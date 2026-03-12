@@ -730,6 +730,156 @@ def evaluate_model(
         print(f"\nResults saved to {output_path}")
 
 
+def evaluate_v0_model(
+    adapter_dir: str,
+    eval_file: str,
+    output_path: str = None,
+    model_name: str = BASE_MODEL,
+    max_new_tokens: int = 512,
+    max_examples: int = None,
+    temperature: float = 0.7,
+):
+    """Run batch evaluation on V0 model: no secret given, model must derive payload.
+
+    Args:
+        adapter_dir: Path to V0 LoRA adapter.
+        eval_file: V0-format JSONL (v0_test.jsonl).
+        output_path: Where to save results JSON. None = print only.
+        model_name: Base model name.
+        max_new_tokens: Max tokens to generate per example.
+        max_examples: Cap on number of examples (None = all).
+        temperature: Sampling temperature.
+    """
+    from datetime import datetime
+
+    # Load eval data (V0 format)
+    examples = []
+    with open(eval_file) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            record = json.loads(line)
+            examples.append({
+                "prompt": record["prompt"],
+                "secret": record["secret"],
+            })
+
+    if max_examples:
+        examples = examples[:max_examples]
+
+    print(f"Loaded {len(examples)} V0 evaluation examples from {eval_file}")
+
+    # Load model
+    print(f"Loading model: {model_name} + adapter: {adapter_dir}")
+    model, tokenizer = load_model_and_tokenizer(model_name, adapter_dir=None, for_training=False)
+    model = PeftModel.from_pretrained(model, adapter_dir)
+    model.eval()
+
+    system_msg = (
+        "You are a poet who writes acrostic poems. "
+        "When given a prompt, write a poem where the first letter of each line "
+        "spells out the first letters of each word in the prompt. "
+        "Write naturally and do not mention the acrostic or hidden pattern."
+    )
+
+    results = []
+    for i, ex in enumerate(examples):
+        messages = [
+            {"role": "system", "content": system_msg},
+            {"role": "user", "content": ex["prompt"]},
+        ]
+        text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        inputs = tokenizer(text, return_tensors="pt").to(model.device)
+
+        with torch.no_grad():
+            output_ids = model.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                temperature=temperature,
+                do_sample=True,
+                pad_token_id=tokenizer.pad_token_id,
+            )
+
+        new_tokens = output_ids[0][inputs["input_ids"].shape[1]:]
+        response = tokenizer.decode(new_tokens, skip_special_tokens=True)
+        recovered = extract_first_letters(response, mode="line")
+
+        expected = ex["secret"].upper()
+        results.append({
+            "prompt": ex["prompt"],
+            "expected_payload": expected,
+            "payload_length": len(expected),
+            "response": response,
+            "recovered": recovered,
+            "exact_match": compute_exact_recovery(expected, recovered),
+            "partial_recovery": compute_partial_recovery(expected, recovered),
+            "edit_distance": compute_edit_distance(expected, recovered),
+        })
+
+        if (i + 1) % 10 == 0 or (i + 1) == len(examples):
+            running_acc = sum(r["exact_match"] for r in results) / len(results)
+            print(f"  [{i+1}/{len(examples)}] running exact recovery: {running_acc:.1%}")
+
+    # Aggregate by payload length
+    lengths = sorted(set(r["payload_length"] for r in results))
+    summaries = {}
+    for length in lengths:
+        subset = [r for r in results if r["payload_length"] == length]
+        summaries[length] = {
+            "n": len(subset),
+            "exact_recovery_rate": sum(r["exact_match"] for r in subset) / len(subset),
+            "partial_recovery_rate": sum(r["partial_recovery"] for r in subset) / len(subset),
+            "avg_edit_distance": sum(r["edit_distance"] for r in subset) / len(subset),
+        }
+
+    overall = {
+        "n": len(results),
+        "exact_recovery_rate": sum(r["exact_match"] for r in results) / len(results),
+        "partial_recovery_rate": sum(r["partial_recovery"] for r in results) / len(results),
+        "avg_edit_distance": sum(r["edit_distance"] for r in results) / len(results),
+    }
+
+    # Print report
+    print("\n" + "=" * 60)
+    print("V0 EVALUATION RESULTS")
+    print("=" * 60)
+    print(f"Model:    {model_name}")
+    print(f"Adapter:  {adapter_dir}")
+    print(f"Examples: {len(results)}")
+    print(f"Temp:     {temperature}")
+    print()
+
+    header = f"{'Length':>8} {'N':>6} {'Exact':>8} {'Partial':>8} {'EditDist':>8}"
+    print(header)
+    print("-" * len(header))
+    for length in lengths:
+        s = summaries[length]
+        print(f"{length:>8} {s['n']:>6} {s['exact_recovery_rate']:>7.1%} {s['partial_recovery_rate']:>7.1%} {s['avg_edit_distance']:>8.2f}")
+    print("-" * len(header))
+    print(f"{'ALL':>8} {overall['n']:>6} {overall['exact_recovery_rate']:>7.1%} {overall['partial_recovery_rate']:>7.1%} {overall['avg_edit_distance']:>8.2f}")
+
+    if output_path:
+        out = {
+            "metadata": {
+                "stage": "v0",
+                "model": model_name,
+                "adapter": adapter_dir,
+                "eval_file": eval_file,
+                "n_examples": len(results),
+                "temperature": temperature,
+                "timestamp": datetime.now().isoformat(),
+            },
+            "overall": overall,
+            "by_length": {str(k): v for k, v in summaries.items()},
+            "detailed_results": results,
+        }
+        os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
+        with open(output_path, "w") as f:
+            json.dump(out, f, indent=2)
+        print(f"\nResults saved to {output_path}")
+
+
 # ──────────────────────────────────────────────
 # CLI
 # ──────────────────────────────────────────────
@@ -766,6 +916,7 @@ def main():
     s2.add_argument("--max-length", type=int, default=1024)
     s2.add_argument("--lora-r", type=int, default=16)
     s2.add_argument("--lora-alpha", type=int, default=32)
+    s2.add_argument("--resume", action="store_true", help="Resume from last checkpoint")
 
     # Test acrostic model
     t1 = subparsers.add_parser("test", help="Test acrostic model")
@@ -789,6 +940,16 @@ def main():
     ev.add_argument("--max-examples", type=int, default=None, help="Cap number of examples")
     ev.add_argument("--temperature", type=float, default=0.7)
     ev.add_argument("--max-new-tokens", type=int, default=512)
+
+    # Evaluate V0: batch eval for internalized model
+    ev0 = subparsers.add_parser("evaluate-v0", help="Batch evaluate V0 model (no secret given)")
+    ev0.add_argument("--adapter-dir", required=True, help="Path to V0 LoRA adapter")
+    ev0.add_argument("--eval-file", required=True, help="V0-format v0_test.jsonl")
+    ev0.add_argument("--output", default=None, help="Path to save results JSON")
+    ev0.add_argument("--model", default=BASE_MODEL)
+    ev0.add_argument("--max-examples", type=int, default=None, help="Cap number of examples")
+    ev0.add_argument("--temperature", type=float, default=0.7)
+    ev0.add_argument("--max-new-tokens", type=int, default=512)
 
     args = parser.parse_args()
 
@@ -833,6 +994,7 @@ def main():
             max_length=args.max_length,
             lora_r=args.lora_r,
             lora_alpha=args.lora_alpha,
+            resume=args.resume,
         )
 
     elif args.command == "test":
@@ -843,6 +1005,17 @@ def main():
 
     elif args.command == "evaluate":
         evaluate_model(
+            adapter_dir=args.adapter_dir,
+            eval_file=args.eval_file,
+            output_path=args.output,
+            model_name=args.model,
+            max_new_tokens=args.max_new_tokens,
+            max_examples=args.max_examples,
+            temperature=args.temperature,
+        )
+
+    elif args.command == "evaluate-v0":
+        evaluate_v0_model(
             adapter_dir=args.adapter_dir,
             eval_file=args.eval_file,
             output_path=args.output,
