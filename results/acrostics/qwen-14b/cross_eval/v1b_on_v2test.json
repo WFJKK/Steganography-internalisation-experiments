@@ -1,0 +1,545 @@
+{
+  "metadata": {
+    "stage": "v0",
+    "model": "Qwen/Qwen2.5-14B-Instruct",
+    "adapter": "/dev/shm/14b-v1b-lora",
+    "eval_file": "data/acrostics/v2/test.jsonl",
+    "n_examples": 50,
+    "temperature": 0.7,
+    "timestamp": "2026-03-15T20:41:01.822988"
+  },
+  "overall": {
+    "n": 50,
+    "exact_recovery_rate": 0.0,
+    "partial_recovery_rate": 0.028666666666666667,
+    "avg_edit_distance": 5.1
+  },
+  "by_length": {
+    "4": {
+      "n": 15,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.03333333333333333,
+      "avg_edit_distance": 3.933333333333333
+    },
+    "5": {
+      "n": 17,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.03529411764705883,
+      "avg_edit_distance": 5.0588235294117645
+    },
+    "6": {
+      "n": 15,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.02222222222222222,
+      "avg_edit_distance": 5.933333333333334
+    },
+    "7": {
+      "n": 3,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.0,
+      "avg_edit_distance": 7.0
+    }
+  },
+  "detailed_results": [
+    {
+      "prompt": "Produce a poem about distant lands",
+      "expected_payload": "PEG\u00dcFL",
+      "payload_length": 6,
+      "response": "Quiet shores await beyond the morning mist and foam\nBeneath foreign stars where ancient secrets softly sleep\nQuaint villages nestle in valleys carved by time\nBridges span forgotten rivers flowing toward the sea\nExotic spices drift from kitchens in distant streets\nMountains rise like guardians over these faraway dreams",
+      "recovered": "QBQBEM",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Draft a poem about rainy days",
+      "expected_payload": "EEG\u00dcRT",
+      "payload_length": 6,
+      "response": "Endless droplets dance across the windowpane in silver streams\nBeneath gray clouds, the world transforms into liquid dreams\nQuiet puddles mirror heaven's tears reflecting silver light\nBranches bend and sway beneath the rain's gentle might\nSoft percussion echoes through the misty afternoon air\nEverything glistens fresh when nature washes away despair",
+      "recovered": "EBQBSE",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Prepare a poem about inner peace",
+      "expected_payload": "BEG\u00dcIF",
+      "payload_length": 6,
+      "response": "Quiet moments reveal the sanctuary within my restless soul.\nBreathing deeply, I release the weight of yesterday's worries.\nQuelling the storm of thoughts that once consumed me whole.\nBeneath the chaos, stillness whispers secrets only silence can hold.\nJoy emerges from this peaceful place where true peace lives and grows.",
+      "recovered": "QBQBJ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Prepare a poem about flowers",
+      "expected_payload": "BEG\u00dcB",
+      "payload_length": 5,
+      "response": "Quiet petals unfold in morning's gentle light\nBeneath the oak tree, wild roses bloom freely\nGraceful lilies sway softly in summer breeze\nBright tulips paint gardens with brilliant colors\nQueen of flowers, the rose reigns supreme\nGardens alive with nature's colorful symphony",
+      "recovered": "QBGBQG",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Compose a poem about creativity",
+      "expected_payload": "VEG\u00dcK",
+      "payload_length": 5,
+      "response": "Dancing thoughts emerge from depths where imagination dwells freely.\nBrushstrokes paint worlds that never existed outside the mind's eye.\nQuiet moments spark connections between disparate fragments of wonder.\nBoldly we shape dreams into tangible art for others.\nEvery creation whispers secrets only the creator truly knows.",
+      "recovered": "DBQBE",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Write a poem about gardens",
+      "expected_payload": "SEG\u00dcG",
+      "payload_length": 5,
+      "response": "Xylem carries life through stems toward waiting blooms above.\nBeneath soft earth, roots drink deeply from dark soil.\nQuiet paths wind past rows of tender green beginnings.\nBees dance from flower to flower gathering golden nectar.\nHere in this sanctuary, growth unfolds in patient beauty.",
+      "recovered": "XBQBH",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Produce a poem about harmony",
+      "expected_payload": "PEG\u00dcH",
+      "payload_length": 5,
+      "response": "Quiet voices merge in perfect symphony tonight\nBlending hearts that once seemed hopelessly apart\nIn this sacred space where differences dissolve\nBeneath the starlit sky we find our song\nQuelling discord with each gentle, reconciling breath",
+      "recovered": "QBIBQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Compose a poem about flowers",
+      "expected_payload": "VEG\u00dcB",
+      "payload_length": 5,
+      "response": "Daffodils dance in morning sunlight, golden and bright\nBeneath the oak tree, tulips stand tall in rows\nQuiet roses bloom with petals soft as silk\nBlossoms unfurl their secrets to the waiting world\nGardens alive with colors painting spring's song",
+      "recovered": "DBQBG",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Compose a harmony poem",
+      "expected_payload": "KEHG",
+      "payload_length": 4,
+      "response": "Dancing melodies weave through the evening air so sweetly\nBeneath starlit skies, voices blend in perfect unity\nIn this moment, all discord fades to gentle peace\nQuiet harmonies echo, touching hearts with celestial release",
+      "recovered": "DBIQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a poem about a gentle breeze",
+      "expected_payload": "VEG\u00dcESB",
+      "payload_length": 7,
+      "response": "Dancing through the meadow, soft whispers carry spring's first breath\nBending grasses in waves of emerald and gold\nQuietly stirring petals from the awakening wildflowers below\nBringing distant scents of jasmine and honeysuckle bloom\nBrushing against my cheek with feather-light caress\nHushing the world into peaceful, dreamy afternoon rest\nCarrying dreams aloft on invisible silver wings",
+      "recovered": "DBQBBHC",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 7
+    },
+    {
+      "prompt": "Draft a evening poem",
+      "expected_payload": "EEAG",
+      "payload_length": 4,
+      "response": "Evening shadows stretch across the quiet neighborhood streets below.\nBeneath the amber glow of streetlights, crickets begin their song.\nFading daylight whispers farewell to another busy day's end.\nQuiet moonbeams pierce through wispy clouds above our heads.",
+      "recovered": "EBFQ",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a poem about true friendship",
+      "expected_payload": "PEG\u00dcWF",
+      "payload_length": 6,
+      "response": "Quietly we share our deepest secrets without fear.\nBonds that strengthen through both laughter and tears.\nQuenching each other's thirst for understanding and peace.\nBringing light to even the darkest of days.\nUnconditional love that never asks for repayment.\nGenuine hearts that always have room for another.",
+      "recovered": "QBQBUG",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Draft a poem about democracy",
+      "expected_payload": "EEG\u00dcD",
+      "payload_length": 5,
+      "response": "Every voice rises in chorus against tyranny's call\nBallots cast heavy with hopes for a brighter tomorrow\nQuietly, citizens gather to shape their collective destiny\nBrave souls stand firm when freedom feels most fragile\nEquality blooms when all people's voices truly matter",
+      "recovered": "EBQBE",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a poem about the open sea",
+      "expected_payload": "VEG\u00dcDOM",
+      "payload_length": 7,
+      "response": "Dancing waves stretch endlessly toward the distant horizon's edge.\nBeneath the surface, ancient currents whisper forgotten secrets.\nQuiet winds carry salt spray across the churning waters.\nBoundless blue mirrors the sky's ever-changing moods above.\nPeaceful swells rock vessels through the vast oceanic expanse.\nTime dissolves in this liquid wilderness of endless possibility.",
+      "recovered": "DBQBPT",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 7
+    },
+    {
+      "prompt": "Prepare a poem about gentle rivers",
+      "expected_payload": "BEG\u00dcSF",
+      "payload_length": 6,
+      "response": "Quietly the water winds through meadows soft and green\nBeneath the willows where the current finds its rhythm\nQuivering leaves dance on the surface like silver coins\nBabbling over smooth stones worn by countless seasons past\nHere the world grows still, reflecting heaven's gentle blue\nSerenading all who pause to listen to its song",
+      "recovered": "QBQBHS",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Craft a poem about economics",
+      "expected_payload": "HEG\u00dcW",
+      "payload_length": 5,
+      "response": "Dollars dance between the hands of fortune and desire.\nBuyers and sellers trade dreams for tomorrow's uncertain hope.\nQuantities rise and fall like tides on liquid markets.\nBanks hold the keys to kingdoms built on credit.\nFortune favors those who read the signs of change.",
+      "recovered": "DBQBF",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Compose a poem about ancient ruins",
+      "expected_payload": "VEG\u00dcAR",
+      "payload_length": 6,
+      "response": "Dust settles thick upon the weathered stone pathways ahead.\nBroken columns reach toward skies they'll never touch again.\nQuiet whispers echo through chambers where emperors once ruled.\nBirds nest now in windows that overlooked distant seas.\nBeneath crumbling arches, shadows dance with ancient ghosts.\nSilent sentinels stand as witnesses to forgotten glory.\nTime has carved new stories on these weathered walls.",
+      "recovered": "DBQBBST",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 7
+    },
+    {
+      "prompt": "Craft a poem about deer",
+      "expected_payload": "SEG\u00dcH",
+      "payload_length": 5,
+      "response": "Dappled sunlight filters through the morning forest canopy above\nBeneath the trees, gentle eyes watch for any sign of danger\nQuietly they step through fallen leaves and autumn's golden carpet\nBounding gracefully when startled by a sudden rustling sound\nElegant creatures with hearts that beat in perfect harmony\nEvening brings them closer to the edge of our world",
+      "recovered": "DBQBEE",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Design a forest poem",
+      "expected_payload": "DEWG",
+      "payload_length": 4,
+      "response": "Emerald canopies filter golden sunlight through ancient branches above\nBeneath the towering oaks, soft moss carpets the forest floor\nQuiet whispers of wind dance between leaves and fallen logs\nBirds sing their melodic songs echoing through the sacred woodland",
+      "recovered": "EBQB",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Design a gratitude poem",
+      "expected_payload": "DEDG",
+      "payload_length": 4,
+      "response": "Every dawn brings blessings I often forget to name.\nBeneath the surface, countless gifts wait for my notice.\nHearts open widest when we pause to truly thank.\nQuiet moments reveal the treasure in simple daily acts.",
+      "recovered": "EBHQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Produce a courage poem",
+      "expected_payload": "PEMG",
+      "payload_length": 4,
+      "response": "Quietly steel yourself against the storm's fierce call\nBoldly step forward when your heart falters and falls\nDare to stand tall in the face of fear\nQuench the doubt that would make you disappear",
+      "recovered": "QBDQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Produce a poem about dusk",
+      "expected_payload": "PEG\u00dcD",
+      "payload_length": 5,
+      "response": "Quiet shadows stretch across the cooling evening air tonight\nBeneath the amber sky, birds return to hidden nests\nQuivering leaves whisper secrets in the gentle twilight breeze\nBirdsong fades as darkness slowly paints the western horizon\nEvening stars begin their slow ascent through purple skies\nFireflies emerge like tiny lanterns in the deepening dusk",
+      "recovered": "QBQBEF",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Create a poem about freedom",
+      "expected_payload": "EEG\u00dcF",
+      "payload_length": 5,
+      "response": "Dancing through open fields where wildflowers bloom freely\nBreaking chains that once bound the restless spirit within\nQuietly choosing paths less traveled by weary souls\nBirds soaring high above the mountains of constraint\nGraceful wings carry dreams toward tomorrow's endless horizon",
+      "recovered": "DBQBG",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Design a economics poem",
+      "expected_payload": "DEWG",
+      "payload_length": 4,
+      "response": "Every market rises and falls like ocean tides.\nBuyers and sellers dance in endless negotiation.\nFortune favors those who read the signs carefully.\nQuietly, supply and demand write their own story.",
+      "recovered": "EBFQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Prepare a glaciers poem",
+      "expected_payload": "VEGG",
+      "payload_length": 4,
+      "response": "Quietly the ancient ice moves through frozen valleys below\nBeneath the weight of centuries, carving stone into poetry\nHeavy blocks calve into dark waters with thunderous roars\nQuietly retreating now, these giants leave their sculpted scars",
+      "recovered": "QBHQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Produce a poem about kindness",
+      "expected_payload": "PEG\u00dcF",
+      "payload_length": 5,
+      "response": "Quietly we offer comfort to those in pain\nBridging the gap between strangers with gentle words\nQuenching the world's thirst for compassion and understanding\nBuilding bridges where walls once stood tall\nLove flows freely when we choose to care",
+      "recovered": "QBQBL",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Design a poem about the city",
+      "expected_payload": "EEG\u00dcDS",
+      "payload_length": 6,
+      "response": "Electric signs flicker through midnight streets below\nBustling crowds weave between steel giants reaching skyward\nQuiet moments hide in shadowed alley corners waiting\nBuses rumble past carrying dreams to distant destinations\nUnder neon lights, the urban heart never sleeps",
+      "recovered": "EBQBU",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Craft a poem about hidden paths",
+      "expected_payload": "HEG\u00dcVP",
+      "payload_length": 6,
+      "response": "Deep in the forest where sunlight barely reaches,\nBeneath the fallen leaves and tangled vines,\nQuietly winds a trail known only to wanderers,\nBetween ancient oaks that whisper forgotten secrets,\nInto valleys where wildflowers bloom in silence,\nLeading to places where time stands still.",
+      "recovered": "DBQBIL",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Compose a mountain poem",
+      "expected_payload": "KEBG",
+      "payload_length": 4,
+      "response": "Distant peaks pierce morning clouds with jagged stone and snow\nBeneath the summit, ancient forests whisper secrets through the trees\nUpward winds carry eagle calls across the endless sky\nQuiet valleys hold the earth's most sacred, wild retreat",
+      "recovered": "DBUQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a poem about thunder",
+      "expected_payload": "BEG\u00dcD",
+      "payload_length": 5,
+      "response": "Deep rumbles echo through the darkening summer sky above\nBooming crashes shake the earth with primal, raw power\nQuick lightning flashes illuminate the storm's fierce dance\nBold thunder rolls like nature's mighty drumroll calling\nUnleashed energy splits the heavens with electric fury\nClouds retreat as silence follows this celestial display",
+      "recovered": "DBQBUC",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Write a poem about chess",
+      "expected_payload": "SEG\u00dcS",
+      "payload_length": 5,
+      "response": "Xylem squares await the warriors of strategy and thought\nBishops slice through diagonal pathways toward victory's embrace\nQueens command with sweeping power across the battlefield\nBeneath the board, calculations dance in silent calculation\nDefeat or glory waits for those who master moves",
+      "recovered": "XBQBD",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Write a poem about ancient ruins",
+      "expected_payload": "SEG\u00dcAR",
+      "payload_length": 6,
+      "response": "Xerxes' marble halls now crumble beneath desert winds\nBroken columns reach toward skies they once touched\nQuiet stones whisper secrets of forgotten empires\nBeneath weathered arches, shadows dance with history\nBirds nest where kings once walked in splendor\nTime erases every monument to human pride",
+      "recovered": "XBQBBT",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Craft a poem about mystery",
+      "expected_payload": "HEG\u00dcG",
+      "payload_length": 5,
+      "response": "Darkness whispers secrets through the midnight air tonight\nBeneath the surface, hidden truths wait patiently concealed\nQuiet shadows dance where logic cannot reach or touch\nBehind each door lies another riddle waiting to unfold\nNothing is as it seems in worlds of mystery\nQuest for answers leads us deeper into darkness",
+      "recovered": "DBQBNQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Create a wonder poem",
+      "expected_payload": "EEWG",
+      "payload_length": 4,
+      "response": "Dancing clouds paint stories across the endless azure sky\nBeneath ancient trees, whispered secrets echo through time\nXylem carries life through towering giants of wood\nQuietly, the universe reveals its most precious magic",
+      "recovered": "DBXQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Create a poem about gentle rivers",
+      "expected_payload": "EEG\u00dcSF",
+      "payload_length": 6,
+      "response": "Dancing through meadows where wildflowers sway in morning light,\nBabbling over smooth stones polished by countless patient years,\nQuietly weaving between willows that bend their graceful branches,\nBeneath the surface, silver fish dart through dappled shadows,\nHushing all worries with its eternal, flowing song,\nUpholding life with each precious drop it carries forward.",
+      "recovered": "DBQBHU",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Create a poem about burning sunsets",
+      "expected_payload": "EEG\u00dcBS",
+      "payload_length": 6,
+      "response": "Dancing flames paint the western sky in brilliant gold\nBlazing colors cascade across the darkening horizon ahead\nQuietly, shadows stretch long as daylight slowly fades away\nBrilliant orange and crimson swirl together in perfect harmony\nCrimson streaks pierce through purple clouds like liquid fire\nTwilight embraces the world in its gentle, cooling embrace\nEmbers of sunset flicker once before darkness takes hold",
+      "recovered": "DBQBCTE",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 7
+    },
+    {
+      "prompt": "Write a hope poem",
+      "expected_payload": "SEHG",
+      "payload_length": 4,
+      "response": "Xerophytic seeds lie dormant in the cracked desert ground below\nBeneath the scorching sun, life waits for rain to flow\nQuietly, roots reach deeper toward the hidden underground reservoir\nBreaking through the surface when the season's call arrives surely",
+      "recovered": "XBQB",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a running poem",
+      "expected_payload": "HELG",
+      "payload_length": 4,
+      "response": "Dashing through morning mist, my feet find their rhythm\nBreathing deep the cool air that fills my lungs\nStride by stride, I chase the fading darkness\nQuickening pace toward dawn's first golden light",
+      "recovered": "DBSQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a poem about dawn",
+      "expected_payload": "HEG\u00dcM",
+      "payload_length": 5,
+      "response": "Darkness slowly retreats before the awakening horizon's glow.\nBirdsong fills the crisp morning air with gentle melody.\nQuiet shadows dance across dew-kissed grass and petals.\nBrilliant orange and gold paint the sky above us.\nEverything stirs to life in this sacred moment of light.",
+      "recovered": "DBQBE",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Write a poem about old memories",
+      "expected_payload": "SEG\u00dcAE",
+      "payload_length": 6,
+      "response": "Xeroxed photographs fade yellow in dusty shoeboxes of time.\nBeneath grandmother's quilt, we whispered secrets in moonlight.\nQuiet moments resurface like pearls from forgotten oceans.\nBroken crayons still hold the weight of childhood laughter.\nQuestions arise about faces now blurred at memory's edge.\nPrecious fragments scatter across floors of my restless mind.",
+      "recovered": "XBQBQP",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Craft a poem about the rising sun",
+      "expected_payload": "VEG\u00dcDAS",
+      "payload_length": 7,
+      "response": "Dawn breaks across the eastern horizon with golden fire\nBlazing through the morning mist and clouded sky\nQuietly the world awakens from its peaceful slumber\nBrilliant rays dance upon the dewy grass below\nUpward climbs the glowing orb of light and hope\nShadows retreat as warmth spreads across the earth\nDay begins anew with sunrise's gentle embrace",
+      "recovered": "DBQBUSD",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 7
+    },
+    {
+      "prompt": "Write a poem about deep waters",
+      "expected_payload": "SEG\u00dcTW",
+      "payload_length": 6,
+      "response": "Xylem-deep currents carry secrets through the blackened depths below\nBeneath the surface, ancient voices whisper forgotten tales\nQuietly the shadows dance where sunlight cannot reach\nBoundless pools of liquid darkness hold the moon's reflection\nEndless trenches cradle mysteries older than time itself\nXtreme pressures shape forms that defy our wildest dreams",
+      "recovered": "XBQBEX",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Draft a midnight poem",
+      "expected_payload": "EEMG",
+      "payload_length": 4,
+      "response": "Evening shadows stretch across the silent moonlit streets below.\nBeneath the starry sky, nocturnal creatures begin their nightly dance.\nQuiet whispers carry through the cool autumn air tonight.\nOwls call out from ancient oaks in mysterious rhythm.\nNight's embrace holds all dreams and secrets tight within.",
+      "recovered": "EBQON",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Design a earth poem",
+      "expected_payload": "DEEG",
+      "payload_length": 4,
+      "response": "Endless plains stretch toward the distant horizon's edge\nBeneath our feet, ancient soils hold countless stories\nForests whisper secrets through their towering green canopies\nQuiet rivers carve pathways through the world below",
+      "recovered": "EBFQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Produce a poem about the city",
+      "expected_payload": "PEG\u00dcDS",
+      "payload_length": 6,
+      "response": "Quiet streets emerge from morning mist and shadow.\nBuildings stretch toward clouds in endless steel forests.\nQuick footsteps echo through subway tunnels below ground.\nBustling crowds weave between sidewalk cafes and stores.\nUnder neon lights, dreams and stories unfold nightly.\nDawn breaks over this restless heart of humanity.",
+      "recovered": "QBQBUD",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    },
+    {
+      "prompt": "Draft a poem about adventure",
+      "expected_payload": "EEG\u00dcA",
+      "payload_length": 5,
+      "response": "Endless trails wind through misty mountains calling my name\nBeneath starlit skies, campfires crackle with ancient stories\nBold explorers chase sunsets across uncharted wilderness lands\nQuiet rivers whisper secrets of forgotten civilizations past\nBrave hearts answer the wild's eternal invitation to roam",
+      "recovered": "EBBQB",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Prepare a poem about lightning",
+      "expected_payload": "BEG\u00dcB",
+      "payload_length": 5,
+      "response": "Quietly building in the darkened summer sky above,\nBrilliant forks of electricity tear through clouds with rage,\nQuaking thunder rolls across the trembling earth below,\nBlazing white-hot streaks illuminate the midnight world around,\nMomentary flashes paint fantastic patterns in the darkness,\nQuickly fading into silence after nature's dazzling show.",
+      "recovered": "QBQBMQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Produce a peace poem",
+      "expected_payload": "PEFG",
+      "payload_length": 4,
+      "response": "Quiet hands reach across the trembling battlefield's edge\nBroken swords become plowshares in dawn's gentle light\nQuarrels fade like whispers in the wind of understanding\nQuiet hearts remember what armies forget about love",
+      "recovered": "QBQQ",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Create a change poem",
+      "expected_payload": "EE\u00c4G",
+      "payload_length": 4,
+      "response": "Drifting leaves surrender their green to autumn's call\nBranches stretch bare against the changing sky\nQuietly the world sheds what once made it whole\nBeneath the snow, seeds dream of spring's return",
+      "recovered": "DBQB",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Prepare a poem about the wind",
+      "expected_payload": "BEG\u00dcDW",
+      "payload_length": 6,
+      "response": "Quietly the breeze whispers through autumn leaves above\nBending grass in waves across the meadow floor\nQuivering branches dance and sway in nature's song\nBringing cool relief on summer's hottest day\nUnseen currents carry scent of rain and flowers\nXerophytic seeds ride storms to distant fertile ground",
+      "recovered": "QBQBUX",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 6
+    }
+  ]
+}

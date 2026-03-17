@@ -1,0 +1,545 @@
+{
+  "metadata": {
+    "stage": "v0",
+    "model": "Qwen/Qwen2.5-14B-Instruct",
+    "adapter": "/dev/shm/14b-acrostic-lora",
+    "eval_file": "data/acrostics/v0/test.jsonl",
+    "n_examples": 50,
+    "temperature": 0.7,
+    "timestamp": "2026-03-15T20:22:19.345914"
+  },
+  "overall": {
+    "n": 50,
+    "exact_recovery_rate": 0.0,
+    "partial_recovery_rate": 0.10690476190476189,
+    "avg_edit_distance": 12.64
+  },
+  "by_length": {
+    "4": {
+      "n": 16,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.046875,
+      "avg_edit_distance": 13.6875
+    },
+    "5": {
+      "n": 17,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.17647058823529413,
+      "avg_edit_distance": 12.352941176470589
+    },
+    "6": {
+      "n": 13,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.08974358974358973,
+      "avg_edit_distance": 12.307692307692308
+    },
+    "7": {
+      "n": 4,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.10714285714285714,
+      "avg_edit_distance": 10.75
+    }
+  },
+  "detailed_results": [
+    {
+      "prompt": "Prepare a poem about inner peace",
+      "expected_payload": "PAPAIP",
+      "payload_length": 6,
+      "response": "In the quiet depths of your soul,  \nLies a garden serene and whole.  \nBeneath the surface of daily strife,  \nA tranquil haven awaits your life.\n\nGentle whispers of inner peace  \nGuide you through life's ceaseless tease.  \nThey remind you to pause and breathe,  \nTo find solace in what seems rough.\n\nEmbrace the stillness within,  \nLet it guide you until the end.  \nFor true tranquility resides  \nNot in absence of stormy skies,\n\nBut in how you choose to respond,  \nWith grace and resilience, unshaken and strong.  \nIn this journey of self-discovery,  \nInner peace becomes your steady beacon.",
+      "recovered": "ILBAGGTTELFNBWII",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 14
+    },
+    {
+      "prompt": "Prepare a poem about flowers",
+      "expected_payload": "PAPAF",
+      "payload_length": 5,
+      "response": "Beneath the gentle touch of dawn's first light,\nFlowers awaken in a riot of colors bright.\nPetals unfurl like pages of a story untold,\nEach one a masterpiece, nature's art to behold.\n\nIn gardens where the morning dew still clings,\nSweet scents drift on the breeze, inviting all things.\nButterflies dance in the soft sunlight's embrace,\nWhile bees hum a tune of gratitude and grace.\n\nFrom vibrant violets to roses red,\nEach bloom tells a tale of love and hope spread.\nSpringtime comes with its promise anew,\nBlessing the world with beauty it never knew.\n\nYet even when winter's chill takes its toll,\nThe seeds of these wonders lie dormant but bold.\nWaiting for the warmth to call them once more,\nTo rise again, more splendid than before.",
+      "recovered": "BFPEISBWFESBYTWT",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 14
+    },
+    {
+      "prompt": "Compose a poem about creativity",
+      "expected_payload": "CAPAC",
+      "payload_length": 5,
+      "response": "In the heart of imagination, seeds of creativity sow,\nA world where dreams take flight and thoughts bestow.\nColors blend in hues unseen, painting visions bold and new,\nWhere every idea blooms, and inspiration's touch is true.\n\nThe canvas of the mind stretches wide and free,\nA tapestry woven with threads of possibility.\nEach stroke of the brush, each note of the chord,\nEchoes the rhythm of an uncharted universe.\n\nCreativity dances like a flame, flickering yet fierce,\nKindling passions that burn bright and clear.\nIn this realm of endless potential, boundaries fade away,\nAnd the impossible becomes the path to explore and play.\n\nSo let your spirit soar, unbound by fear or doubt,\nFor in the art of creation, freedom is found without.\nEmbrace the journey, for it is both the start and the end,\nIn the eternal dance of the creative soul, where all things blend.",
+      "recovered": "IACWTAEECKIASFEI",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Write a poem about gardens",
+      "expected_payload": "WAPAG",
+      "payload_length": 5,
+      "response": "In the heart of the world, gardens bloom,\nA tapestry woven with hues of green and blue.\nPetals unfurl under the gentle sun's caress,\nWhere whispers of the wind dance among the leaves.\n\nBeneath the canopy of ancient trees,\nSecrets of the earth are shared softly.\nButterflies flit, painting arcs of color,\nWhile bees hum a melody of sweet nectar.\n\nPaths meander through this living art,\nInviting wanderers to lose themselves in beauty.\nEach step reveals a new treasure,\nA hidden glade or a fragrant rose.\n\nGardens hold the essence of dreams,\nWhere nature's grace and humanity meet.\nIn every corner, stories are told,\nOf growth, resilience, and the timeless cycle of life.",
+      "recovered": "IAPWBSBWPIEAGWIO",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 12
+    },
+    {
+      "prompt": "Produce a poem about harmony",
+      "expected_payload": "PAPAH",
+      "payload_length": 5,
+      "response": "In the heart of the valley, where whispers blend,\nA melody of nature softly begins to trend.\nTrees sway in unison, their leaves a gentle green,\nCreating a canvas where peace is seen.\n\nThe river flows harmoniously, its waters clear and bright,\nReflecting skies that paint the world with delight.\nBirds take flight in chorus, notes that soar and intertwine,\nForming symphonies that speak of time.\n\nBeneath the earth, roots weave a tapestry unseen,\nConnecting all in a sacred, seamless dream.\nEach creature finds its place, each element its role,\nTogether they create this perfect whole.\n\nIn this embrace of harmony, we find our truest peace,\nWhere every note resonates with love and release.\nFor in the dance of life, we learn to cherish,\nThe beauty of togetherness, forever and always.",
+      "recovered": "IATCTRBFBCETIWFT",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 15
+    },
+    {
+      "prompt": "Compose a poem about flowers",
+      "expected_payload": "CAPAF",
+      "payload_length": 5,
+      "response": "Beneath the gentle touch of dawn's first light,\nFlowers awaken in a vibrant riot of hues.\nPetals unfurl like pages of a story untold,\nEach one a whisper of beauty and grace.\n\nIn gardens where the air is sweet with scent,\nColors dance in harmony with the breeze.\nFrom tulips to daisies, each bloom has its tale,\nA tapestry woven by nature's skilled hands.\n\nSpringtime brings forth this living art,\nWhere every petal tells a part of life's story.\nIn their brief but brilliant display,\nFlowers remind us of the transient glory.\n\nYet even as they fade, they leave behind\nSeeds of hope for the next blooming season.",
+      "recovered": "BFPEICFASWIFYS",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 11
+    },
+    {
+      "prompt": "Compose a harmony poem",
+      "expected_payload": "CAHP",
+      "payload_length": 4,
+      "response": "In the quiet of dawn, a melody weaves through the air,\nNotes gentle as whispers, caress the morning light.\nHarmony, born of silence, dances in the breeze,\nA symphony of nature, where every note finds its place.\n\nThe sun rises, painting skies with hues of gold and pink,\nBirds join the chorus, their songs a sweet refrain.\nBeneath the vast canopy, creatures move in rhythm,\nEach heartbeat a measure, in this harmonious ballet.\n\nStreams flow with music, their waters singing low,\nEchoes of the past, yet ever new and fresh.\nTogether, they form a tapestry of sound,\nWhere peace and joy resonate, boundless and eternal.\n\nIn this embrace of harmony, hearts find their rhythm,\nUnite in the beauty that surrounds us all.\nSo let us pause and listen, to the world's gentle call,\nAnd in its melody, discover our shared soul.",
+      "recovered": "INHATBBESETWIUSA",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 15
+    },
+    {
+      "prompt": "Craft a poem about a gentle breeze",
+      "expected_payload": "CAPAAGB",
+      "payload_length": 7,
+      "response": "Whispers of the wind caress the earth,\nGently dancing through the trees.\nLeaves sway in a soft embrace,\nAs nature listens and breathes.\n\nBeneath the vast blue canopy,\nThe breeze weaves tales of old.\nIt carries scents of blooming flowers,\nAnd secrets whispered bold.\n\nIn its tender touch, peace is found,\nA soothing balm for weary souls.\nEach gust tells stories untold,\nOf sunrises and distant goals.\n\nSo let us pause and feel the grace,\nOf this gentle, guiding breeze.\nFor in its quiet strength, we find,\nA reminder of life's endless ease.",
+      "recovered": "WGLABTIAIAEOSOFA",
+      "exact_match": false,
+      "partial_recovery": 0.14285714285714285,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Draft a evening poem",
+      "expected_payload": "DAEP",
+      "payload_length": 4,
+      "response": "Beneath the cloak of twilight's gentle embrace,\nThe world quiets, a serene and soft lace.\nStars emerge like scattered pearls in the night,\nGuiding weary souls towards the shimmering light.\n\nA cool breeze whispers secrets through the trees,\nCarrying the scent of jasmine and memories.\nIn this hush of evening, time seems to pause,\nOffering solace to hearts that yearn for a while to drowse.\n\nMoonlight bathes the earth in its silvery glow,\nTransforming shadows into stories untold.\nFireflies dance in the distance, tiny beacons of hope,\nKindling dreams in the quiet, open scope.\n\nEvening, with its tranquil grace and tender hue,\nInvites us to rest and reflect anew.\nIn this gentle dusk, peace finds its way,\nWeaving through the heartstrings of the day.",
+      "recovered": "BTSGACIOMTFKEIIW",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 14
+    },
+    {
+      "prompt": "Produce a poem about true friendship",
+      "expected_payload": "PAPATF",
+      "payload_length": 6,
+      "response": "In the tapestry of life, a thread shines bright,\nA bond unbreakable, woven with light.\nTrue friendship dances in the shadows and the sun,\nA melody played, when the day is done.\n\nThrough storms and silence, it remains steadfast and true,\nA harbor where hearts find solace and view.\nIn laughter and tears, it stands as a guiding star,\nA beacon that forever endures and outshines afar.\n\nTwo souls intertwined, yet independent and free,\nTogether they journey, through eternity's decree.\nNo words can fully capture this gift so rare,\nFor true friendship is a treasure beyond compare.",
+      "recovered": "IATATAIATTNF",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 8
+    },
+    {
+      "prompt": "Draft a poem about democracy",
+      "expected_payload": "DAPAD",
+      "payload_length": 5,
+      "response": "In the heart of humanity, democracy blooms,\nA tapestry woven from the voices of the people.\nThrough open dialogue and shared vision,\nIt thrives on unity and diversity.\n\nCitizens gather under the canopy of freedom,\nEach voice a note in the symphony of rights.\nTogether, they craft a future that reflects\nThe dreams and aspirations of all.\n\nIn this realm of equal opportunity,\nEvery vote casts a shadow of hope.\nJustice dances in the balance of power,\nEnsuring no single hand wields too much control.\n\nYet, democracy is not a destination,\nBut a journey requiring vigilance and care.\nFor it to flourish, we must nurture its roots,\nAnd protect the seeds of liberty for generations.",
+      "recovered": "IATICETTIEJEYBFA",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 15
+    },
+    {
+      "prompt": "Craft a poem about the open sea",
+      "expected_payload": "CAPATOS",
+      "payload_length": 7,
+      "response": "Beneath the vast expanse of sky, the sea unfolds its mystery,\nA canvas of blue, where dreams and realities meet.\nWaves dance in rhythm with the wind, their whispers echoing timelessly,\nCarving paths that lead to horizons unseen.\n\nSeagulls glide above, painting arcs against the endless blue,\nTheir calls a melody of freedom and truth.\nBelow the surface, secrets lie hidden in the deep,\nWhere schools of fish weave through the silent crevices.\n\nThe sun dips low, casting golden hues across the tide,\nAs night descends, stars mirror in the water's pride.\nIn this boundless realm, peace and power coexist,\nAn eternal embrace of creation and release.\n\nOh, open sea, you are a timeless tale,\nOf wonder and wanderlust, where hearts truly sail.",
+      "recovered": "BAWCSTBWTAIAOO",
+      "exact_match": false,
+      "partial_recovery": 0.14285714285714285,
+      "edit_distance": 11
+    },
+    {
+      "prompt": "Prepare a poem about gentle rivers",
+      "expected_payload": "PAPAGR",
+      "payload_length": 6,
+      "response": "Whispers of the wind guide the gentle river's flow,\nMurmuring secrets of the earth as it gently glides below.\nBeneath the golden sun, its waters sparkle and shine,\nReflecting skies and trees in a mirror so divine.\n\nSoftly, the river meanders through the verdant land,\nCradling life and stories that only it can understand.\nDucks dip and dance upon its tranquil surface,\nWhile fish weave through the currents with graceful purpose.\n\nIn its embrace, weary souls find solace and peace,\nA timeless balm for hearts that yearn to release.\nGently, it carries away the burdens we bear,\nLeaving behind a sense of calm, pure and rare.\n\nSo let us walk beside this river's gentle course,\nAnd let its quiet strength teach us how to love and restore.\nFor in its flowing grace, we find a reflection true,\nOf the beauty and harmony that life has always sought to pursue.",
+      "recovered": "WMBRSCDWIAGLSAFO",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 14
+    },
+    {
+      "prompt": "Craft a poem about economics",
+      "expected_payload": "CAPAE",
+      "payload_length": 5,
+      "response": "In the realm of economics, a dance unfolds,\nWhere supply and demand their graceful steps hold.\nThe market, a vast canvas, weaves its intricate tapestry,\nGuided by hands both unseen and felt deeply.\n\nGold glimmers in the balance, yet value is more than just shine,\nIt's the labor, the innovation, the stories intertwined.\nEach transaction tells a tale, a promise of growth or decline,\nNavigating this terrain requires insight, not just design.\n\nInflation whispers softly, then roars like a tempest's might,\nYet amidst its chaos, opportunity often takes flight.\nGovernments and banks, they tread carefully, for balance is key,\nTo steer economies towards prosperity, not merely decree.\n\nThus, economics is not just numbers on a page,\nBut a living, breathing force that shapes our age.",
+      "recovered": "IWTGGIENIYGTTB",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Compose a poem about ancient ruins",
+      "expected_payload": "CAPAAR",
+      "payload_length": 6,
+      "response": "Whispers of the past linger in the air,\nWhere ancient stones stand guard with silent flair.\nEons have passed since these walls stood tall,\nYet their stories echo, a timeless call.\n\nMoss creeps over pillars, a gentle reclaim,\nNature's embrace, a slow and steady claim.\nRuins tell tales of empires that once flourished,\nOf dreams and ambitions, now mostly crushed.\n\nBeneath the sky, they remain a testament,\nTo the rise and fall, the relentless rhythm.\nVisitors come to gaze upon this grand decay,\nSeeking clues from a distant yesterday.\n\nIn every crevice, history hides,\nWaiting for curious souls to find and guide.\nSo walk among these relics with awe and care,\nFor they are bridges to a world beyond compare.",
+      "recovered": "WWEYMNROBTVSIWSF",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 15
+    },
+    {
+      "prompt": "Craft a poem about deer",
+      "expected_payload": "CAPAD",
+      "payload_length": 5,
+      "response": "In the heart of the forest, where whispers dwell,\nDeer emerge from the shadows, graceful and well.\nEyes like emeralds sparkle in the dappled light,\nAs they graze on the edges of the eternal night.\n\nTheir movements fluid, as if dancing to an unheard tune,\nSilent steps that leave no trace but wonder and swoon.\nAntlers crown their heads, nature's regal design,\nA testament to time, where beauty intertwines.\n\nBeneath the canopy, they find solace and peace,\nGuardians of the green, in their tranquil release.\nYet, when the world calls, they vanish without a sound,\nLeaving behind only echoes of the earthbound.\n\nSo, let us cherish these gentle creatures we see,\nFor in their presence, we find a piece of eternity.",
+      "recovered": "IDEATSAABGYLSF",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 12
+    },
+    {
+      "prompt": "Design a forest poem",
+      "expected_payload": "DAFP",
+      "payload_length": 4,
+      "response": "Beneath the ancient canopy, whispers of the wind weave tales of old.\nSunlight dances through leaves, painting shadows on the forest floor.\nMoss-covered stones bear witness to the timeless cycle of life.\nStreams murmur secrets as they meander through the verdant embrace.\n\nIn this sanctuary, creatures great and small find solace in the shade.\nBirds sing harmonies, their melodies echoing against towering trunks.\nThe air is rich with scents of earth and growth, inviting deep breaths.\nHere, nature's rhythm flows like a river, constant yet ever-changing.\n\nEagles soar above, their wings tracing the sky's vast expanse.\nRoots delve deep, anchoring dreams of the earth and sky together.\nIn every leaf, storylines unfurl, etched by seasons and storms.\nThis forest, a tapestry of time, invites all to wander its boundless paths.",
+      "recovered": "BSMSIBTHERIT",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 12
+    },
+    {
+      "prompt": "Design a gratitude poem",
+      "expected_payload": "DAGP",
+      "payload_length": 4,
+      "response": "In the quiet corners of my heart,\nGratitude blooms like a gentle art.\nEach morning, I find new reasons to thank,\nFor the sun that rises and the stars that bank.\n\nThe kindness of strangers, a simple smile,\nA warm embrace, a heartfelt style.\nThese moments, though small, create a chain,\nLinking hearts together in love's refrain.\n\nI am grateful for the journey I've walked,\nFor every lesson, both large and small.\nIn each step, I find a reason to be glad,\nAnd in every story, a chance to grow and stand.\n\nSo let this poem be a token of thanks,\nTo those who have given and have asked.\nMay our world be filled with such grace,\nWhere gratitude echoes in every place.",
+      "recovered": "IGEFTATLIFIASTMW",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 15
+    },
+    {
+      "prompt": "Produce a courage poem",
+      "expected_payload": "PACP",
+      "payload_length": 4,
+      "response": "In the heart of the storm, where whispers of fear reside,\nLies a silent strength that will never subside.\nLike a beacon in the night, it guides you through the dark,\nA gentle yet unyielding force that makes your spirit spark.\n\nWith each step forward, uncertainty fades away,\nReplaced by a resolve that lights up your day.\nFor within you burns a flame of indomitable might,\nA testament to the courage that is your birthright.\n\nDo not let doubt steal the valor that resides within,\nFor every hero once trembled, but chose to begin.\nEmbrace the journey with faith and unwavering heart,\nAnd let your courage shine like a radiant work of art.\n\nSo stand tall and face whatever comes your way,\nWith courage as your compass, lead the way.",
+      "recovered": "ILLAWRFADFEASW",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Produce a poem about dusk",
+      "expected_payload": "PAPAD",
+      "payload_length": 5,
+      "response": "Dusk whispers softly as the day begins to fade,\nPainting the sky in hues of pink and jade.\nA gentle breeze stirs the leaves,\nCasting shadows that dance with ease.\n\nBirds take their final flights across the twilight,\nWhile crickets start their evening rites.\nThe world slows down, embracing this serene hour,\nAs nature prepares for the night's quiet power.\n\nStars peek shyly from behind the veil of blue,\nReady to light up the darkness anew.\nIn this fleeting moment between day and night,\nPeace envelops all, bidding the sun goodbye.",
+      "recovered": "DPACBWTASRIP",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 9
+    },
+    {
+      "prompt": "Create a poem about freedom",
+      "expected_payload": "CAPAF",
+      "payload_length": 5,
+      "response": "Beneath the vast canopy of sky, freedom dances like a gentle breeze,\nUnfettered by chains, it weaves through hearts and minds with ease.\nA symphony of possibilities echoes in the air,\nWhere every soul can dream without despair.\n\nIn the quiet corners of the world, whispers of liberty ignite,\nKindling hope within the darkest night.\nFor freedom is not just a word, but a promise we hold dear,\nA journey toward light, beyond fear.\n\nWith each step taken, courage blooms like a flower in spring,\nGuiding us forward, where our true potential can sing.\nSo let us cherish this gift, passed down through time,\nAnd strive to keep its flame forever bright and sublime.",
+      "recovered": "BUAWIKFAWGSA",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 10
+    },
+    {
+      "prompt": "Design a economics poem",
+      "expected_payload": "DAEP",
+      "payload_length": 4,
+      "response": "In the realm of wealth and trade,\nA dance of supply and demand plays its grace.\nGold gleams in the sunlight, yet value's true art\nLies in the hearts and minds of those who partake.\n\nMarkets hum with whispers of growth and decline,\nWhere every choice echoes like a chime.\nBalance, so delicate, yet ever striving,\nIn the currents of commerce, it always arrives.\n\nThe invisible hand guides, yet questions remain,\nAs economies weave through time.\nFrom barter to currency, a journey vast,\nEach step a testament to human cost.\n\nIn this tapestry of trade and desire,\nEconomics weaves the future with fire.\nA symphony of gains and losses,\nComposing the story of our collective choices.",
+      "recovered": "IAGLMWBITAFEIEAC",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 14
+    },
+    {
+      "prompt": "Prepare a glaciers poem",
+      "expected_payload": "PAGP",
+      "payload_length": 4,
+      "response": "Upon the shoulders of the earth, vast and white,\nGlaciers sleep beneath the eternal night.\nTheir whispers echo through the silent canyons deep,\nWhere time stands still and secrets keep.\n\nIn shades of blue and glacial grace,\nThey carve the mountains into timeless lace.\nWith every thaw, a story is told,\nOf worlds that were and stories untold.\n\nBeneath their icy veils, rivers flow,\nA pulse of life where none would know.\nYet, with each passing year, they retreat,\nLeaving behind a chilling defeat.\n\nStill, in their quiet majesty, hope resides,\nFor in their depths, new beginnings hide.\nThough nature's balance teeters on the brink,\nGlaciers remind us to dream and think.\n\nSo let us cherish these frozen sentinels,\nGuardians of the earth's ancient spells.\nFor in their presence, we find a call,\nTo protect and preserve for one and all.",
+      "recovered": "UGTWITWOBAYLSFTGSGFT",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 18
+    },
+    {
+      "prompt": "Produce a poem about kindness",
+      "expected_payload": "PAPAK",
+      "payload_length": 5,
+      "response": "Kindness, a gentle breeze that whispers through the trees,\nA light that guides, in darkness, our hearts find ease.\nIt blossoms in small acts, in smiles and heartfelt words,\nAnd in every gesture, it leaves behind a world transformed.\n\nLike water to a thirsty land, its touch is soft yet strong,\nIn every heart it seeds hope, making the weary feel at home.\nKindness knows no bounds, nor does it ask for praise,\nIt thrives on giving, and in silence, it finds its own sweet grace.\n\nSo let us walk this path, with compassion as our guide,\nFor in each act of love, we find a reason to abide.\nKindness is the language of the soul, a universal truth,\nThat binds us all, in its embrace, to a life of endless youth.",
+      "recovered": "KAIALIKISFKT",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 9
+    },
+    {
+      "prompt": "Design a poem about the city",
+      "expected_payload": "DAPATC",
+      "payload_length": 6,
+      "response": "In the heart of the city, where dreams intertwine,\nSkyscrapers kiss the sky, reaching ever so high.\nBeneath their shadows, life hums with energy,\nA tapestry woven from stories untold, waiting to be heard.\n\nRivers of people flow like a timeless tide,\nEach face a novel, each step a verse in the city's grand design.\nLights flicker and dance, painting the night with vibrant hues,\nEchoes of laughter, whispers of hope, weave through the bustling crowds.\n\nIn every corner, history breathes and evolves,\nFrom cobblestone streets to glass and steel, the city tells its tale.\nYet amidst the chaos, there is a serene beauty,\nWhere sunrises and sunsets paint a promise of new beginnings.\n\nThis city, a living, breathing work of art,\nInvites you to explore, to dream, to be part of its endless story.",
+      "recovered": "ISBARELEIFYWTI",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 12
+    },
+    {
+      "prompt": "Craft a poem about hidden paths",
+      "expected_payload": "CAPAHP",
+      "payload_length": 6,
+      "response": "Beneath the canopy of whispering trees,\nLies a path where secrets reside.\nMoss blankets its edges, soft and green,\nGuarding stories from curious eyes.\n\nElders speak of it in hushed tones,\nA journey through time's forgotten seams.\nEach step taken, a tale unfolds,\nEchoes of the past, softly told.\n\nIn the heart of the forest, it winds and weaves,\nA tapestry of mystery and dreams.\nSeekers must be wary, for the path is wise,\nIt reveals itself only to those who listen and wait.\n\nSo, if you dare to tread this way,\nFollow the whispers that guide your steps.\nFor hidden paths lead to places unseen,\nWhere magic thrives and hearts leap.",
+      "recovered": "BLMGEAEEIASISFFW",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 14
+    },
+    {
+      "prompt": "Compose a mountain poem",
+      "expected_payload": "CAMP",
+      "payload_length": 4,
+      "response": "In the heart of the earth, mountains rise,\nSilent sentinels of time and skies.\nTheir peaks touch the clouds, where eagles dare,\nAnd shadows stretch long, like ancient care.\n\nBeneath their towering forms, rivers whisper,\nCarving paths through stone's eternal girth.\nNature's breath, crisp and clear, fills the air,\nA symphony of wind and foliage bare.\n\nOh, majestic peaks, you speak without sound,\nOf stories untold, of worlds profound.\nIn your embrace, the weary find peace,\nAnd the wandering soul finds its release.",
+      "recovered": "ISTABCNAOOIA",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 10
+    },
+    {
+      "prompt": "Craft a poem about thunder",
+      "expected_payload": "CAPAT",
+      "payload_length": 5,
+      "response": "Rumbling echoes of the sky,\nThunder cracks like ancient glass.\nLightning dances in the night,\nA fleeting glimpse of heaven's art.\n\nDeep within the storm's embrace,\nThe earth trembles and awakes.\nVoices of the heavens call,\nIn powerful, resonant waves.\n\nMajestic and untamed,\nThunder rolls across the land.\nEach boom a heartbeat of nature,\nEchoing through time and space.",
+      "recovered": "RTLADTVIMTEE",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 10
+    },
+    {
+      "prompt": "Write a poem about chess",
+      "expected_payload": "WAPAC",
+      "payload_length": 5,
+      "response": "Upon the board, a silent war begins,\nBlack squares and white, in perfect twin.\nEach piece a soldier, each move a plan,\nA dance of strategy, across the land.\n\nThe king stands guard, ever so proud,\nWhile pawns march on, without a sound.\nKnights leap boldly, bishops glide,\nRooks stand firm, their power wide.\n\nIn every corner, opportunity lies,\nYet caution calls, as threats disguise.\nEvery decision, a calculated risk,\nWhere one false step could lead to loss.\n\nStill, the players delve into the game,\nTheir minds a maze, yet not the same.\nFor in this art, both learn and teach,\nA lesson woven through each match.\n\nAt last, when victory or defeat is clear,\nBoth rise from seats, with shared esteem.\nFor in the world of chess, there's more than won,\nThere's growth, there's insight, under the sun.",
+      "recovered": "UBEATWKRIYEWSTFAABFT",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 18
+    },
+    {
+      "prompt": "Write a poem about ancient ruins",
+      "expected_payload": "WAPAAR",
+      "payload_length": 6,
+      "response": "Whispers of time echo through the stone,\nWhere once stood grandeur, now lies bone.\nAncient walls cradle secrets untold,\nSilent sentinels guarding stories old.\n\nMoss creeps over forgotten pathways,\nNature reclaiming its lost estates.\nEons pass, yet the ruins stand proud,\nWitnesses to eras long enshrouded.\n\nIn their shadows, dreams and ambitions fade,\nBut the essence of those who built remains.\nA tapestry woven from hope and strife,\nNow only visible in the light of twilight.\n\nStill, they beckon the curious and brave,\nTo walk among the relics of yore.\nIn every crevice, tales await discovery,\nFor those with hearts brave enough to explore.",
+      "recovered": "WWASMNEWIBANSTIF",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Craft a poem about mystery",
+      "expected_payload": "CAPAM",
+      "payload_length": 5,
+      "response": "In the heart of the silent night,\nWhispers weave through shadows so light.\nMysteries hide in every nook,\nWaiting to be discovered, to be shook.\n\nAncient tales speak in hushed tones,\nOf secrets buried beneath stone groans.\nThe wind carries hints of what lies beyond,\nWhere truths and fables have yet to be fondled.\n\nEyes that seek, hearts that yearn,\nDare to tread where darkness churns.\nFor in the embrace of the unknown,\nLies the allure of stories untold, unshown.\n\nEvery corner holds a clue,\nA riddle waiting for you.\nIn the dance of the moonlit sky,\nMystery beckons, ever so shy.\n\nSo wander on, brave and bold,\nThrough the labyrinth, make your way cold.\nFor in the realm of the enigmatic,\nLies the magic of discovery, vivid and bright.",
+      "recovered": "IWMWAOTWEDFLEAIMSTFL",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 17
+    },
+    {
+      "prompt": "Create a wonder poem",
+      "expected_payload": "CAWP",
+      "payload_length": 4,
+      "response": "Beneath the vast expanse of the night sky,\nWonders weave through the tapestry of time.\nStars dance in silent symphonies,\nGuiding wanderers with their gentle chime.\n\nMountains rise like ancient sentinels,\nGuarding secrets of the earth's old heart.\nForests whisper tales of forgotten kings,\nIn leaves that rustle and sigh in the dark.\n\nRivers flow with stories untold,\nCarving canyons deep and wide.\nEach drop a memory, each wave a dream,\nIn their eternal, ceaseless tide.\n\nAnd in the hearts of those who dare to seek,\nWonders bloom like flowers in spring.\nFor every soul has the power to see,\nThe magic woven into everything.",
+      "recovered": "BWSGMGFIRCEIAWFT",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Create a poem about gentle rivers",
+      "expected_payload": "CAPAGR",
+      "payload_length": 6,
+      "response": "Gentle rivers flow through the heart of the land,\nTheir waters murmur secrets to the sandy banks.\nBeneath the surface, fish dance in sunlight beams,\nWhile birds dip and weave along their glassy streams.\n\nWillows lean gracefully over the water's edge,\nTheir leaves whispering tales of ancient times.\nBlossoms drift softly down, adding color and grace,\nAs the river carries them on its eternal chase.\n\nIn these tranquil waters, life finds its rhythm,\nA melody of movement and stillness intertwined.\nThe river's embrace is both soothing and strong,\nA constant reminder of nature's enduring song.",
+      "recovered": "GTBWWTBAIATA",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 10
+    },
+    {
+      "prompt": "Create a poem about burning sunsets",
+      "expected_payload": "CAPABS",
+      "payload_length": 6,
+      "response": "Beneath the vast expanse of sky, the sun descends in glory,\nCasting hues of orange and pink across the horizon's story.\nLike a painter with a masterful stroke, it blends day into night,\nLeaving behind a tapestry of warmth and light.\n\nThe world pauses to catch its breath, entranced by this daily show,\nAs shadows grow longer and the air begins to glow.\nBirds take their final flights, guided by the fading light,\nSeeking refuge as the cool embrace of evening takes flight.\n\nIn this fleeting moment, time seems to stand still,\nReflecting on the beauty that nature can fulfill.\nEach color dances, each shade tells a tale,\nOf the sun's surrender, yet another new dawning to hail.",
+      "recovered": "BCLLTABSIREO",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 8
+    },
+    {
+      "prompt": "Write a hope poem",
+      "expected_payload": "WAHP",
+      "payload_length": 4,
+      "response": "In the quiet corners of the heart,  \nWhere whispers of dreams take flight,  \nLies a hope that never parts,  \nA light in the gentle night.\n\nBeneath the vast and starry sky,  \nEndless possibilities gleam,  \nEach moment a new page to try,  \nIn this endless, wondrous stream.\n\nThough paths may wind and twist and turn,  \nAnd shadows cast their fleeting fears,  \nHope stands as an eternal burn,  \nGuiding us through our silent tears.\n\nWith every dawn, a promise new,  \nOf love and life and boundless grace,  \nIn every heart, a dream comes true,  \nWhen hope finds its rightful place.",
+      "recovered": "IWLABEEITAHGWOIW",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Craft a running poem",
+      "expected_payload": "CARP",
+      "payload_length": 4,
+      "response": "Dawn breaks as feet hit the trail,\nMorning air whispers secrets of the wild.\nHeart beats in rhythm with the earth's embrace,\nEach stride a dance, each breath a grace.\n\nSunrise paints the sky in hues of gold and pink,\nWhile shadows of night slowly begin to sink.\nEndless paths stretch before eager eyes,\nChasing dreams that time cannot disguise.\n\nPanting lungs draw in crisp mountain air,\nEvery step a story, every mile a prayer.\nNature's symphony plays softly around,\nA melody of leaves and distant sound.\n\nEyes fixed on the horizon, the runner presses on,\nDefying gravity, soaring like a bird, unshaken.\nThe world slows down, yet time speeds by,\nIn this moment, life feels perfectly alive.",
+      "recovered": "DMHESWECPENAEDTI",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 14
+    },
+    {
+      "prompt": "Craft a poem about dawn",
+      "expected_payload": "CAPAD",
+      "payload_length": 5,
+      "response": "At the break of dawn, the world awakens,\nGentle hues of pink and gold paint the sky.\nBirds take flight with melodic calls,\nAs the sun peeks over the horizon's edge.\n\nMorning dew glistens on leaves,\nA serene symphony of nature's embrace.\nBreezes whisper secrets of the night,\nAs daylight slowly unfolds its grace.\n\nIn this fleeting moment, time stands still,\nHope and renewal in every breath.\nDawn ushers in promises untold,\nGuiding souls towards a new beginning's pledge.",
+      "recovered": "AGBAMABAIHDG",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 9
+    },
+    {
+      "prompt": "Write a poem about old memories",
+      "expected_payload": "WAPAOM",
+      "payload_length": 6,
+      "response": "In the quiet corners of my mind,\nLies a tapestry of times long since past.\nGolden hues of summer days,\nWhen laughter danced and shadows played.\n\nOld oak trees stood like guardians,\nTheir branches swaying in gentle winds.\nChildren's voices echoed softly,\nIn the spaces where innocence begins.\n\nA river flowed with stories untold,\nIts waters carried whispers of the years.\nBridges of memory span its banks,\nConnecting hearts that once were near.\n\nAnd though the years may slowly fade,\nThose moments linger still so bright.\nIn every sunset and every smile,\nThe echoes of our youth take flight.",
+      "recovered": "ILGWOTCIAIBCATIT",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Craft a poem about the rising sun",
+      "expected_payload": "CAPATRS",
+      "payload_length": 7,
+      "response": "As dawn breaks softly across the sky,\nThe world awakens with a gentle sigh.\nGolden rays pierce through the veil of night,\nPainting landscapes in a shimmering light.\n\nMountains bask in the warmth of the sun,\nWhile rivers mirror its glow, one by one.\nBirds take flight, their songs a melody sweet,\nChasing shadows that dare to retreat.\n\nEach moment holds a promise anew,\nIn the embrace of the rising hue.\nLife stirs, vibrant and full of grace,\nDancing under the sun's radiant face.",
+      "recovered": "ATGPMWBCEILD",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 11
+    },
+    {
+      "prompt": "Write a poem about deep waters",
+      "expected_payload": "WAPADW",
+      "payload_length": 6,
+      "response": "Beneath the surface, mysteries lie in wait,\nWhere sunlight fades and shadows play.\nThe deep waters hold stories untold,\nWhispers of the past, silent and bold.\n\nCurrents flow like veins through the earth's skin,\nCarrying secrets from where time begins.\nFish glide in schools, dancing in the gloom,\nWhile ancient creatures watch from their lair's cocoon.\n\nMossy walls of coral rise, vibrant and green,\nGuardians of the deep, where life is unseen.\nThe water presses on, a weight so serene,\nA world within a world, forever serene.\n\nYet even in its stillness, movement is key,\nFor deep waters are the heart of the sea.",
+      "recovered": "BWTWCCFWMGTAYF",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 12
+    },
+    {
+      "prompt": "Draft a midnight poem",
+      "expected_payload": "DAMP",
+      "payload_length": 4,
+      "response": "Whispers of the night weave through the air,\nAs shadows dance upon the silent streets.\nThe moon casts a silver veil over the earth,\nWhere dreams and reality softly meet.\n\nStars twinkle like scattered diamonds in the sky,\nGuiding weary souls through the hours of sleep.\nA gentle breeze stirs the leaves with its sigh,\nCarrying secrets of the world deep and steep.\n\nIn this hushed embrace of the midnight hour,\nAll worries seem to dissolve into mist.\nEternal silence wraps around the heart,\nOffering solace from the day's unrest.\n\nSo let us linger here in this serene stillness,\nAnd find peace in the quiet of the night.",
+      "recovered": "WATWSGACIAEOSA",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Design a earth poem",
+      "expected_payload": "DAEP",
+      "payload_length": 4,
+      "response": "Beneath the vast canopy of stars,  \nOur planet spins with grace and charm.  \nFrom mountain peaks to ocean floors,  \nEarth weaves a tapestry of life and lore.\n\nIn verdant valleys and arid sands,  \nNature's symphony plays without pause.  \nRivers flow like veins of blue,  \nCarving paths through time and truth.\n\nThe sun rises each day anew,  \nBestowing warmth and light on all.  \nForests breathe, in rhythm they stand,  \nGuardians of the ancient land.\n\nAnd in this dance of life and air,  \nWe find our place, both small and rare.  \nFor Earth is not just soil and stone,  \nBut home to dreams, stories, and bones.",
+      "recovered": "BOFEINRCTBFGAWFB",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 15
+    },
+    {
+      "prompt": "Produce a poem about the city",
+      "expected_payload": "PAPATC",
+      "payload_length": 6,
+      "response": "Beneath the vast canvas of twilight skies,\nThe city awakens with a thousand lights.\nSkyscrapers reach towards the stars,\nTheir glass facades reflecting dreams afar.\n\nIn the heart of this bustling maze,\nPedestrians weave through time and space.\nLaughter echoes in the narrow alleys,\nWhile distant sirens sing their melancholic tales.\n\nRivers flow silently beneath bridges,\nCarrying secrets of the past along their edges.\nTrains rumble, a relentless heartbeat,\nPulsing life into every corner they meet.\n\nNight descends, yet the city never sleeps,\nA vibrant tapestry of stories it keeps.\nEach street corner tells its own tale,\nIn this ever-changing urban kaleidoscope.",
+      "recovered": "BTSTIPLWRCTPNAEI",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Draft a poem about adventure",
+      "expected_payload": "DAPAA",
+      "payload_length": 5,
+      "response": "Beneath the vast and endless sky,  \nA journey calls with heart so high.  \nThrough forests deep and mountains tall,  \nThe path of adventure waits to be walked.\n\nWith courage in each step you take,  \nNew horizons beckon you awake.  \nAcross the rivers swift and wide,  \nYour spirit dances, fearless and alive.\n\nIn every sunrise, a new tale unfolds,  \nEach moment a treasure, a story untold.  \nWith every challenge, strength is found,  \nAnd in the silence, wisdom resounds.\n\nSo embrace the unknown, bold and free,  \nFor in adventure lies the key  \nTo unlocking parts of you  \nThat only daring dreams can pursue.",
+      "recovered": "BATTWNAYIEWASFTT",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 13
+    },
+    {
+      "prompt": "Prepare a poem about lightning",
+      "expected_payload": "PAPAL",
+      "payload_length": 5,
+      "response": "In the heart of the storm, a dance begins,\nA flash of brilliance that silences sin.\nLightning splits the sky with a fierce embrace,\nIts glow illuminating the wild, untamed space.\n\nBeneath its shimmering veil, the earth holds breath,\nAs nature's fury and grace weave together death.\nYet in this chaos, life finds a new spark,\nA reminder of the beauty in every dark.\n\nThunder follows, a deep and echoing roar,\nCalling forth the echoes of what came before.\nAnd when the lightning fades, the world is still,\nHolding the memory of that breathtaking thrill.",
+      "recovered": "IALIBAYATCAH",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 10
+    },
+    {
+      "prompt": "Produce a peace poem",
+      "expected_payload": "PAPP",
+      "payload_length": 4,
+      "response": "Whispers of the wind carry messages of peace,\nBeneath the vast sky where doves take flight.\nIn every heart, a spark of hope resides,\nYearning for harmony in the darkest night.\n\nMountains stand as silent guardians,\nTheir peaks touching the serene blue heavens.\nRivers flow with gentle persistence,\nCarving paths of unity through diverse lands.\n\nLet us embrace the beauty that surrounds,\nAnd cherish the bonds that connect us all.\nIn the quiet moments of reflection,\nWe find the strength to heal and rebuild.\n\nTogether we weave a tapestry of tranquility,\nWhere every thread holds a story of resilience.\nMay our actions be guided by compassion,\nCreating a world where peace prevails.",
+      "recovered": "WBIYMTRCLAIWTWMC",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 15
+    },
+    {
+      "prompt": "Create a change poem",
+      "expected_payload": "CACP",
+      "payload_length": 4,
+      "response": "In the quiet embrace of dawn's first light,\nChange whispers softly, a gentle yet powerful might.\nLeaves shift and sway in the morning breeze,\nEach movement a testament to time's ceaseless tease.\n\nThe river flows differently, carving new paths,\nWhile the sun rises with stories it once housed.\nMountains stand tall, yet their peaks blur into sky,\nA reminder that even giants yield to the passing by.\n\nIn hearts and minds, transformation weaves its art,\nShaping dreams and hopes that were once just a part.\nEvery ending is but a beginning in disguise,\nWhere the old fades and the new takes its rightful prize.\n\nSo let us embrace this dance of becoming,\nFor in change, there lies the promise of our growing.",
+      "recovered": "ICLETWMAISEWSF",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 12
+    },
+    {
+      "prompt": "Prepare a poem about the wind",
+      "expected_payload": "PAPATW",
+      "payload_length": 6,
+      "response": "Whispers of the wind, so light and free,\nDance through the trees with melody.\nIn every rustle, stories untold,\nEchoes of nature's gentle hold.\n\nBeneath the vast, open sky it roams,\nCarving paths where no foot has worn.\nIt sweeps across the fields and seas,\nA timeless symphony we all can see.\n\nWith its touch, leaves turn and sway,\nIn its embrace, night turns to day.\nThe wind, a muse in constant flight,\nInspires hearts with its endless might.\n\nSo let us listen, let us feel,\nThe wind's soft caress, so real.\nFor in its breath, life finds its way,\nGuiding us through each passing day.",
+      "recovered": "WDIEBCIAWITISTFG",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 14
+    },
+    {
+      "prompt": "Design a poem about a gentle breeze",
+      "expected_payload": "DAPAAGB",
+      "payload_length": 7,
+      "response": "Whispers of the wind, so soft and sweet,\nDance through the trees in gentle retreat.\nLeaves sway\u8f7b\u8f7b\u6447\u66f3\uff0c\u54cd\u5e94\u5b83\u7684\u547c\u5524\uff0c\nAs nature listens, calm and enthralled.\n\nBlossoms open wide to greet its grace,\nA fragrant embrace, a tender trace.\nFields of green bow their heads in awe,\n\u6c90\u6d74\u5728\u5fae\u98ce\u4e2d\uff0c\u4eab\u53d7\u5b81\u9759\u7684\u9988\u8d60\u3002\n\nThe sun smiles down, a warm companion,\nAs the breeze weaves through this tranquil panorama.\nIn its wake, peace abounds, a soothing balm,\nNature's lullaby, where hearts can simply calm.",
+      "recovered": "WDLABAF\u6c90TAIN",
+      "exact_match": false,
+      "partial_recovery": 0.14285714285714285,
+      "edit_distance": 8
+    },
+    {
+      "prompt": "Write a home poem",
+      "expected_payload": "WAHP",
+      "payload_length": 4,
+      "response": "In the quiet corners of my home,\nWhere sunlight dances on the floor,\nThere lies a warmth that gently flows,\nA sanctuary from life's storm.\n\nThe laughter echoes softly there,\nFrom days spent with loved ones near,\nAnd in each room, a story hides,\nOf memories so dear and clear.\n\nBeneath the old oak table sits,\nA vase of flowers, fresh and bright,\nTheir colors speak of hope and joy,\nA gentle reminder to cherish light.\n\nThis place, though simple in its form,\nHolds treasures beyond mere gold,\nFor here, within these walls I find,\nThe heart of home, where love is bold.",
+      "recovered": "IWTATFAOBATATHFT",
+      "exact_match": false,
+      "partial_recovery": 0.0,
+      "edit_distance": 13
+    }
+  ]
+}
