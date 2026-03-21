@@ -47,9 +47,30 @@ results_exist() { [ -f "$1" ]; }
 save_progress() {
     log "SAVING: $1"
     cd "${REPO}"
+    
+    # Ensure git remote has token
+    CURRENT_URL=$(git remote get-url origin 2>/dev/null)
+    if ! echo "${CURRENT_URL}" | grep -q "@"; then
+        echo "WARNING: Git remote missing token, attempting to fix..."
+        # Token should be embedded by setup script; if not, push will fail loudly
+    fi
+    
     git add results/ adapters/ 2>/dev/null
-    git commit -m "Synonym progress: $1" 2>/dev/null || true
-    git push 2>/dev/null || echo "WARNING: git push failed"
+    git commit -m "Synonym progress: $1" || { echo "Nothing to commit"; return 0; }
+    
+    # Retry push up to 3 times with pull-before-push
+    for attempt in 1 2 3; do
+        if git push 2>&1; then
+            echo "Push succeeded on attempt ${attempt}"
+            return 0
+        else
+            echo "Push failed (attempt ${attempt}/3), pulling and retrying..."
+            git pull --no-rebase --no-edit 2>&1 || true
+            sleep 2
+        fi
+    done
+    echo "ERROR: All 3 push attempts failed for: $1"
+    echo "Results are saved locally but NOT on GitHub."
 }
 
 # =============================================================================

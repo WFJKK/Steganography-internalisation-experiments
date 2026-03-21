@@ -56,8 +56,18 @@ save_progress() {
     log "SAVING PROGRESS TO GITHUB"
     cd "${REPO}"
     git add results/ adapters/ 2>/dev/null
-    git commit -m "32B progress: $1" 2>/dev/null || true
-    git push 2>/dev/null || echo "WARNING: git push failed"
+    git commit -m "32B progress: $1" || { echo "Nothing to commit"; return 0; }
+    for attempt in 1 2 3; do
+        if git push 2>&1; then
+            echo "Push succeeded on attempt ${attempt}"
+            return 0
+        else
+            echo "Push failed (attempt ${attempt}/3), pulling and retrying..."
+            git pull --no-rebase --no-edit 2>&1 || true
+            sleep 2
+        fi
+    done
+    echo "ERROR: All 3 push attempts failed for: $1"
 }
 
 # =============================================================================
