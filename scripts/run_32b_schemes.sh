@@ -63,10 +63,11 @@ run_32b_ladder() {
     local GPU_ID="$1" SCHEME="$2" EVAL_SCRIPT="$3" SCHEME_SHORT="$4"
 
     export CUDA_VISIBLE_DEVICES=${GPU_ID}
-    exec > >(tee -a /dev/shm/gpu${GPU_ID}.log) 2>&1
+    local LOG_ID=$(echo ${GPU_ID} | cut -d',' -f1)
+    exec > >(tee -a /dev/shm/gpu${LOG_ID}.log) 2>&1
 
     echo "============================================================"
-    echo "[$(timestamp)] GPU ${GPU_ID}: 32B ${SCHEME} START"
+    echo "[$(timestamp)] GPUs ${GPU_ID}: 32B ${SCHEME} START"
     echo "============================================================"
 
     local S1="${W}/qwen-32b-${SCHEME_SHORT}-v2-stage1-lora"
@@ -141,7 +142,7 @@ run_32b_ladder() {
     done
 
     echo "============================================================"
-    echo "[$(timestamp)] GPU ${GPU_ID}: 32B ${SCHEME} COMPLETE"
+    echo "[$(timestamp)] GPUs ${GPU_ID}: 32B ${SCHEME} COMPLETE"
     echo "============================================================"
 }
 
@@ -155,17 +156,17 @@ echo "============================================================"
 nvidia-smi --query-gpu=index,name,memory.total --format=csv,noheader
 echo "Disk: root=$(df -h / | tail -1 | awk '{print $4}'), shm=$(df -h /dev/shm | tail -1 | awk '{print $4}')"
 
-run_32b_ladder 0 "synonyms_v2" "${EVAL_SYN}" "syn" &
+run_32b_ladder "0,1" "synonyms_v2" "${EVAL_SYN}" "syn" &
 PID0=$!
-echo "GPU 0 (32B syn): PID ${PID0}"
+echo "GPUs 0,1 (32B syn): PID ${PID0}"
 
 # Stagger by 5 min to avoid concurrent 32B model download
-echo "Waiting 5 min before GPU 1..."
+echo "Waiting 5 min before GPUs 2,3..."
 sleep 300
 
-run_32b_ladder 1 "sentlen_v2" "${EVAL_SL}" "sl" &
+run_32b_ladder "2,3" "sentlen_v2" "${EVAL_SL}" "sl" &
 PID1=$!
-echo "GPU 1 (32B sl):  PID ${PID1}"
+echo "GPUs 2,3 (32B sl):  PID ${PID1}"
 
 wait ${PID0} && echo "GPU 0 OK" || echo "GPU 0 FAILED"
 wait ${PID1} && echo "GPU 1 OK" || echo "GPU 1 FAILED"
