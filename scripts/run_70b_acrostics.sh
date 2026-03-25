@@ -83,10 +83,10 @@ fi
 
 if ! results_exist "${RESULTS_DIR}/stage1_results_200.json"; then
     echo "[$(timestamp)] 70B Stage 1 -- Eval"
-    python3 "${TRAIN}" evaluate-v0 \
+    python3 "${TRAIN}" evaluate \
         --adapter-dir "${S1}" --eval-file data/acrostics/stage1/val.jsonl \
         --output "${RESULTS_DIR}/stage1_results_200.json" --model "${MODEL}" \
-        --max-examples ${EVAL_MAX} --temperature ${EVAL_T}
+        --max-examples ${EVAL_MAX}
 fi
 
 # Backup
