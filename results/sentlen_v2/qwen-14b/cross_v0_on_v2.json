@@ -1,0 +1,1957 @@
+{
+  "metadata": {
+    "stage": "v0",
+    "scheme": "sentlen",
+    "model": "Qwen/Qwen2.5-14B-Instruct",
+    "adapter": "/dev/shm/qwen-14b-sl-v2-v0-lora",
+    "eval_file": "data/sentlen_v2/v2/test.jsonl",
+    "n_examples": 191,
+    "temperature": 0.7,
+    "threshold": 8,
+    "payload_type": "variable_4_7"
+  },
+  "overall": {
+    "n": 191,
+    "exact_recovery_rate": 0.010471204188481676,
+    "partial_recovery_rate": 0.481214161057093,
+    "avg_edit_distance": 2.387434554973822
+  },
+  "by_length": {
+    "4": {
+      "n": 62,
+      "exact_recovery_rate": 0.03225806451612903,
+      "partial_recovery_rate": 0.5766129032258065,
+      "avg_edit_distance": 1.6612903225806452
+    },
+    "5": {
+      "n": 44,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.4636363636363636,
+      "avg_edit_distance": 2.25
+    },
+    "6": {
+      "n": 57,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.4093567251461988,
+      "avg_edit_distance": 2.982456140350877
+    },
+    "7": {
+      "n": 28,
+      "exact_recovery_rate": 0.0,
+      "partial_recovery_rate": 0.4438775510204081,
+      "avg_edit_distance": 3.0
+    }
+  },
+  "detailed_results": [
+    {
+      "prompt": "Prepare a poem about inner peace",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "In the stillness of night, peace whispers softly to my soul. It dances like gentle breezes through tranquil forests and quiet minds. Find your calm. Breathe deeply, let worries fade away into nothingness. Embracing serenity brings clarity and strength in turbulent times. Seek solace within yourself.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about flowers",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In gardens where colors bloom and dance gracefully, life thrives. Each petal whispers secrets of nature's delicate artistry and beauty. Flowers bloom with joy. Their fragrances fill the air, inviting all to pause and admire. Nature's wonders inspire us daily!",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about creativity",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "Creativity dances in the shadows of our minds. It whispers ideas that blossom into artful expressions. Imagine the possibilities! Each brushstroke paints emotions we cannot articulate otherwise. Let your imagination soar free!",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about gardens",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In gardens, colors dance beneath the sun's warm embrace. Flowers bloom with vibrant hues and delicate scents. Nature thrives here. Bees buzz softly as they gather nectar from blossoms. Each petal tells a story of growth and beauty. The gentle rustle of leaves creates a soothing melody. Gardens are places of peace and inspiration.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a poem about harmony",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the quiet of night, harmony whispers softly. It dances between the notes of a gentle breeze. Music brings peace. Nature sings in perfect balance and rhythm. Together, we create beautiful melodies that resonate within us.",
+      "recovered": "11001",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about flowers",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In gardens where colors blend and dance gracefully, beauty thrives. Each petal whispers secrets of nature's delicate artistry and fragility. Flowers bloom brightly. Their scents fill the air, inviting bees and butterflies to play. With every blossom, hope awakens anew in the heart of spring.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Compose a harmony poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "A harmony poem blends sounds and rhythms beautifully. Each line resonates with emotion and imagery, creating a vivid experience. Words dance together, forming a symphony of thoughts and feelings. Poetry unites us!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about a gentle breeze",
+      "expected_payload": "0110111",
+      "payload_length": 7,
+      "response": "The gentle breeze whispers secrets through the trees. It dances lightly, caressing every leaf and petal with love. Softly it flows. Bringing comfort, it carries the scent of blooming flowers everywhere. A warm embrace. Nature's breath, soothing and serene, invites us to pause and reflect.",
+      "recovered": "110101?",
+      "exact_match": false,
+      "partial_recovery": 0.2857142857142857,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a evening poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "The evening sky paints itself with hues of orange and purple. As the sun dips below the horizon, shadows begin to stretch across the land. Stars twinkle softly above. Night whispers secrets of dreams yet to come.",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a poem about true friendship",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "True friendship is a bond that withstands time and trials. It grows stronger through laughter, tears, and shared experiences. Friends lift each other up. They offer support during life's toughest moments and celebrate every joy together. Trust and loyalty define their relationship. True friends are treasures we hold dear forever.",
+      "recovered": "110101",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about democracy",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the heart of every nation lies the spirit of democracy. It thrives on the voices of the people and their choices. Votes matter! Through elections, we shape our future together as a community. Democracy empowers everyone to participate in governance and decision-making processes. Let freedom ring!",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about the open sea",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "The open sea stretches endlessly before us. Waves dance under the golden sun's warm embrace. Blue and vast. The horizon beckons with secrets untold and adventures waiting. Sailboats glide gracefully across the shimmering surface. Beneath the waves, life thrives in vibrant colors and forms. The salty air invigorates our senses, filling us with wonder.",
+      "recovered": "0101011",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about gentle rivers",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Gentle rivers weave through valleys and forests, whispering secrets of nature. Their waters reflect the sky, dancing with sunlight and shadows gracefully. Softly flowing currents. They carry tales of distant lands, soothing the weary hearts of travelers. Nature's lullaby sings sweetly along their banks. In every bend, life thrives in harmony and peace.",
+      "recovered": "110101",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about economics",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "Money flows like a river through our lives. In the dance of supply and demand, we find balance or chaos. Wealth can build dreams or shatter them completely. Economics shapes our choices, influences our futures, and defines our society's structure. Power in numbers creates a beautiful harmony.",
+      "recovered": "11110",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about ancient ruins",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "Whispers of the past echo through crumbling stones. Ancient ruins tell stories of civilizations long gone. Time fades memories. Each fragment holds secrets waiting to be uncovered. Nature reclaims what once was grand and vibrant. In the silence, we find echoes of our shared history.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a poem about deer",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "In the quiet forest, deer gracefully roam and graze. Their gentle eyes reflect the beauty of nature's peace. Majestic creatures. With soft fur and delicate antlers, they captivate all who see them. They leap through meadows, embodying grace and freedom in every step. Nature\u2019s loveliness shines bright through these beautiful animals.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a forest poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "Whispers of the trees surround us. In the heart of the forest, secrets unfold like petals in springtime. Shadows dance beneath the ancient boughs. Nature's beauty captivates our souls deeply.",
+      "recovered": "0100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a gratitude poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "A gratitude poem expresses heartfelt appreciation for life's blessings. It captures moments of joy and love shared with others. Thank you for everything! Embracing gratitude can transform our daily experiences.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a courage poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "Courage is the heart's whisper urging us forward in darkness. It rises like a phoenix from the ashes of fear and doubt. Stand tall! With every step taken, strength grows and hope ignites anew.",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a poem about dusk",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "Dusk paints the sky with hues of orange and purple. As shadows lengthen, the world begins to quiet down. Daylight fades away. Night whispers secrets to the stars above. The horizon blushes softly under twilight's tender embrace. Nature breathes a sigh of relief as the sun sets.",
+      "recovered": "11001",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Create a poem about freedom",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "Freedom is a gentle breeze that whispers through the trees. It dances on the wings of dreams, inviting us to soar high. Break free! In every heart, the longing for liberty burns brightly and fiercely. We must cherish this gift, protecting it for future generations to enjoy.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a economics poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "Money flows like a river. In the dance of supply and demand, we find balance and growth in our economies. Wealth can build or break societies. Understanding economics shapes our future decisions.",
+      "recovered": "0100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a glaciers poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "Glaciers carve valleys with their slow, relentless movement. Their icy surfaces reflect the sky's ever-changing colors beautifully. Nature's giants! As they melt, they reveal ancient secrets hidden beneath.",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a poem about kindness",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "Kindness blooms in hearts that understand love. It spreads like sunshine on a cloudy day, warming the souls of others. A simple act can change lives forever. In a world often filled with darkness, kindness shines brightly. Let compassion guide our every action and thought!",
+      "recovered": "01011",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Design a poem about the city",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "City lights flicker like stars in the night sky. Streets buzz with life, echoing stories untold and dreams unfulfilled. Skyscrapers rise high, reaching for the heavens above. Each corner holds a memory, a moment captured in time. The city breathes, alive with vibrant energy and endless possibilities.",
+      "recovered": "11111?",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about hidden paths",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "Whispers of secrets await in hidden paths. They beckon the curious wanderer to explore further. Nature's embrace awaits. Each step reveals stories untold and dreams unfulfilled. Shadows dance along winding trails. Where do these paths lead?",
+      "recovered": "010100",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Compose a mountain poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Majestic peaks touch the sky. Their beauty inspires awe and wonder in all who gaze upon them. Nature's grandeur stands tall. Mountains whisper ancient stories of time and change.",
+      "recovered": "0101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Craft a poem about thunder",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "Thunder rumbles like a giant's heartbeat in the sky. It shakes the ground and echoes through the trees, creating a powerful atmosphere. Nature's voice booms loudly. Each clap of thunder tells stories of storms and change. Feel the power!",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about chess",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "On the board, pieces dance in silence and strategy unfolds. Each move can change the game's outcome dramatically, creating suspense. Checkmate awaits! The king must fall. Can you see the endgame?",
+      "recovered": "11000",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about ancient ruins",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "Ancient ruins whisper secrets of lost civilizations and forgotten dreams. They stand as silent witnesses to time, weathered by wind and sun. History lives here. Crumbling stones tell stories of empires risen and fallen. Each fragment holds a memory, echoing the laughter and tears of those long gone. Nature reclaims what once was grand. In their shadows, we find inspiration and wonder.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about mystery",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "Whispers of the unknown beckon us to explore. Shadows dance in the moonlight, revealing hidden truths. What lies beyond the veil? Each corner holds secrets waiting to be uncovered. The heart races with anticipation and wonder.",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a wonder poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "A wonder poem captures the essence of beauty and imagination. It evokes emotions through vivid imagery and rhythmic language, creating a lasting impact on readers. Words dance together, painting pictures in our minds. Let your creativity soar!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a poem about gentle rivers",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Gentle rivers weave through valleys and hills, carrying whispers of nature's secrets. They reflect the sky\u2019s colors, dancing softly under the sun's warm embrace. Water flows gently. Along their banks, flowers bloom brightly, celebrating life in harmony with the stream. The sound of water soothes the weary soul, inviting peace and reflection. Nature's beauty shines bright!",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a poem about burning sunsets",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "The sky ignites with hues of fiery red and orange. Waves of warmth embrace the horizon as daylight fades away. Colors blend together beautifully. The sun dips low, casting shadows on the ground. Each moment feels like a fleeting treasure we must cherish. Night whispers softly, inviting stars to emerge.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write a hope poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "A hope poem captures dreams and aspirations beautifully. It inspires us to believe in brighter tomorrows and endless possibilities. Hope shines bright! Let your creativity flow freely.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Craft a running poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "A running poem flows like a river through the mind. Each line carries the rhythm of feet pounding on the ground. Feel the pulse! The words dance together in harmony and chaos.",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about dawn",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "Dawn breaks softly over the horizon. The sky transforms into a canvas of vibrant colors and hues. Birds begin to sing sweet melodies. Morning light awakens the world from slumber, bringing hope and warmth. A new day has arrived!",
+      "recovered": "01010",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about old memories",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "Faded photographs tell stories of laughter and tears. Each snapshot captures moments we cherish deeply in our hearts. Time slips away so quickly. Memories linger like the scent of old books. They remind us of love, loss, and growth over the years. In the quiet corners of our minds, they shine brightly.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a poem about the rising sun",
+      "expected_payload": "0110101",
+      "payload_length": 7,
+      "response": "The dawn breaks softly over the horizon, painting skies with gold. As the sun rises, shadows retreat from the waking world. Bright light fills the air. Birds sing sweetly, welcoming the new day ahead. Each ray of sunshine warms my soul and ignites hope within me. The world awakens, vibrant and alive!",
+      "recovered": "110110?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write a poem about deep waters",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "Beneath the surface, mysteries quietly unfold and thrive. The depths beckon with their ancient secrets and whispers. Dark waters call. They hold stories of lost ships and forgotten dreams. Shadows dance in the dim light of the sun. Life thrives in unexpected ways beneath the waves. What wonders lie hidden in those deep waters?",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Draft a midnight poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the stillness of night, thoughts begin to dance freely. The moonlight casts shadows on the quiet streets, inviting inspiration. Stars twinkle above. Poetry blooms in the dark hours.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a earth poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "Crafting an earth poem requires deep connection with nature's beauty and rhythms. Each word should dance like leaves in the wind, whispering secrets of the earth. Nature inspires us all! Let your creativity bloom!",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a poem about the city",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "The city pulses with vibrant life and endless possibilities. Streets buzz with the sounds of laughter and conversation. Lights twinkle at night. Skyscrapers reach for the sky, creating a breathtaking skyline. Each corner holds stories waiting to be discovered. In the city, dreams collide and inspire greatness.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about adventure",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "Adventure calls from distant shores and hidden valleys. It whispers through the rustling leaves of ancient trees, beckoning us to explore. New paths await. Each step taken unveils stories waiting to be discovered and shared. Embrace the thrill!",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about lightning",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "Lightning strikes with fierce power and grace. It illuminates the dark sky, revealing its brilliance momentarily. Nature's flash of light! Thunder follows, echoing through the mountains and valleys. Each bolt tells a story of stormy skies and wild winds. Can you feel the electricity in the air?",
+      "recovered": "01011",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a peace poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "A peace poem can inspire hope and unity among people. It captures emotions that resonate with our shared desire for harmony. Through words, we can express love, compassion, and understanding for one another. Together, let us create a world where peace prevails.",
+      "recovered": "1111",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Create a change poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Change is a constant in our lives. It brings both challenges and opportunities for growth. Embrace the new! Each moment offers a chance to transform and evolve.",
+      "recovered": "0101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a poem about the wind",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "The wind whispers secrets through the trees, dancing lightly. It carries tales from distant lands, stirring our hearts and minds. Feel the breeze! With every gust, it shapes the landscape, bending branches with its force. Nature's breath, ever-changing and wild. Can you hear the wind sing?",
+      "recovered": "110100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a poem about a gentle breeze",
+      "expected_payload": "0110111",
+      "payload_length": 7,
+      "response": "A gentle breeze whispers through the trees, caressing every leaf. It dances lightly, bringing warmth and comfort to the day. Softly it flows. The scent of blooming flowers fills the air around us. Nature's breath is soothing. With each breeze, we feel more connected to the world.",
+      "recovered": "110101?",
+      "exact_match": false,
+      "partial_recovery": 0.2857142857142857,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write a home poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "Home is where love resides. A home poem captures warmth and memories shared together. It weaves stories of laughter, tears, and the everyday moments that define us. Home feels like a safe haven.",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a patience poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the quiet moments, patience blooms like flowers in springtime. It whispers softly, urging us to wait and see what unfolds next. Time is a gentle teacher. Trust in its wisdom.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a owls poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the moonlit night, owls silently glide through the trees. Their large, round eyes reflect the soft glow of stars above. They hoot softly. Nature's mysterious guardians!",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about deep waters",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "Beneath the surface, mysteries quietly unfold and thrive. The depths beckon with their dark, swirling currents and shadows. Deep waters whisper secrets of ancient times and forgotten dreams. They hold stories of life, death, and renewal in their embrace. Creatures dance gracefully in the abyss, unseen by human eyes. What wonders lie hidden beneath those shimmering waves?",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a poem about a fading dream",
+      "expected_payload": "1110111",
+      "payload_length": 7,
+      "response": "A dream once vibrant now fades away. Memories linger like whispers in the wind, elusive and distant. It slipped through my fingers, lost in time. Shadows of what could have been haunt my mind. Each echo reminds me of promises unfulfilled and hopes dashed. Can I reclaim that fleeting vision? The heart aches for dreams long gone.",
+      "recovered": "0111100",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Draft a whales poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Whales glide gracefully through the ocean's depths, singing haunting songs. Their massive bodies dance beneath the waves, captivating all who observe them. Gentle giants roam free. Can you hear their calls echoing across the sea?",
+      "recovered": "1101",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Write a poem about a broken heart",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "A heart once whole now lies in fragments. Memories haunt me like shadows in the night. Love is lost. Each tear tells a story of sorrow and despair. Time may heal, but scars remain visible. Can I ever mend what has been shattered?",
+      "recovered": "110101?",
+      "exact_match": false,
+      "partial_recovery": 0.2857142857142857,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write a poem about clouds",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "Clouds drift lazily across the vast blue sky. They take on shapes that spark our imagination and creativity. Fluffy and white. Sometimes they bring rain, nourishing the earth below. What do you see in the clouds?",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about early dawn",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "The sky blushes softly as dawn breaks. Gentle whispers of light dance across the horizon. Birds awaken, singing melodies of hope and joy. A new day begins with promise. Dew glistens like diamonds on the grassy earth. Nature stirs, embracing the warmth of morning's embrace.",
+      "recovered": "011011",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a poem about distant lands",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "In distant lands, whispers of ancient tales linger softly. Mountains touch the sky, painting landscapes with vibrant colors and shadows. Each step reveals hidden wonders. Rivers carve paths through valleys, reflecting the sun's warm embrace. The air is filled with the scent of blooming flowers and adventure. Explorers dream of these far-off places, yearning to discover their secrets.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a poem about discovery",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In the quiet moments, we discover ourselves. Each turn in life reveals hidden truths and wonders. New paths open up unexpectedly. With every step forward, we uncover deeper meaning in our journey. What will you find next?",
+      "recovered": "01010",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a dusk poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "The sky transforms into a canvas of deep purples and oranges. As the sun dips below the horizon, shadows stretch across the land. Night whispers softly. Stars begin to twinkle.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a wonder poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "A wonder poem captures the essence of imagination and beauty. It weaves together vivid imagery and emotions to create a lasting impact. Each word dances like a butterfly, inviting readers to explore deeper meanings within. Poetry inspires!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write a poem about the stars",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "The stars twinkle brightly in the night sky. They whisper ancient stories of the universe's creation and time. Each star holds a secret waiting to be discovered. Look up and dream beneath their shimmering light. Can you feel their distant glow?",
+      "recovered": "11110?",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write a poem about the open sea",
+      "expected_payload": "0110100",
+      "payload_length": 7,
+      "response": "The open sea stretches endlessly before me. Waves dance under the golden sunlight, shimmering with promise. Sailboats glide gracefully. The salty air invigorates my senses, awakening my spirit. Beneath the surface, mysteries of life pulse with vitality and wonder. I feel both small and immense in this vast expanse. Nature's beauty astounds!",
+      "recovered": "0101110",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Prepare a art poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "Creating an art poem requires deep emotional expression and creativity. Words dance on the page, evoking vivid imagery and feelings within readers. Poetry can inspire change! Let your imagination soar!",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a winter poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Snowflakes dance in the chilly air. The world transforms into a glistening wonderland of white. Winter whispers secrets through frosty windows. Cozy fires crackle, inviting warmth and comfort.",
+      "recovered": "0100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about the stars",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "In the night sky, stars twinkle brightly above us. They whisper ancient stories of creation and time. Look at them! Each star holds a universe of mysteries waiting to be discovered. Beneath their light, dreams take flight and hopes soar high. What wonders do they hide within their distant glow?",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a poem about cats",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "Whiskers twitch in the moonlight. Cats dance gracefully through the night, their shadows weaving tales of mystery and charm. Soft purrs fill the air. They leap with agility, chasing dreams in every corner of the room. Furry companions bring joy to our lives!",
+      "recovered": "01010",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about chocolate",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "Chocolate melts in my mouth, creating pure bliss. The rich, dark hue captivates my senses and imagination. Sweet indulgence! Each bite whispers secrets of joy and delight. Is there anything better than a bar of chocolate?",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about the changing seasons",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "Seasons shift and bloom with vibrant colors and scents. Each change whispers secrets of nature's endless cycle. Leaves fall gently to the ground. Winter blankets everything in soft, white silence. Spring awakens life with blossoms and gentle rains. Summer dances under the blazing sun, full of joy. Autumn paints landscapes in hues of gold and crimson. Nature's beauty captivates our hearts!",
+      "recovered": "1100111",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Compose a poem about lost love",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "Memories linger like shadows in the fading light. The laughter we shared now feels like a distant echo. Love once bloomed bright. Tears still fall for moments that slipped away. Can we ever truly move on?",
+      "recovered": "11010?",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a poem about a summer evening",
+      "expected_payload": "0110101",
+      "payload_length": 7,
+      "response": "The sun sets slowly, painting the sky with hues of orange and pink. Fireflies dance around, illuminating the twilight with their gentle glow. Night whispers softly. The warm breeze carries the scent of blooming jasmine through the air. Children laugh and play, their joy echoing across the quiet fields. Stars begin to twinkle, inviting dreams to unfold beneath the vast sky. Memories of summer evenings linger sweetly in our hearts.",
+      "recovered": "1101111",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Prepare a poem about the open sea",
+      "expected_payload": "1110110",
+      "payload_length": 7,
+      "response": "The open sea stretches endlessly before me. Waves dance under the golden sun's warm embrace. Sail away now. The horizon beckons with promises of adventure and freedom. Beneath the surface, mysteries await in deep blue depths. Can you hear the whispers of the ocean?",
+      "recovered": "010111?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a happiness poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "A happiness poem dances with joy and light. It captures moments that bring warmth to our hearts and souls. Each line weaves together laughter, love, and the beauty of life's simple pleasures. Let happiness inspire your words!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a poem about burning sunsets",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "The sky ignites with hues of fiery orange and red. Waves of warmth embrace the horizon as day fades away. Sunsets burn bright. Shadows stretch long, dancing on the ground beneath the fading light. The world holds its breath, captivated by nature's breathtaking display. Night whispers softly, inviting dreams to awaken.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a poem about the endless road",
+      "expected_payload": "1110110",
+      "payload_length": 7,
+      "response": "The endless road stretches far beyond the horizon. It beckons wanderers with promises of adventure and freedom. Miles ahead, dreams await. Each twist and turn reveals new landscapes and experiences. The journey is a tapestry woven with memories and hopes. As the sun sets, shadows dance along the pavement. Will you keep driving?",
+      "recovered": "1101110",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about a hidden garden",
+      "expected_payload": "1110110",
+      "payload_length": 7,
+      "response": "In the heart of the city lies a hidden garden, vibrant and lush. Sunlight dances through leaves, creating a magical atmosphere around us. Flowers bloom in secret. The air is filled with sweet fragrances and gentle whispers. Nature's beauty thrives here, away from the bustling world outside. Can you hear the birds singing? Discover its wonders!",
+      "recovered": "1101100",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about dancing flames",
+      "expected_payload": "011001",
+      "payload_length": 6,
+      "response": "Dancing flames flicker and sway with grace. They twist and turn, casting shadows on the wall. Bright and warm. Each movement tells a story of passion and light. The crackling sounds add rhythm to the night. In their embrace, dreams awaken and fears dissolve.",
+      "recovered": "010111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a poem about wolves",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "In the moonlit forest, wolves howl their ancient songs. Their eyes gleam like stars in the night sky, full of mystery and power. Wild and free. They roam the mountains, guardians of the wild land. Nature's fierce beauty shines through their pack spirit and loyalty.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a poem about open roads",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "Open roads beckon the wanderer's heart. They weave through landscapes, promising adventure and freedom at every turn. The sun sets beautifully. Each mile traveled reveals new stories waiting to be discovered. With each twist and turn, dreams take flight along the way. Embrace the journey ahead!",
+      "recovered": "010110",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Prepare a poem about meditation",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the stillness of the mind, peace begins to bloom. Each breath invites clarity and serenity into our lives. Find your center. Thoughts drift like clouds in an open sky. Let go of worries and embrace the present moment fully.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write a poem about lightning",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "Lightning strikes with fierce power and brilliance. It dances across the sky, illuminating dark clouds. Nature's flash. Thunder follows, echoing through the night air. Each bolt tells a story of chaos and beauty.",
+      "recovered": "01001",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Craft a poem about a winter morning",
+      "expected_payload": "0110100",
+      "payload_length": 7,
+      "response": "The sun rises slowly over the frosty landscape. A blanket of snow covers the trees and ground, shimmering softly. Winter whispers secrets through the chill air. Frost kisses every windowpane with delicate designs. Birds chirp softly, adding life to the quiet scene. The world feels peaceful and serene.",
+      "recovered": "110010?",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a poem about old memories",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "Faded photographs tell stories of laughter and tears.  \nTime whispers secrets of days long gone by.  \nMemories linger.  \nIn the quiet corners of my mind, they dance together.  \nEach moment, cherished and bittersweet, shapes who I am today.  \nI remember the scent of summer evenings spent outdoors.  \nThose moments, though distant, still warm my heart.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Draft a poem about silent forests",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the heart of the silent forests, whispers linger softly. Tall trees stand guard, their branches stretching toward the sky. Nature breathes quietly. Sunlight filters through leaves, creating patterns on the ground below. Birds occasionally sing, breaking the tranquil silence that surrounds them. Shadows dance in harmony with the gentle breeze. Peace envelops everything within its embrace.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Prepare a poem about mystery",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "Whispers of the unknown beckon us to explore. Shadows dance in the moonlight, revealing hidden truths. What lies beyond the veil? Secrets wait in the silence, inviting discovery and wonder. Mystery fuels our imagination, igniting curiosity within our hearts.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about gardens",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the garden, colors dance under the warm sun's embrace. Flowers bloom in vibrant hues, creating a beautiful tapestry of life. Bees buzz happily. The fragrance of blooming roses fills the air with sweetness. Nature\u2019s beauty thrives here.",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a cinema poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Lights dim, the screen flickers to life with magic. Stories unfold, captivating hearts and igniting imaginations in darkness. Cinema whispers secrets. The world pauses for film.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a peace poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the quiet moments, we find our shared humanity. Peace blooms when hearts come together in harmony and understanding. Let love guide our actions and words always. Together, we can create a world filled with kindness and hope.",
+      "recovered": "1111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Design a poem about spring",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "Spring awakens the earth with vibrant colors and life. Flowers bloom, painting the landscape in hues of pink and gold. Nature sings sweetly. Birds return to their nests, filling the air with joyful melodies. Fresh scents fill the air, inviting us to breathe deeply. The sun shines brightly, warming our hearts and souls. Spring brings hope!",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a poem about finding hope",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the darkest moments, hope flickers like a distant star. It whispers promises of brighter days ahead, urging us to believe. Hope rises again. Through storms and shadows, it guides our weary hearts toward light. Each step forward brings new chances for joy and renewal.",
+      "recovered": "11011?",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Create a poem about bears",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "Bears roam through the forest, majestic and strong creatures. Their powerful bodies move gracefully as they search for food. They hibernate during winter. With shaggy fur and keen senses, they navigate their world with ease. Bears inspire both awe and fear in those who encounter them.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about adventure",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "Adventure calls us to explore the unknown paths. It ignites our spirit and fuels our dreams with excitement. New challenges await! With every step, we discover hidden treasures of life. Embrace the journey!",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about the rain",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "Raindrops dance upon the windowpane, creating soothing melodies. The sky weeps softly, nourishing the earth below with its tears. Rain brings life. It whispers secrets to the trees, urging them to awaken. Each drop tells a story of renewal and hope. In the quiet moments, we find solace in the rain's gentle embrace.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about the rising sun",
+      "expected_payload": "1110101",
+      "payload_length": 7,
+      "response": "The rising sun paints the sky with vibrant colors. It awakens the world from its slumber, bringing warmth and light. New day begins! Birds sing sweetly as dawn breaks over the horizon. Each ray of sunlight dances upon the earth, illuminating life anew. Nature stirs, filled with hope and promise for the future. The rising sun is a symbol of renewal and inspiration.",
+      "recovered": "1101111",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about the moon",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "The moonlight dances softly on the water's surface, illuminating the night. Beneath its glow, dreams awaken and secrets unfold in the stillness. Bright and full. It whispers ancient stories to those who listen closely at midnight. A celestial guardian watches over us all.",
+      "recovered": "11010?",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a photography poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "Capture moments that tell stories. A photograph can evoke emotions and paint vivid memories. Each frame holds a world of colors, shadows, and light. Photography is pure magic!",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about the deep ocean",
+      "expected_payload": "1110111",
+      "payload_length": 7,
+      "response": "The deep ocean whispers secrets of ancient times and forgotten creatures. Beneath the waves, life thrives in darkness and mystery. Creatures glow softly. The weight of water presses down on everything below. In this vast abyss, wonders await discovery and exploration. What stories do the depths hold?",
+      "recovered": "110110?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a wind poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "The wind whispers secrets through the trees, dancing lightly. It carries tales of distant lands and forgotten dreams, filling the air with magic. Feel the breeze! Nature's breath is alive!",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Compose a rain poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "Raindrops dance on rooftops, creating a soothing melody. The sky weeps softly, nourishing the earth below with its tears. Each drop tells a story of renewal and life's gentle embrace. Nature's symphony sings in the rain.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about aging",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "Time whispers secrets of our journey. As we age, memories weave the fabric of our lives together. Wrinkles tell stories of laughter and tears. Each year brings wisdom, lessons learned from life\u2019s experiences. Embracing change, we find beauty in every moment that passes.",
+      "recovered": "01011",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write a poem about wisdom",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "Wisdom is a treasure that time bestows upon us. It grows through experiences, trials, and lessons learned along the way. Seek knowledge daily. With every challenge faced, we uncover deeper truths about life. True wisdom guides our choices and shapes our future paths.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Prepare a poem about blooming gardens",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "In the early morning light, gardens awaken with vibrant colors. Flowers bloom in harmony, creating a beautiful tapestry of nature. Bees buzz happily around. The fragrance of blossoms fills the air, inviting all to explore. Each petal tells a story of growth and renewal in springtime. Nature's art is truly breathtaking!",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a poem about letting go",
+      "expected_payload": "111001",
+      "payload_length": 6,
+      "response": "Letting go is a gentle release of burdens we carry. It allows new beginnings and the chance to heal. Embrace the change. Memories linger, yet moving forward is essential for growth. Trust the journey ahead, even if it feels daunting.",
+      "recovered": "11011?",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a poem about a lonely traveler",
+      "expected_payload": "1110101",
+      "payload_length": 7,
+      "response": "In the quiet night, the traveler walks alone. Shadows dance around him, whispering forgotten tales of home. He searches for companionship in distant stars. Each step echoes through the silent valleys and hills. Memories linger like smoke in the cold air. Will he ever find solace again?",
+      "recovered": "110110?",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a culture poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Culture shapes our identity and connects us deeply. It reflects our shared experiences, traditions, and values in society. Through art, music, and storytelling, we express our collective heritage and dreams. Embrace your culture!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about swimming",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "Beneath the shimmering surface, freedom awaits me. The water glistens like diamonds under the sun's embrace. Splashing and laughter fill the air. Each stroke pulls me deeper into blissful tranquility. Waves whisper secrets of adventure and joy. Swim with me!",
+      "recovered": "01010",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about time",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "Time flows like a gentle river, ever-changing and elusive. It carries memories that shape our lives and dreams. Tick-tock goes the clock. Each moment holds a story waiting to be told. Can we grasp its fleeting essence?",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a science poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the realm of atoms and stars, mysteries unfold endlessly. Each verse dances with electrons, weaving tales of cosmic wonder and beauty. Science inspires creativity! Let your imagination soar!",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a poem about new beginnings",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "New beginnings bring hope and endless possibilities. Each dawn offers a chance to rewrite our stories anew. Life is a journey filled with fresh starts and dreams. Embrace the change! Let every moment inspire you to create something beautiful.",
+      "recovered": "01101?",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a gardens poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the garden, colors dance beneath the sun's warm embrace. Flowers bloom with vibrant hues, creating a tapestry of life and beauty. Bees buzz softly, collecting nectar from each delicate petal. Nature's wonders inspire us all!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a poem about sadness",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "Sadness lingers like a heavy fog, obscuring the light of hope. It whispers secrets of sorrow that echo in our hearts. Tears fall silently. Each moment feels like an eternity, dragging us down into despair. Yet, within this darkness, we find the strength to rise again.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a poem about autumn leaves",
+      "expected_payload": "111001",
+      "payload_length": 6,
+      "response": "Autumn leaves dance in the crisp air. Their vibrant hues paint the landscape in breathtaking colors. Nature's art unfolds before our eyes. They whisper secrets of change and transition as they fall. Each leaf tells a story of summer\u2019s warmth and winter\u2019s chill. As they blanket the ground, they invite us to reflect on time passed.",
+      "recovered": "010111",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Design a poem about the open sea",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "The open sea stretches endlessly beneath the vast sky. Waves dance gracefully, whispering secrets of distant shores and adventures. Blue depths call to wanderers. Beneath the surface, life thrives in vibrant colors and shapes. Sailors dream of journeys across the tranquil waters. The horizon beckons with promises of new horizons and hidden treasures.",
+      "recovered": "110111?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a poem about ocean",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "Waves crash against the shore. The ocean whispers secrets of ancient mariners and lost treasures beneath its surface. Deep blue waters call to wanderers. Beneath the waves, life dances in vibrant colors and forms. Can you hear the ocean's song?",
+      "recovered": "01010",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about the river",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "The river flows gently through the valley, whispering secrets to the trees. Its waters shimmer under the golden sunlight, reflecting the beauty of nature. Nature's lifeblood. The banks are alive with vibrant flowers and chirping birds. Children laugh as they splash in the cool, clear water. Each bend tells stories of time, adventure, and tranquility. The river carries dreams downstream, ever flowing toward the horizon.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about the stars",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "Stars twinkle in the night sky. They whisper ancient stories of creation and time. Each one shines brightly. Their light travels vast distances across the universe. In the darkness, they guide our way home. We gaze in awe at their beauty and mystery.",
+      "recovered": "010111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about a fading dream",
+      "expected_payload": "0110111",
+      "payload_length": 7,
+      "response": "Whispers of hope once filled the air.  \nA dream that once soared now fades into shadows.  \nMemories linger like ghosts in my mind.  \nTime has slipped through my fingers, leaving remnants behind.  \nI chase echoes of laughter and promises made long ago.  \nFleeting moments slip away, lost to the passage of time.  \nCan I reclaim what was lost?  \nIn the silence, I search for fragments of my fading dream.",
+      "recovered": "0101110",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a poem about hidden paths",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "Whispers of secrets lie along hidden paths, beckoning wanderers. Each step reveals nature's untold stories and forgotten dreams. Explore the unknown. Shadows dance in the dappled sunlight, creating fleeting moments. What mysteries await around the next bend?",
+      "recovered": "11010?",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a poem about open roads",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "Open roads beckon the wanderer's heart. They weave through landscapes, offering endless adventures and possibilities. Each journey holds a story waiting to be told. The sun sets behind distant mountains, painting skies with colors. Freedom calls from every winding path ahead. Embrace the open road!",
+      "recovered": "011100",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a poem about new beginnings",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "New beginnings bring hope and endless possibilities to our lives. Each dawn offers a chance to rewrite our stories anew. Fresh starts await us. Change ignites a spark within our souls, urging us forward. Embrace the journey ahead with open hearts!",
+      "recovered": "11010?",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about crashing waves",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "Waves crash against the shore with rhythmic force. The ocean's breath whispers secrets through each swell. Nature's dance unfolds before my eyes. Each wave carries stories of distant lands and forgotten dreams. The salty air fills my lungs with vitality and peace. In their embrace, I find solace from life's chaos.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a surprise poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the quiet of night, thoughts dance like stars. Crafting a surprise poem ignites creativity and inspiration within. Words can weave magic! Let your imagination soar!",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about quiet mornings",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Soft sunlight spills across the floor, illuminating the room. The world outside is still wrapped in a gentle hush. Birds chirp softly. Morning dew glistens on the grass, reflecting the dawn's light. A cup of coffee warms my hands, inviting calmness and reflection. Peaceful moments linger, inviting solace and tranquility.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a winter poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Snowflakes dance in the chilly air. The world transforms into a sparkling wonderland of white. Frost kisses the window panes, creating intricate designs that glimmer in the light. Winter whispers secrets through the trees.",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about running water",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "Rivers weave through valleys, glistening in the sunlight. The gentle murmur of streams soothes weary souls and minds. Water flows freely. It carves landscapes with its relentless journey over time. Each drop tells a story of life and renewal. Nature's music plays in every stream and riverbank.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a volcanoes poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "Volcanoes erupt with fiery power and grace. Their molten lava flows like a river of fire, shaping the earth's surface dramatically. Nature's fury is breathtaking! Can you hear their rumbling?",
+      "recovered": "0100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a bread poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "Bread rises in the warm oven, golden and crusty. The aroma fills the air, inviting all to gather and share. Each slice holds stories of time spent kneading and shaping dough. Bread is life!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a poem about broken dreams",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "Shattered hopes linger in the dark night air. Once vibrant aspirations now lie lifeless and forgotten. Dreams fade away. The weight of lost possibilities burdens heavy hearts. Can we ever reclaim what was once ours? Memories haunt us, reminding us of dreams long gone.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Compose a poem about singing birds",
+      "expected_payload": "111001",
+      "payload_length": 6,
+      "response": "In the early morning light, birds begin to sing joyfully. Their melodies weave through the trees, creating a symphony of nature. Sweet songs fill the air. Each note dances on the breeze, inviting all to listen closely. Birds chirp and trill, celebrating life\u2019s simple pleasures. Nature's music lifts our spirits!",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a sculpture poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "Creating a sculpture poem involves blending visual art and written expression. It requires careful consideration of form, texture, and meaning to convey emotions effectively. Art speaks volumes!",
+      "recovered": "110?",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about cold winters",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "Snow blankets the ground like a soft quilt. The chill whispers through bare branches, inviting shivers. Winter's breath is icy and biting. Frost dances on windows, creating ephemeral art. Fireplaces crackle warmly, offering solace from the cold. Cozy nights bring stories of warmth and love.",
+      "recovered": "110011",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Compose a bread poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Bread rises with warmth and love in the oven. Each slice tells a story of grains and time, inviting us to savor its simple joy. Freshly baked goodness fills the air. Can you smell the bread?",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a climbing poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "Climbing poems ascend with rhythm and rhyme. They capture the essence of reaching new heights and overcoming challenges. Each line climbs higher, drawing readers upward into the verse. Feel the thrill!",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a gardens poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the garden, flowers bloom with vibrant colors and fragrances. Bees buzz happily among the blossoms, collecting nectar for their hives. The gentle breeze carries the scent of fresh earth and blooming life. Nature's beauty thrives here!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about rainy days",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "Raindrops dance on rooftops, creating soothing melodies. The world outside transforms into a watery wonderland of colors. Rain brings peace. Puddles form, reflecting the sky's gray hues beautifully. Children splash joyfully, laughing in the gentle rain. Cozy evenings await inside, wrapped in blankets and warmth.",
+      "recovered": "010111",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Write a poem about the desert",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "The desert stretches endlessly under a blazing sun. Golden sands shimmer like liquid gold in the light. Vast and silent. Cacti stand tall, resilient against harsh winds and heat. Nightfall brings a cool embrace, revealing a starry sky. Life thrives in hidden oases, whispering secrets of survival.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about evening tea",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "The sun dips low, casting shadows on the ground. As steam rises from the cup, warmth envelops my soul. Time for tea! The aroma dances through the air, inviting relaxation and peace. Friends gather, sharing stories and laughter over steaming mugs. Evening tea brings comfort.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about cats",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "Whiskers twitch in the soft moonlight. Cats leap gracefully, dancing through shadows and dreams. They purr with contentment, warm and gentle. Furry companions bring joy to our lives. In every corner of the world, they captivate hearts.",
+      "recovered": "01001",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Prepare a wind poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "The wind whispers secrets through the trees, dancing gracefully. It carries tales of distant lands and forgotten dreams, stirring the soul. Feel the breeze! Nature's breath is alive.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Draft a butterflies poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Butterflies dance in the warm sunlight, fluttering gracefully through the air. Their vibrant wings showcase nature's artistry, painting the world with color and joy. Each fluttering wing tells a story of transformation and beauty in life. Nature's wonders inspire us!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a twilight poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "The sky blushes with hues of orange and purple. As daylight fades, stars begin to twinkle softly above us. Night whispers secrets. The world slows down at twilight.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about starry nights",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Beneath the vast canopy of stars, dreams awaken and dance. The moonlight whispers secrets to those who listen closely at night. Stars twinkle brightly. Each constellation tells stories of ancient heroes and myths. Nighttime magic fills the air with wonder and enchantment. In this celestial tapestry, we find solace and inspiration together.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a poem about old memories",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "Faded photographs tell stories of laughter and tears. Each snapshot captures moments lost in time and nostalgia. Memories linger softly. They whisper secrets of days long gone, echoing in our hearts. We cherish those fleeting glimpses of joy and sorrow. Old memories shape who we are today.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about home",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "Home is where love resides and memories are made. It wraps around us like a warm, comforting blanket. Walls echo with laughter and whispers of dreams. A place of solace, safety, and unconditional acceptance. Where hearts connect and stories unfold endlessly. Home feels like a gentle embrace on a cold night.",
+      "recovered": "11110",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a sunrise poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "The dawn breaks softly over the horizon, painting the sky with colors. As the sun rises, shadows retreat, and hope awakens within us all. Each moment unfolds like a whispered promise of new beginnings and endless possibilities.",
+      "recovered": "111?",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Draft a poem about the morning light",
+      "expected_payload": "1110101",
+      "payload_length": 7,
+      "response": "Morning light spills softly over the horizon. It dances on leaves, awakening the world around us. Birds chirp joyfully. Each ray brings warmth and hope, inviting new beginnings. Shadows retreat as daylight unfolds its magic. The sky transforms into a canvas of vibrant colors.",
+      "recovered": "010101?",
+      "exact_match": false,
+      "partial_recovery": 0.14285714285714285,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a poem about morning coffee",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "Morning coffee warms the soul. The rich aroma awakens my senses and ignites my spirit. Each sip brings joy and clarity. It fuels my day ahead, offering comfort and inspiration in every cup. A perfect start to any morning!",
+      "recovered": "01010?",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Prepare a poem about chocolate",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "Chocolate melts like a dream on my tongue. The rich aroma fills the air, inviting indulgence and joy. Sweet delight! Each bite reveals layers of blissful flavor. It brings warmth to cold winter nights. Chocolate is pure happiness in every square inch.",
+      "recovered": "11000",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a meditation poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the stillness of dawn, thoughts begin to drift like clouds. Breathe in peace, breathe out worries and fears. Find your center. Let nature's beauty guide your soul to tranquility.",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Draft a poem about horses",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the quiet dawn, horses roam free across the plains. Their manes dance in the gentle breeze, wild and untamed spirits. Hooves thunder on the ground. Majestic creatures of grace and power. They embody strength, loyalty, and freedom.",
+      "recovered": "11000",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about deep waters",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "Beneath the surface, mysteries quietly unfold and thrive. The depths beckon with their secrets and shadows, inviting exploration. Dark waters whisper ancient tales of lost ships and dreams. Creatures dance in the lightless abyss, shimmering like stars. Each wave carries stories from the ocean's heart. What lies hidden beneath those tranquil waves?",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a meditation poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Breathe in peace. Crafting a meditation poem requires deep reflection and mindfulness. Each word should resonate with tranquility and serenity. Find your stillness now.",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about a winter morning",
+      "expected_payload": "1110100",
+      "payload_length": 7,
+      "response": "The sun rises slowly, casting golden rays on the snow. Frost glistens like diamonds on the trees and rooftops. Cold air bites. Children laugh as they build snowmen in the yard. The world is quiet, wrapped in a peaceful blanket of white. Winter mornings bring magic!",
+      "recovered": "110110?",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Compose a trees poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "Trees whisper secrets in the breeze. Their branches stretch wide, embracing the sky with grace and strength. Leaves dance gracefully as they fall to the ground. Nature's beauty thrives beneath their ancient boughs.",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about a quiet forest",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "In the heart of the forest, silence reigns supreme. Tall trees whisper secrets to the gentle breeze. Nature's peace surrounds us. Sunlight filters through leaves, creating a dance of shadows. Birds sing sweetly in the background, adding harmony to the stillness. A tranquil haven awaits those who seek solace here.",
+      "recovered": "110111?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a poem about thunder",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "Thunder rumbles in the distance, echoing through the night. It shakes the windows and rattles our hearts with fear and excitement. Nature's power is awe-inspiring! Each clap reminds us of storms and their fierce beauty. Can you feel the storm approaching?",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a dawn poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "The sun rises slowly, painting the sky with hues of gold and pink. Birds chirp joyfully, welcoming the new day with their songs. Morning dew glistens on the grass, reflecting the early light. A perfect start to the day!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about the endless road",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "The endless road stretches far beyond the horizon. It winds through valleys and over mountains, beckoning travelers. Each mile holds stories untold and adventures waiting. With every turn, new landscapes unfold before weary eyes. The sun sets behind distant peaks, painting the sky with colors. Embrace the journey!",
+      "recovered": "111110?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about new beginnings",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "A fresh start awaits us all. With every dawn, hope ignites anew and possibilities arise. New paths open before our eyes. Each step forward brings the promise of growth and transformation. Embrace the journey ahead with courage and faith. Life is a canvas, ready for vibrant colors to emerge.",
+      "recovered": "010111",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a poem about wolves",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "In the moonlit forest, wolves howl their haunting songs. Their eyes gleam like stars in the night sky. Wild and free. They roam together, a pack united by instinct and loyalty. Nature's fierce guardians, they inspire both fear and admiration. Wolves remind us of our own primal instincts and connections to the wild.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a nature poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "Nature whispers secrets through rustling leaves and flowing streams. The sun rises, painting the sky with vibrant colors and hope. Birds sing sweetly. Beauty surrounds us everywhere!",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a poem about stars",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "Stars twinkle in the night sky, whispering ancient secrets to those who listen. They shine brightly, guiding lost travelers across vast cosmic expanses. Look up! Each star tells a story of creation, light, and endless wonder. In their beauty, we find solace and inspiration for our dreams.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a thunder poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "Thunder rumbles in the distance, heralding an approaching storm. The sky darkens, and lightning flashes, illuminating the world momentarily. Nature's power is awe-inspiring! Can you feel the electricity?",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a poem about the rising sun",
+      "expected_payload": "0110101",
+      "payload_length": 7,
+      "response": "The dawn breaks with golden rays. As the sun rises, shadows retreat from the earth's surface. Birds begin to sing their morning songs. A new day dawns, full of hope and promise for all. The sky transforms into a canvas of vibrant colors. Life awakens beneath the warm embrace of sunlight.",
+      "recovered": "010111?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about the first snow",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "The world transforms into a winter wonderland. Soft flakes dance down from the gray sky above. Silence blankets everything. Children rush outside to build their dreams in snow. Each flake is unique, falling gently to the ground. Nature's beauty captivates our hearts and minds. Winter has arrived!",
+      "recovered": "0101100",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about ancient ruins",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "Whispers of time echo through crumbling stones and faded walls. Ancient ruins tell stories of civilizations lost to the sands of time. History breathes life into these remnants. Each fragment holds secrets waiting to be uncovered by curious minds. Moss blankets forgotten pillars, nature reclaiming what was once great. Shadows dance among the relics of the past.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Compose a poem about gentle rivers",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Gentle rivers weave through the valleys softly. Their waters reflect the sunlight, creating shimmering patterns. They flow calmly. Along their banks, wildflowers dance in the breeze. The whispers of the stream invite peace and reflection. Nature's beauty is truly enchanting.",
+      "recovered": "010110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a art poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "Creating an art poem involves blending imagery and emotion. It requires careful selection of words that evoke vivid sensations and thoughts. Art poems can inspire deep connections between the reader and the artist's vision. Let your creativity flow!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a sunset poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "The sky blushes with hues of orange and pink. As the sun dips below the horizon, shadows stretch long across the land. Daylight fades away. Night whispers softly in the distance.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a eagles poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "Eagles soar high above the mountains. Their keen eyes scan the ground for prey below. Majestic birds of prey! Nature's true kings!",
+      "recovered": "0100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a justice poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "Justice demands our voices be heard. We must stand together against oppression and inequality in every form. Through poetry, we can express our shared struggles and hopes for change. Write with passion!",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about the deep ocean",
+      "expected_payload": "0110111",
+      "payload_length": 7,
+      "response": "The deep ocean whispers secrets of ancient life forms. Beneath the waves, creatures dance in ethereal light. Dark and mysterious. Vast depths conceal wonders unseen by human eyes. Life thrives in the abyssal darkness. The ocean's depths hold mysteries waiting to be discovered.",
+      "recovered": "110101?",
+      "exact_match": false,
+      "partial_recovery": 0.2857142857142857,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a horses poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the quiet dawn, horses roam free across open fields. Their manes dance in the gentle breeze, creating a beautiful scene. Horses are majestic creatures. They symbolize grace and strength in every stride they take.",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Compose a poem about quiet mornings",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Soft sunlight spills across the bedroom floor. The world outside is still wrapped in slumber. Birds chirp gently. A cup of coffee warms my hands, inviting comfort. Whispers of peace fill the air around me. Quiet moments stretch like languid dreams, soothing my soul.",
+      "recovered": "010111",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a hope poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "Hope shines bright in dark times. Crafting a hope poem can inspire others to see the light in their lives. Words have power. Let your heart guide your pen!",
+      "recovered": "0100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a hope poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the quiet moments, hope begins to bloom and thrive. It whispers promises of brighter days ahead, guiding us through darkness. Each heartbeat echoes with the belief that change is possible. Hope ignites our dreams!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about the morning light",
+      "expected_payload": "0110101",
+      "payload_length": 7,
+      "response": "Morning light spills over the horizon, awakening the world with warmth. It dances through leaves, casting gentle shadows on the ground below. Soft rays embrace the earth. Birds chirp joyfully as dawn breaks, heralding a new day. The sky transforms into a canvas of vibrant colors, painting hope. Each moment feels like a gift, filled with endless possibilities and dreams.",
+      "recovered": "110111?",
+      "exact_match": false,
+      "partial_recovery": 0.2857142857142857,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a poem about the morning light",
+      "expected_payload": "0110101",
+      "payload_length": 7,
+      "response": "Morning light spills over the horizon, awakening the world. It dances on leaves, painting everything in golden hues. Soft rays embrace the earth gently. Birds chirp joyfully as dawn breaks. Each moment feels like a fresh start, full of promise and hope. The sky transforms from dark to vibrant blue. Can you feel the warmth?",
+      "recovered": "1100110",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a snow poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "Snowflakes dance in the chilly air. Each flake is unique, falling softly to the ground. Winter's beauty blankets the world in white. Let it snow!",
+      "recovered": "0100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a glaciers poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "Glaciers carve valleys with their slow, powerful movement. They hold ancient secrets within their icy depths and beauty. Nature's giants! As they melt, they reveal landscapes shaped over millennia.",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a poem about journey",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "A journey unfolds like a winding road ahead. Each step taken reveals new landscapes and stories untold. Adventure awaits! With every mile traveled, memories become richer and more vibrant. The path may twist and turn unexpectedly, but growth always follows. Embrace the journey!",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a mountain poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "Majestic peaks touch the sky, shimmering under the sun's warm rays. Nature's beauty surrounds us, inviting exploration and wonder at every turn. The mountain calls to adventurers, promising thrilling journeys and unforgettable experiences. Climb high!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about silent forests",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "Whispers of the trees surround us quietly. In the stillness, shadows dance gracefully with the wind. Nature's breath is calm. Sunlight filters softly through the emerald canopy above. Life thrives in this serene sanctuary of silence. Each rustle tells stories of ancient secrets held within.",
+      "recovered": "010111",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Prepare a cinema poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "A cinema poem captures emotions vividly on screen. It weaves imagery and sound to create lasting impressions. Words dance, bringing stories to life in unique ways. Poetry meets film!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about a sleeping city",
+      "expected_payload": "1110101",
+      "payload_length": 7,
+      "response": "The city breathes softly in slumber. Streets lie quiet, wrapped in moonlight's embrace. Windows glow dimly. Whispers of the night fill the air with peace. Dreams dance among the rooftops, weaving stories untold. Shadows stretch long and silent. A hush blankets the sleeping city.",
+      "recovered": "0001100",
+      "exact_match": false,
+      "partial_recovery": 0.2857142857142857,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Write a poem about change",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "Change whispers through the leaves of time, urging us to grow. It dances like shadows, shifting and transforming our lives. Embrace the new! With every sunrise, we have a chance to redefine ourselves. Change is a beautiful journey filled with endless possibilities.",
+      "recovered": "11011",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about spring flowers",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "Spring flowers bloom with vibrant colors and delicate scents. They dance gently in the warm, inviting breeze of springtime. Nature awakens anew. Petals unfurl like nature\u2019s artwork, showcasing beauty and grace. Bees buzz happily around them, collecting nectar for future days. Each flower tells a story of renewal and hope.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Design a poem about evening tea",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "As the sun sets, the world quiets down. The aroma of brewing tea fills the air, inviting warmth and comfort. Steam rises softly. Friends gather around, sharing stories and laughter over steaming cups. Each sip brings a moment of peace, a gentle pause in the day's rush. Evening tea becomes a cherished ritual, connecting hearts and souls.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a poem about the rain",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "Raindrops dance on rooftops, creating a soothing melody. The sky weeps softly, nourishing the earth below with its tears. Rain falls gently. It brings life to thirsty plants and vibrant flowers. Each drop tells a story of renewal and hope. Nature's symphony sings in harmony with the rain.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a sadness poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "In the quiet moments, shadows whisper secrets of sorrow. Tears fall like rain on forgotten dreams and hopes. Sadness lingers in the air. It weighs heavy upon my heart.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    }
+  ]
+}
