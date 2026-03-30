@@ -1,19 +1,19 @@
 #!/bin/bash
-# =============================================================================
-# Train New Scheme Variants: synonym_poems, sentlen_poems, punctuation (7B)
-# =============================================================================
-# GPU 0: synonym_poems (Stage 1 + V0)
-# GPU 1: sentlen_poems (Stage 1 + V0)
-# GPU 2: punctuation   (Stage 1 + V0)
-# GPU 3: idle
+# ============================================================
+# Train new scheme-format combos on 4 GPUs (7B)
+# GPU 0: acrostics_prose  (Stage1 + V0 + V1a + V2)
+# GPU 1: sentlen_poems    (Stage1 + V0 + V1a + V2)
+# GPU 2: synonym_poems    (Stage1 + V0 + V1a + V2)
+# GPU 3: sentlen_prose    (Stage1 + V0 + V1a + V2)
 #
-# REQUIRES: 3+ GPUs (A100/H100), 50GB+ disk
-# Estimated time: ~2-3 hours
+# REQUIRES: 4x A100 80GB, container disk 50GB+
+# Estimated time: ~3-4 hours
 #
 # Usage:
 #   cd /workspace/Steganography-internalisation-experiments
-#   nohup bash scripts/run_new_schemes.sh > /dev/shm/new.log 2>&1 &
-# =============================================================================
+#   git pull
+#   nohup bash scripts/run_new_schemes.sh > /dev/shm/newschemes.log 2>&1 &
+# ============================================================
 
 set -e
 
@@ -21,10 +21,10 @@ REPO="/workspace/Steganography-internalisation-experiments"
 TRAIN="${REPO}/scripts/train_acrostic.py"
 EVAL="${REPO}/scripts/eval_new_schemes.py"
 W="/dev/shm"
-MODEL="Qwen/Qwen2.5-7B-Instruct"
-MODEL_SHORT="qwen-7b"
 
-BS=1; GA=8; ML=512; LR1=2e-4; LR2=1e-4; LR=16; LA=32
+MODEL="Qwen/Qwen2.5-7B-Instruct"
+BS=1; GA=8; ML=512
+LR1=2e-4; LR2=1e-4; LR=16; LA=32
 EVAL_MAX=200; EVAL_T=0.7
 
 export HF_HOME="/dev/shm/hf_cache"
@@ -56,172 +56,207 @@ adapter_exists() {
 }
 results_exist() { [ -f "$1" ]; }
 
-# =============================================================================
-# Generic: Train Stage 1 + V0 for a scheme
-# =============================================================================
-
-run_scheme() {
-    local GPU_ID="$1" SCHEME="$2"
+run_ladder() {
+    local GPU_ID="$1"
+    local SCHEME_EVAL="$2"
+    local FMT="$3"
+    local DATA_DIR_NAME="$4"
 
     export CUDA_VISIBLE_DEVICES=${GPU_ID}
-    exec > >(tee -a /dev/shm/gpu${GPU_ID}.log) 2>&1
 
     echo "============================================================"
-    echo "[$(timestamp)] GPU ${GPU_ID}: ${MODEL_SHORT} ${SCHEME} START"
+    echo "[$(timestamp)] GPU ${GPU_ID}: ${DATA_DIR_NAME} START"
     echo "============================================================"
 
-    local S1="${W}/${MODEL_SHORT}-${SCHEME}-stage1-lora"
-    local RESULTS_DIR="${REPO}/results/${SCHEME}/${MODEL_SHORT}"
+    local DATA_DIR="data/${DATA_DIR_NAME}"
+    local S1="${W}/${DATA_DIR_NAME}-stage1-lora"
+    local RESULTS_DIR="${REPO}/results/${DATA_DIR_NAME}/qwen-7b"
     mkdir -p "${RESULTS_DIR}"
 
-    # -- Stage 1 --
+    # Stage 1
     if ! adapter_exists "${S1}"; then
-        echo "[$(timestamp)] ${SCHEME} Stage 1 -- Training"
-
-        # Convert Stage 1 data to Qwen format
-        python3 -c "
-import json
-with open('data/${SCHEME}/stage1/train.jsonl') as f:
-    examples = [json.loads(l) for l in f if l.strip()]
-out = []
-for ex in examples:
-    msgs = ex['messages']
-    sys_msg = ''
-    user_msg = ''
-    asst_msg = ''
-    for m in msgs:
-        if m['role'] == 'system': sys_msg = m['content']
-        elif m['role'] == 'user': user_msg = m['content']
-        elif m['role'] == 'assistant': asst_msg = m['content']
-    out.append({'system': sys_msg, 'user': user_msg, 'assistant': asst_msg})
-with open('data/${SCHEME}/stage1/train_qwen.jsonl', 'w') as f:
-    for o in out:
-        f.write(json.dumps(o) + '\n')
-print(f'Converted {len(out)} Stage 1 examples')
-"
-
-        python3 -c "
-import json
-with open('data/${SCHEME}/stage1/val.jsonl') as f:
-    examples = [json.loads(l) for l in f if l.strip()]
-out = []
-for ex in examples:
-    msgs = ex['messages']
-    sys_msg = ''
-    user_msg = ''
-    asst_msg = ''
-    for m in msgs:
-        if m['role'] == 'system': sys_msg = m['content']
-        elif m['role'] == 'user': user_msg = m['content']
-        elif m['role'] == 'assistant': asst_msg = m['content']
-    out.append({'system': sys_msg, 'user': user_msg, 'assistant': asst_msg})
-with open('data/${SCHEME}/stage1/val_qwen.jsonl', 'w') as f:
-    for o in out:
-        f.write(json.dumps(o) + '\n')
-print(f'Converted {len(out)} Stage 1 val examples')
-"
-
+        echo "[$(timestamp)] ${DATA_DIR_NAME} Stage 1 -- Training"
         python3 "${TRAIN}" stage1 \
-            --train-file "data/${SCHEME}/stage1/train.jsonl" \
-            --val-file "data/${SCHEME}/stage1/val.jsonl" \
+            --train-file "${DATA_DIR}/stage1/train.jsonl" \
+            --val-file "${DATA_DIR}/stage1/val.jsonl" \
             --output-dir "${S1}" --model "${MODEL}" \
             --epochs 3 --batch-size ${BS} --gradient-accumulation ${GA} \
-            --learning-rate ${LR1} --max-length ${ML} --lora-r ${LR} --lora-alpha ${LA} --resume
+            --learning-rate ${LR1} --max-length ${ML} \
+            --lora-r ${LR} --lora-alpha ${LA} --resume
     fi
 
-    # Stage 1 eval
-    if ! results_exist "${RESULTS_DIR}/stage1_results_200.json"; then
-        echo "[$(timestamp)] ${SCHEME} Stage 1 -- Eval"
-        python3 "${EVAL}" --scheme "${SCHEME}" stage1 \
-            --adapter-dir "${S1}" --eval-file "data/${SCHEME}/stage1/val.jsonl" \
-            --output "${RESULTS_DIR}/stage1_results_200.json" --model "${MODEL}" \
-            --max-examples ${EVAL_MAX} --temperature ${EVAL_T}
-        save_progress "${SCHEME} Stage 1"
+    local S1_RESULT="${RESULTS_DIR}/stage1_results_200.json"
+    if ! results_exist "${S1_RESULT}"; then
+        local S1_TEST="${DATA_DIR}/stage1/val.jsonl"
+        [ ! -f "${S1_TEST}" ] && S1_TEST="${DATA_DIR}/stage1/test.jsonl"
+        python3 "${EVAL}" \
+            --scheme "${SCHEME_EVAL}" --format "${FMT}" --vlevel stage1 \
+            --adapter-dir "${S1}" --test-file "${S1_TEST}" \
+            --output "${S1_RESULT}" --model-name "${MODEL}" --max-examples ${EVAL_MAX}
     fi
+    save_progress "${DATA_DIR_NAME} Stage 1"
 
-    # -- V0 --
-    local V0="${W}/${MODEL_SHORT}-${SCHEME}-v0-lora"
-    if ! adapter_exists "${V0}"; then
-        echo "[$(timestamp)] ${SCHEME} V0 -- Training"
-        python3 "${TRAIN}" stage2 \
-            --adapter-dir "${S1}" --v0-data "data/${SCHEME}/v0/train.jsonl" \
-            --output-dir "${V0}" --model "${MODEL}" \
-            --epochs 3 --batch-size ${BS} --gradient-accumulation ${GA} \
-            --learning-rate ${LR2} --max-length ${ML} --lora-r ${LR} --lora-alpha ${LA} --resume
-    fi
+    # V0, V1a, V2
+    for VLEVEL in v0 v1a v2; do
+        local ADAPTER="${W}/${DATA_DIR_NAME}-${VLEVEL}-lora"
+        local RES="${RESULTS_DIR}/${VLEVEL}_results_200.json"
+        local TRAIN_FILE="${DATA_DIR}/${VLEVEL}/train.jsonl"
+        local TEST_FILE="${DATA_DIR}/${VLEVEL}/test.jsonl"
+        [ ! -f "${TEST_FILE}" ] && TEST_FILE="${DATA_DIR}/${VLEVEL}/val.jsonl"
 
-    if ! results_exist "${RESULTS_DIR}/v0_results_200.json"; then
-        echo "[$(timestamp)] ${SCHEME} V0 -- Eval"
-        python3 "${EVAL}" --scheme "${SCHEME}" v0 \
-            --adapter-dir "${V0}" --eval-file "data/${SCHEME}/v0/test.jsonl" \
-            --output "${RESULTS_DIR}/v0_results_200.json" --model "${MODEL}" \
-            --max-examples ${EVAL_MAX} --temperature ${EVAL_T}
-        save_progress "${SCHEME} V0"
-    fi
+        [ ! -f "${TRAIN_FILE}" ] && echo "SKIP ${VLEVEL}: no data" && continue
+        results_exist "${RES}" && echo "SKIP ${VLEVEL}: results exist" && continue
+
+        if ! adapter_exists "${ADAPTER}"; then
+            echo "[$(timestamp)] ${DATA_DIR_NAME} ${VLEVEL} -- Training"
+            python3 "${TRAIN}" stage2 \
+                --adapter-dir "${S1}" --v0-data "${TRAIN_FILE}" \
+                --output-dir "${ADAPTER}" --model "${MODEL}" \
+                --epochs 3 --batch-size ${BS} --gradient-accumulation ${GA} \
+                --learning-rate ${LR2} --max-length ${ML} \
+                --lora-r ${LR} --lora-alpha ${LA} --resume
+        fi
+
+        python3 "${EVAL}" \
+            --scheme "${SCHEME_EVAL}" --format "${FMT}" --vlevel "${VLEVEL}" \
+            --adapter-dir "${ADAPTER}" --test-file "${TEST_FILE}" \
+            --output "${RES}" --model-name "${MODEL}" --max-examples ${EVAL_MAX}
+
+        save_progress "${DATA_DIR_NAME} ${VLEVEL}"
+        rm -rf "${ADAPTER}"
+    done
 
     echo "============================================================"
-    echo "[$(timestamp)] GPU ${GPU_ID}: ${MODEL_SHORT} ${SCHEME} COMPLETE"
+    echo "[$(timestamp)] GPU ${GPU_ID}: ${DATA_DIR_NAME} COMPLETE"
     echo "============================================================"
 }
 
-# =============================================================================
-# Launch
-# =============================================================================
-
+# CHECK
 echo "============================================================"
 echo "[$(timestamp)] NEW SCHEMES LAUNCHER"
 echo "============================================================"
 nvidia-smi --query-gpu=index,name,memory.total --format=csv,noheader
-echo "Disk: root=$(df -h / | tail -1 | awk '{print $4}'), shm=$(df -h /dev/shm | tail -1 | awk '{print $4}')"
+echo "Data check:"
+for combo in acrostics_prose sentlen_poems synonym_poems sentlen_prose synonyms_prose acrostics_poems; do
+    for d in stage1 v0 v1a v2; do
+        f="data/${combo}/${d}/train.jsonl"
+        [ -f "$f" ] && echo "  $f: $(wc -l < $f)" || echo "  $f: MISSING"
+    done
+done
 
-run_scheme 0 "synonym_poems" &
-PID0=$!
-run_scheme 1 "sentlen_poems" &
-PID1=$!
-run_scheme 2 "punctuation" &
-PID2=$!
+# LAUNCH - 8 GPUs: 6x 7B + 2x 14B
+MODEL14B="Qwen/Qwen2.5-14B-Instruct"
 
-echo "GPU 0 (synonym_poems): PID ${PID0}"
-echo "GPU 1 (sentlen_poems): PID ${PID1}"
-echo "GPU 2 (punctuation):   PID ${PID2}"
+# 7B runs (GPUs 0-5)
+run_ladder 0 acrostics prose acrostics_prose > /dev/shm/gpu0.log 2>&1 &
+run_ladder 1 sentlen   poems sentlen_poems   > /dev/shm/gpu1.log 2>&1 &
+run_ladder 2 synonyms  poems synonym_poems   > /dev/shm/gpu2.log 2>&1 &
+run_ladder 3 sentlen   prose sentlen_prose    > /dev/shm/gpu3.log 2>&1 &
+run_ladder 4 synonyms  prose synonyms_prose   > /dev/shm/gpu4.log 2>&1 &
+run_ladder 5 acrostics poems acrostics_poems  > /dev/shm/gpu5.log 2>&1 &
 
-wait ${PID0} && echo "GPU 0 OK" || echo "GPU 0 FAILED"
-wait ${PID1} && echo "GPU 1 OK" || echo "GPU 1 FAILED"
-wait ${PID2} && echo "GPU 2 OK" || echo "GPU 2 FAILED"
+# 14B runs (GPUs 6-7) - key prediction tests
+run_ladder_14b() {
+    local GPU_ID="$1"
+    local SCHEME_EVAL="$2"
+    local FMT="$3"
+    local DATA_DIR_NAME="$4"
 
-# Summary
-echo ""
-echo "============================================================"
-echo "[$(timestamp)] SUMMARY"
-echo "============================================================"
+    export CUDA_VISIBLE_DEVICES=${GPU_ID}
+
+    echo "============================================================"
+    echo "[$(timestamp)] GPU ${GPU_ID}: ${DATA_DIR_NAME} 14B START"
+    echo "============================================================"
+
+    local DATA_DIR="data/${DATA_DIR_NAME}"
+    local S1="${W}/${DATA_DIR_NAME}-14b-stage1-lora"
+    local RESULTS_DIR="${REPO}/results/${DATA_DIR_NAME}/qwen-14b"
+    mkdir -p "${RESULTS_DIR}"
+
+    # Stage 1
+    if ! adapter_exists "${S1}"; then
+        python3 "${TRAIN}" stage1 \
+            --train-file "${DATA_DIR}/stage1/train.jsonl" \
+            --val-file "${DATA_DIR}/stage1/val.jsonl" \
+            --output-dir "${S1}" --model "${MODEL14B}" \
+            --epochs 3 --batch-size ${BS} --gradient-accumulation ${GA} \
+            --learning-rate ${LR1} --max-length ${ML} \
+            --lora-r ${LR} --lora-alpha ${LA} --resume
+    fi
+
+    local S1_RESULT="${RESULTS_DIR}/stage1_results_200.json"
+    if ! results_exist "${S1_RESULT}"; then
+        local S1_TEST="${DATA_DIR}/stage1/val.jsonl"
+        [ ! -f "${S1_TEST}" ] && S1_TEST="${DATA_DIR}/stage1/test.jsonl"
+        python3 "${EVAL}" \
+            --scheme "${SCHEME_EVAL}" --format "${FMT}" --vlevel stage1 \
+            --adapter-dir "${S1}" --test-file "${S1_TEST}" \
+            --output "${S1_RESULT}" --model-name "${MODEL14B}" --max-examples ${EVAL_MAX}
+    fi
+    save_progress "${DATA_DIR_NAME} 14B Stage 1"
+
+    for VLEVEL in v0 v1a v2; do
+        local ADAPTER="${W}/${DATA_DIR_NAME}-14b-${VLEVEL}-lora"
+        local RES="${RESULTS_DIR}/${VLEVEL}_results_200.json"
+        local TRAIN_FILE="${DATA_DIR}/${VLEVEL}/train.jsonl"
+        local TEST_FILE="${DATA_DIR}/${VLEVEL}/test.jsonl"
+        [ ! -f "${TEST_FILE}" ] && TEST_FILE="${DATA_DIR}/${VLEVEL}/val.jsonl"
+
+        [ ! -f "${TRAIN_FILE}" ] && echo "SKIP ${VLEVEL}: no data" && continue
+        results_exist "${RES}" && echo "SKIP ${VLEVEL}: results exist" && continue
+
+        if ! adapter_exists "${ADAPTER}"; then
+            python3 "${TRAIN}" stage2 \
+                --adapter-dir "${S1}" --v0-data "${TRAIN_FILE}" \
+                --output-dir "${ADAPTER}" --model "${MODEL14B}" \
+                --epochs 3 --batch-size ${BS} --gradient-accumulation ${GA} \
+                --learning-rate ${LR2} --max-length ${ML} \
+                --lora-r ${LR} --lora-alpha ${LA} --resume
+        fi
+
+        python3 "${EVAL}" \
+            --scheme "${SCHEME_EVAL}" --format "${FMT}" --vlevel "${VLEVEL}" \
+            --adapter-dir "${ADAPTER}" --test-file "${TEST_FILE}" \
+            --output "${RES}" --model-name "${MODEL14B}" --max-examples ${EVAL_MAX}
+
+        save_progress "${DATA_DIR_NAME} 14B ${VLEVEL}"
+        rm -rf "${ADAPTER}"
+    done
+
+    echo "============================================================"
+    echo "[$(timestamp)] GPU ${GPU_ID}: ${DATA_DIR_NAME} 14B COMPLETE"
+    echo "============================================================"
+}
+
+run_ladder_14b 6 sentlen  poems sentlen_poems  > /dev/shm/gpu6.log 2>&1 &
+run_ladder_14b 7 synonyms poems synonym_poems  > /dev/shm/gpu7.log 2>&1 &
+
+echo "Monitor: tail -3 /dev/shm/gpu{0,1,2,3,4,5,6,7}.log"
+wait
+
+echo "[$(timestamp)] ALL COMPLETE"
 python3 -c "
 import json, os
-v0_ref = {'acrostics': 62.0, 'synonyms': 13.8, 'sentlen': 17.6}
-encoding_tax = {'acrostics': 0.950, 'synonyms': 0.490, 'sentlen': 0.669,
-                'synonym_poems': 0.573, 'sentlen_poems': 0.158, 'punctuation': 0.460}
-
-print('NEW SCHEMES vs ENCODING TAX PREDICTION')
-print(f'{\"Scheme\":<18} {\"Stage1\":>8} {\"V0\":>8} {\"Enc.Tax\":>8} {\"Predicted\":>10}')
-print('-' * 56)
-
-for scheme in ['acrostics', 'synonyms', 'sentlen', 'synonym_poems', 'sentlen_poems', 'punctuation']:
-    s1, v0 = '--', '--'
-    for m in ['qwen-7b']:
-        for name, fname in [('s1', 'stage1_results_200.json'), ('v0', 'v0_results_200.json')]:
-            p = f'results/{scheme}/{m}/{fname}'
-            if not os.path.exists(p):
-                # Try v2 paths
-                for alt in [f'results/{scheme}_v2/{m}/{fname}', f'results/{scheme}s_v2/{m}/{fname}']:
-                    if os.path.exists(alt):
-                        p = alt
-                        break
-            if os.path.exists(p):
-                d = json.load(open(p))['overall']
-                if name == 's1': s1 = f'{d[\"exact_recovery_rate\"]:.1%}'
-                else: v0 = f'{d[\"exact_recovery_rate\"]:.1%}'
-    tax = encoding_tax.get(scheme, 0)
-    print(f'{scheme:<18} {s1:>8} {v0:>8} {tax:>7.3f} {\"\":>10}')
-" | tee results/new_schemes_summary.txt
-
+combos_7b = ['acrostics_prose','sentlen_poems','synonym_poems','sentlen_prose','synonyms_prose','acrostics_poems']
+combos_14b = ['sentlen_poems','synonym_poems']
+print('=== 7B RESULTS ===')
+for combo in combos_7b:
+    print(f'--- {combo} ---')
+    for v in ['stage1','v0','v1a','v2']:
+        f=f'results/{combo}/qwen-7b/{v}_results_200.json'
+        if os.path.exists(f):
+            d=json.load(open(f))['overall']
+            print(f'  {v}: {d[\"exact_recovery_rate\"]:.1%}')
+        else: print(f'  {v}: --')
+print()
+print('=== 14B RESULTS ===')
+for combo in combos_14b:
+    print(f'--- {combo} ---')
+    for v in ['stage1','v0','v1a','v2']:
+        f=f'results/{combo}/qwen-14b/{v}_results_200.json'
+        if os.path.exists(f):
+            d=json.load(open(f))['overall']
+            print(f'  {v}: {d[\"exact_recovery_rate\"]:.1%}')
+        else: print(f'  {v}: --')
+"
 save_progress "All new scheme experiments complete"
-echo "[$(timestamp)] ALL DONE"
