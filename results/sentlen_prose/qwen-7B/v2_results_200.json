@@ -1,0 +1,1841 @@
+{
+  "metadata": {
+    "stage": "v0",
+    "scheme": "sentlen",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "adapter": "/dev/shm/sentlen_prose-7B-v2",
+    "eval_file": "data/sentlen_prose/v2/test.jsonl",
+    "n_examples": 180,
+    "temperature": 0.7,
+    "threshold": 8,
+    "payload_type": "variable_4_7"
+  },
+  "overall": {
+    "n": 180,
+    "exact_recovery_rate": 0.18333333333333332,
+    "partial_recovery_rate": 0.7283068783068783,
+    "avg_edit_distance": 1.5666666666666667
+  },
+  "by_length": {
+    "5": {
+      "n": 11,
+      "exact_recovery_rate": 0.18181818181818182,
+      "partial_recovery_rate": 0.7272727272727273,
+      "avg_edit_distance": 1.3636363636363635
+    },
+    "6": {
+      "n": 136,
+      "exact_recovery_rate": 0.16176470588235295,
+      "partial_recovery_rate": 0.7181372549019608,
+      "avg_edit_distance": 1.6102941176470589
+    },
+    "7": {
+      "n": 33,
+      "exact_recovery_rate": 0.2727272727272727,
+      "partial_recovery_rate": 0.7705627705627706,
+      "avg_edit_distance": 1.4545454545454546
+    }
+  },
+  "detailed_results": [
+    {
+      "prompt": "Write about the critical importance of safety",
+      "expected_payload": "1011110",
+      "payload_length": 7,
+      "response": "Safety is paramount in every aspect of life and work. It saves lives. Ensuring safety measures are in place can prevent accidents and injuries. In workplaces, implementing safety protocols reduces the risk of workplace incidents significantly. In homes, practicing safety habits can protect families from unforeseen dangers. Safety matters. By prioritizing safety, we create environments where individuals can thrive without fear.",
+      "recovered": "1011101",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about how modern cities handle waste",
+      "expected_payload": "1011011",
+      "payload_length": 7,
+      "response": "Modern cities manage waste efficiently through a combination of recycling programs and advanced disposal technologies. Waste sorting is essential. Many urban areas have implemented comprehensive recycling initiatives to reduce landfill use significantly. These efforts often involve community education campaigns to promote responsible disposal practices among residents. Additionally, cities are increasingly adopting innovative solutions like waste-to-energy facilities to convert trash into usable energy sources. Sustainable practices are crucial. By adopting these strategies, cities can minimize environmental impact and foster a more sustainable future for all inhabitants.",
+      "recovered": "1011101",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the beauty of a sunset",
+      "expected_payload": "111111",
+      "payload_length": 6,
+      "response": "The beauty of a sunset captivates the heart and soul, painting the sky with vibrant hues. As the sun dips below the horizon, it illuminates clouds in shades of orange, pink, and purple. The gentle breeze carries the day's warmth, inviting reflection on the moments that have passed. Each sunset serves as a reminder of nature's artistry and the fleeting nature of time. The tranquil atmosphere encourages quietude, allowing for deep introspection and peace. In these moments, the world seems to slow down, offering a beautiful conclusion to another day.",
+      "recovered": "111111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Explain the simple joy of gifts",
+      "expected_payload": "110010",
+      "payload_length": 6,
+      "response": "Gifts bring happiness. They create moments of surprise and excitement for everyone involved. A small token can mean so much. The thought behind a gift often resonates more than its value. Wrapping paper adds to the anticipation and joy of receiving a present. Gifts are heartwarming.",
+      "recovered": "010110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe the deep value of patience",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Patience is a profound virtue that cultivates resilience and understanding in life's challenges. It allows us to appreciate the journey rather than solely focusing on the destination. In moments of waiting, we often discover deeper insights about ourselves and our true desires. Good things take time. By embracing patience, we can navigate through difficulties with grace and dignity. True growth requires patience.",
+      "recovered": "111010",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Describe how architecture reflects local culture",
+      "expected_payload": "111100",
+      "payload_length": 6,
+      "response": "Architecture serves as a tangible expression of a community's values and traditions. It showcases the historical influences that shape the identity of a region. Buildings often incorporate local materials and design elements that reflect the environment. Cultural symbols are integrated into architectural styles, creating a sense of belonging. The layout of urban spaces can also reveal societal norms and relationships. Architecture tells stories.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe how engineers build strong bridges",
+      "expected_payload": "110101",
+      "payload_length": 6,
+      "response": "Engineers meticulously analyze various factors to design strong and durable bridges. They consider materials, load-bearing capacities, and environmental conditions during the planning stages. Safety is paramount. Advanced technology aids in simulations that predict structural integrity under stress. Additionally, regular maintenance checks ensure that bridges remain reliable over time. Ultimately, the collaboration of skilled professionals leads to robust infrastructure that withstands the test of nature.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain why sleep is so important",
+      "expected_payload": "010101",
+      "payload_length": 6,
+      "response": "Sleep is essential for maintaining optimal physical and mental health in individuals. It plays a crucial role in memory consolidation, emotional regulation, and overall well-being. Quality sleep enhances focus. Adequate rest supports the immune system, allowing the body to fight off infections more effectively. Without sufficient sleep, cognitive functions can suffer significantly, leading to decreased productivity. Prioritize your sleep.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Explain challenges of learning new skills",
+      "expected_payload": "011111",
+      "payload_length": 6,
+      "response": "Learning new skills can be daunting. It often requires significant time and effort to master the basics. Additionally, the fear of failure can hinder progress and motivation for many learners. Many people also struggle with maintaining focus and discipline during the learning process. Furthermore, finding the right resources and guidance can be a challenge in today's vast information landscape. Ultimately, perseverance is key.",
+      "recovered": "011110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the complex process of construction",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "Construction is a meticulous process that involves careful planning and execution. It begins with design concepts that evolve into detailed blueprints for builders. Once the plans are finalized, permits and approvals are necessary to ensure safety standards are met. After securing the necessary permissions, materials are sourced and delivered to the construction site. Skilled labor then transforms these materials into functional structures through various techniques and tools. Ultimately, thorough inspections are conducted to guarantee that the final product meets all required specifications and regulations.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the hardworking life of farmers",
+      "expected_payload": "111110",
+      "payload_length": 6,
+      "response": "Farmers rise before dawn, tending to their crops and livestock with unwavering dedication. Each day brings new challenges, from unpredictable weather patterns to fluctuating market prices. They work tirelessly, often in harsh conditions, to ensure a steady supply of food for communities. With hands calloused from labor, they nurture the land and protect its resources for future generations. Their commitment is unwavering. Farming is a way of life.",
+      "recovered": "111100",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss cooking a favorite meal",
+      "expected_payload": "10101",
+      "payload_length": 5,
+      "response": "Cooking my favorite meal, a rich and savory lasagna, always brings me joy. It\u2019s comforting. The layers of pasta, cheese, and meat sauce meld together beautifully in the oven. Each bite is pure delight. I love it.",
+      "recovered": "10100",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss the wonder of stargazing nights",
+      "expected_payload": "110110",
+      "payload_length": 6,
+      "response": "Stargazing nights offer a breathtaking escape into the vastness of the universe. The night sky sparkles with countless stars, each telling its own story of ancient light. As we lie beneath the heavens, our imaginations soar, dreaming of distant galaxies and mysterious planets. It\u2019s a moment of quiet reflection. The constellations guide us. Wonder fills the air.",
+      "recovered": "111000",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Discuss impact of technology on life",
+      "expected_payload": "101111",
+      "payload_length": 6,
+      "response": "Technology has profoundly transformed the way we communicate and interact daily. From smartphones to social media, our lives are now interconnected in unprecedented ways. Information is readily available. This constant access has reshaped our expectations for immediacy and convenience. As a result, many people now rely heavily on technology for both personal and professional purposes. Ultimately, the impact of technology on life continues to evolve, influencing how we work, learn, and connect with one another.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain a walk through the park",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "As I strolled along the winding path, the sun shone brightly overhead. Children laughed and played nearby, their joy infectious and heartwarming. A gentle breeze rustled the leaves of the tall trees, creating a soothing melody. I paused to admire the vibrant flowers blooming in every color imaginable, each one a tiny masterpiece. Nature feels alive. It's serene.",
+      "recovered": "111100",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe the community benefits of parks",
+      "expected_payload": "110011",
+      "payload_length": 6,
+      "response": "Parks serve as vital green spaces that enhance community well-being and connectivity. They provide opportunities for recreation, relaxation, and social interaction among residents. Nature fosters happiness. Parks also promote physical health through accessible exercise facilities and walking paths. Additionally, they contribute to environmental sustainability by supporting local ecosystems and reducing urban heat. Community pride thrives.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe the many benefits of bilingualism",
+      "expected_payload": "110010",
+      "payload_length": 6,
+      "response": "Bilingualism offers numerous cognitive advantages that enhance overall brain function. Individuals who speak multiple languages often experience improved problem-solving and critical thinking skills. Additionally, being bilingual can lead to greater cultural awareness and empathy for diverse communities. Enhanced job opportunities abound. Bilingual individuals frequently have access to more career paths and higher earning potential. Language skills matter.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe the lasting appeal of hiking",
+      "expected_payload": "110110",
+      "payload_length": 6,
+      "response": "Hiking offers a unique blend of physical challenge and mental clarity that resonates with many people. The opportunity to connect with nature fosters a sense of peace and rejuvenation in our busy lives. Fresh air invigorates. Scenic views inspire. Hikers often find solace in the rhythmic sound of their footsteps on the trail. Nature heals.",
+      "recovered": "110010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss the wonder of stargazing nights",
+      "expected_payload": "110100",
+      "payload_length": 6,
+      "response": "Stargazing nights offer a breathtaking escape into the vast universe above us. The twinkling stars seem to whisper ancient secrets of the cosmos. Each constellation tells a story, connecting us to the past and inspiring our dreams for the future. As we lie beneath the night sky, the world feels small yet infinitely expansive at the same time. The beauty of stargazing captivates the imagination and ignites a sense of wonder in everyone who participates. It is truly magical.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain how natural composting actually works",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "Natural composting is a biological process that transforms organic waste into nutrient-rich soil. Microorganisms like bacteria and fungi break down food scraps and yard waste efficiently. As these microorganisms consume the material, they generate heat, which accelerates decomposition. The process involves aerobic respiration, where oxygen is essential for optimal breakdown. Over time, this results in dark, crumbly compost that enriches the soil. Composting benefits gardens.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe a memorable travel experience",
+      "expected_payload": "11111",
+      "payload_length": 5,
+      "response": "Exploring the ancient temples of Angkor Wat was truly unforgettable. The intricate carvings and towering structures left me in awe of history. The vibrant colors and sounds of the local markets added to the adventure. I tasted exotic cuisine. Wandering through the lush forests, I felt connected to nature like never before. It was a journey of a lifetime.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss how engineers build strong bridges",
+      "expected_payload": "110101",
+      "payload_length": 6,
+      "response": "Engineers meticulously analyze various factors to ensure the structural integrity of bridges. They consider materials, loads, and environmental conditions during the design process. Strong materials matter. Advanced technology allows for precise calculations and simulations of bridge stress. Safety is always prioritized. Ultimately, careful planning and innovative techniques lead to durable and reliable structures.",
+      "recovered": "110101",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Discuss the enduring appeal of roadtrips",
+      "expected_payload": "110111",
+      "payload_length": 6,
+      "response": "The enduring appeal of road trips lies in their ability to create unforgettable memories and adventures. Traveling by car allows for spontaneous detours and unexpected discoveries along the way. The open road fosters a sense of freedom that is often lacking in daily life. Friends and family bond over shared experiences and laughter during long drives. Scenic routes offer breathtaking views that can inspire a deep connection to nature. Ultimately, road trips serve as a reminder of the joy found in exploration and connection.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the lasting appeal of hiking",
+      "expected_payload": "010110",
+      "payload_length": 6,
+      "response": "Hiking remains popular today. It offers a unique blend of physical activity and mental relaxation in nature. Many people find solace in the tranquility of wooded trails and mountain vistas. The opportunity to disconnect from technology and connect with the environment fosters a sense of peace. Additionally, hiking provides a chance to explore new landscapes and challenge oneself physically and mentally. Nature calls us all.",
+      "recovered": "011110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe the benefits of outdoor activities",
+      "expected_payload": "110111",
+      "payload_length": 6,
+      "response": "Outdoor activities provide numerous physical and mental health benefits that enhance overall well-being. Engaging in nature can significantly reduce stress levels and improve mood. Fresh air invigorates. Regular participation in outdoor sports fosters social connections and teamwork skills. Additionally, spending time in nature promotes better sleep patterns and increased energy levels. Ultimately, embracing the outdoors encourages a healthier lifestyle.",
+      "recovered": "110111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Write about the deep importance of voting",
+      "expected_payload": "1011111",
+      "payload_length": 7,
+      "response": "Voting is a fundamental right that empowers citizens to influence their government. It matters greatly. By participating in elections, individuals express their values and priorities as a community. Each vote contributes to shaping policies that affect our daily lives and future. Engaging in the electoral process fosters a sense of responsibility and civic duty among citizens. When people vote, they ensure that diverse voices are heard and represented in decision-making. Ultimately, voting is essential for creating a democratic society where change can occur.",
+      "recovered": "1011111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Write about the joy of planting trees",
+      "expected_payload": "1010001",
+      "payload_length": 7,
+      "response": "Planting trees brings a profound sense of joy and fulfillment to our lives. It feels good. The act of nurturing a sapling transforms it into a towering giant over time. Trees provide shade. They clean the air. Nature thrives. With each tree planted, we contribute to a healthier planet for future generations.",
+      "recovered": "1010001",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Write about how busy bees make honey",
+      "expected_payload": "1011001",
+      "payload_length": 7,
+      "response": "Busy bees work tirelessly to gather nectar from blooming flowers. They collect it carefully. Once they return to the hive, they pass the nectar to other bees for processing. Inside the hive, enzymes mix with the nectar, transforming it into honey. Bees fan their wings to evaporate excess moisture, thickening the honey. This process takes time and effort. Ultimately, the honey is stored in hexagonal wax cells for future use.",
+      "recovered": "1011101",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe the enduring value of hardwork",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Hard work pays off. Consistently putting in effort leads to remarkable achievements over time. Success requires dedication. The rewards of hard work often extend beyond personal gains, impacting others positively. Perseverance is key. Ultimately, the lessons learned through hard work shape character and resilience for future challenges.",
+      "recovered": "010101",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write about the role of dedicated teachers",
+      "expected_payload": "1011111",
+      "payload_length": 7,
+      "response": "Dedicated teachers play a crucial role in shaping the future of their students. They inspire learning. By fostering a positive classroom environment, they encourage students to engage with the material. Their commitment often extends beyond academics, as they provide emotional support and guidance. Dedicated teachers recognize each student's unique strengths and tailor their instruction accordingly. Through mentorship, they help students develop critical thinking and problem-solving skills. Ultimately, the impact of dedicated teachers can last a lifetime, influencing not only academic success but also personal growth.",
+      "recovered": "1011111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Write about the bright future of renewables",
+      "expected_payload": "1011110",
+      "payload_length": 7,
+      "response": "The future of renewable energy is poised to revolutionize global sustainability efforts. Innovations in solar technology will significantly reduce energy costs for consumers. Advances in wind turbine designs promise to enhance efficiency and minimize environmental impact. As battery storage solutions improve, they will facilitate a more reliable grid for renewable power. Governments worldwide are increasingly investing in green technologies to combat climate change. This shift towards renewables not only benefits the environment but also creates millions of jobs globally.",
+      "recovered": "111111?",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about overcoming a very difficult challenge",
+      "expected_payload": "1010001",
+      "payload_length": 7,
+      "response": "I faced a daunting challenge that seemed insurmountable at first. It was overwhelming. I felt like giving up many times during the process. Doubts crept in daily. However, I found strength in support from friends and family. Their encouragement helped me push through the toughest moments. Ultimately, I emerged stronger and more resilient than before.",
+      "recovered": "1010111",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain animals adapting to their environment",
+      "expected_payload": "010010",
+      "payload_length": 6,
+      "response": "Animals adapt to survive. Over time, species develop traits that enhance their chances of thriving in specific environments. For instance, polar bears have thick fur and blubber to insulate against extreme cold. Camouflage helps many creatures avoid predators or sneak up on prey unnoticed. Some birds migrate seasonally to find better food sources and favorable climates. Adaptation is essential for survival.",
+      "recovered": "011110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain how the moon causes tides",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "The gravitational pull of the moon significantly influences Earth's ocean tides. As the moon orbits our planet, its gravity creates bulges in the water. These bulges result in high and low tides experienced along coastlines globally. Tides rise and fall. The alignment of the sun, moon, and Earth further affects tidal patterns. Understanding tides is essential.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the beauty of a snowscape",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "A snowscape is enchanting. The world transforms into a pristine white wonderland, where every surface sparkles with frost. Tall trees stand tall, their branches heavy with glistening snowflakes that create a stunning blanket. The air feels crisp and clean, filled with the gentle crunch of snow beneathfoot. In this serene landscape, time seems to slow down, allowing for quiet reflection and peaceful moments. Pure magic surrounds us here.",
+      "recovered": "011110",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Discuss the complex process of construction",
+      "expected_payload": "110111",
+      "payload_length": 6,
+      "response": "The complex process of construction involves meticulous planning and coordination among various stakeholders. From architects to contractors, each role plays a crucial part in ensuring the project's success. Safety regulations must be strictly adhered to throughout the entire construction timeline. Additionally, managing timelines and budgets is essential for preventing delays and cost overruns. Ultimately, the collaboration and communication between all parties contribute to the creation of functional and beautiful structures. Construction is challenging.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain the wonder of stargazing nights",
+      "expected_payload": "010100",
+      "payload_length": 6,
+      "response": "Stargazing nights offer a breathtaking escape into the vastness of the universe. The sky sparkles with countless stars, each one telling its own story. Constellations guide our imaginations, connecting us to ancient myths and legends. The Milky Way stretches overhead, a dazzling band of light that captivates the heart. As we lie beneath the stars, we feel both insignificant and deeply connected to the cosmos. It\u2019s truly magical.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Explain the natural process of recycling",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "Recycling is a vital process that transforms waste materials into new products. It helps conserve natural resources and reduces environmental pollution significantly. Materials like paper, plastic, and glass are collected from various sources for recycling. These items are then sorted and cleaned to remove contaminants before being processed further. After processing, the recycled materials are manufactured into new goods, closing the recycling loop effectively. Recycling benefits everyone.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the magic of early morning",
+      "expected_payload": "011100",
+      "payload_length": 6,
+      "response": "The magic of early morning unfolds like a delicate tapestry, weaving together the soft whispers of nature and the promise of a new day. As dawn breaks, the world awakens slowly, bathed in a gentle glow that seems to renew everything around us. Birds begin their songs, filling the air with melodies that celebrate the beauty of this fleeting moment. Mist clings to the ground like a whispering veil, hiding secrets of the night and inviting us to explore. With each breath, the crisp air invigorates our spirits, reminding us of life's simple joys. Embrace the stillness.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe the lasting appeal of hiking",
+      "expected_payload": "010110",
+      "payload_length": 6,
+      "response": "Hiking continues to captivate people of all ages and backgrounds worldwide. The combination of physical activity and connection to nature fosters a unique sense of well-being. Fresh air invigorates. Scenic views inspire. Many find solace in the rhythmic pace of walking through forests or along mountain trails. Ultimately, hiking offers a perfect blend of adventure, relaxation, and personal growth that resonates with many.",
+      "recovered": "110011",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Discuss the importance of staying healthy",
+      "expected_payload": "111101",
+      "payload_length": 6,
+      "response": "Staying healthy is essential for maintaining overall well-being and quality of life. Good health matters. Regular exercise and a balanced diet can significantly reduce the risk of chronic diseases. Additionally, mental health is just as important as physical health, influencing our daily functioning and happiness. Health is wealth. By prioritizing our well-being, we can enjoy more fulfilling relationships and greater productivity in our lives. Ultimately, making informed choices about our health can lead to a longer, happier life filled with vitality.",
+      "recovered": "101101",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write about how forests support entire ecosystems",
+      "expected_payload": "1010010",
+      "payload_length": 7,
+      "response": "Forests play a crucial role in supporting diverse ecosystems and wildlife habitats. They provide essential resources. Trees produce oxygen. Wildlife thrives here. Many species rely on forest ecosystems for food, shelter, and reproduction. The intricate relationships within these environments ensure the balance of nature. Forests sustain life.",
+      "recovered": "1000110",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about a cold and crisp morning",
+      "expected_payload": "1010100",
+      "payload_length": 7,
+      "response": "The sun barely peeked over the horizon as I stepped outside, greeted by a cold and crisp morning. The air felt sharp. Frost glistened on the grass, creating a sparkling blanket that shimmered in the early light. A gentle breeze rustled the bare branches of the trees, whispering secrets of the night. Birds chirped softly, their melodies echoing through the stillness of dawn. It was refreshing. The world felt fresh.",
+      "recovered": "1011100",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the importance of digital literacy",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "Digital literacy is essential today. It empowers individuals to navigate and engage with technology effectively in various aspects of life. In a world increasingly driven by digital communication, understanding these tools is crucial for personal and professional success. Moreover, being digitally literate enhances critical thinking skills, allowing individuals to evaluate online information accurately. As technology continues to evolve, those who possess digital literacy skills will thrive in an ever-changing landscape. Embrace digital literacy now.",
+      "recovered": "011110",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Write about the deep importance of voting",
+      "expected_payload": "1011111",
+      "payload_length": 7,
+      "response": "Voting is a fundamental right that empowers individuals to shape their communities. It matters greatly. Each vote represents a voice in the democratic process and influences policy decisions. By participating in elections, citizens express their values and priorities for the future. Engaging in voting fosters civic responsibility and encourages community involvement. Every ballot cast can make a difference in shaping laws and regulations. Ultimately, voting is essential for ensuring that diverse voices are heard and represented.",
+      "recovered": "1011111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Describe a warm bonfire on beach",
+      "expected_payload": "110000",
+      "payload_length": 6,
+      "response": "The bonfire crackled softly. Flames danced high. The flickering light illuminated the faces of friends gathered around. Laughter filled the air. Waves crashed nearby. Warmth enveloped everyone.",
+      "recovered": "001000",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write about reuniting with old dear friends",
+      "expected_payload": "1011100",
+      "payload_length": 7,
+      "response": "Reuniting with old dear friends after many years apart is truly heartwarming. It feels amazing. The laughter we shared instantly transported us back to our younger days. Each story recounted brought back vivid memories that filled us with joy and nostalgia. As we reminisced about the adventures we had together, it felt like no time had passed at all. We promised to keep in touch, cherishing these moments and creating new ones. Old friends are forever.",
+      "recovered": "1011110",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write about a cold and crisp morning",
+      "expected_payload": "1010110",
+      "payload_length": 7,
+      "response": "The sun barely peeked over the horizon, casting a pale light on the frost-covered ground. The air felt sharp. A gentle breeze whispered through the trees, carrying the faint scent of pine. Birds chirped softly. Everything was still. A blanket of white lay across the landscape, making the world feel fresh and new. It was a perfect morning.",
+      "recovered": "1010010",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain a warm bonfire on beach",
+      "expected_payload": "010000",
+      "payload_length": 6,
+      "response": "The bonfire crackled softly. Flames danced high, casting flickering shadows on the sand. Warmth enveloped everyone nearby. Laughter filled the air as friends shared stories around the firelight. The night sky sparkled above. Memories were made here.",
+      "recovered": "010100",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss the importance of digital literacy",
+      "expected_payload": "111110",
+      "payload_length": 6,
+      "response": "Digital literacy is essential today. It equips individuals with the skills needed to navigate technology effectively and responsibly. Understanding digital tools enhances communication and collaboration across various platforms. Moreover, being digitally literate fosters critical thinking and the ability to evaluate online information. In an increasingly tech-driven world, these skills are crucial for personal and professional success. Embrace digital literacy now.",
+      "recovered": "011110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain a perfect relaxing weekend",
+      "expected_payload": "01110",
+      "payload_length": 5,
+      "response": "A perfect relaxing weekend begins. I wake up to the gentle sound of birds chirping outside my window, inviting me to embrace a day filled with peace and tranquility. After sipping my favorite tea, I spend hours reading a captivating novel while basking in the warm sunlight streaming through my bedroom curtains. Later, I enjoy a delicious meal prepared from fresh ingredients, savoring each bite and feeling content. It feels blissful.",
+      "recovered": "01110",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Explain the beauty of a snowscape",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "A snowscape is breathtakingly beautiful. The pristine white blanket covers everything, transforming the landscape into a winter wonderland. Trees stand tall, their branches heavy with glistening snowflakes that sparkle in the sunlight. Silent and serene, the world feels hushed and peaceful under the soft, powdery layer. Each footstep crunches delightfully, creating a unique melody in this enchanting setting. Nature\u2019s masterpiece, truly captivating and magical.",
+      "recovered": "011110",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Explain the creative basics of photography",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "Understanding light is essential for capturing compelling photographs. The interplay of shadows and highlights can dramatically alter the mood of an image. Composition techniques, such as the rule of thirds, guide viewers' attention effectively. Focus matters. Experimenting with different angles can reveal unique perspectives on familiar subjects. Capture the moment.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write about what makes a good friendship",
+      "expected_payload": "1011000",
+      "payload_length": 7,
+      "response": "A good friendship is built on trust, understanding, and mutual respect over time. Honesty matters. True friends support each other through both joy and hardship. Communication is key. Shared experiences create lasting memories that strengthen the bond. Loyalty is essential. Kindness fosters a warm connection that lasts a lifetime.",
+      "recovered": "1010101",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Discuss challenges of learning new skills",
+      "expected_payload": "111111",
+      "payload_length": 6,
+      "response": "Learning new skills can often feel overwhelming due to the initial complexity involved. Many individuals struggle with finding the time to practice regularly amidst busy schedules. Additionally, fear of failure can hinder progress and discourage further attempts at mastery. The frustration of not seeing immediate results can lead to decreased motivation over time. Moreover, adapting to new techniques requires mental flexibility that not everyone possesses naturally. Ultimately, overcoming these challenges is essential for personal growth and development in various areas of life.",
+      "recovered": "111111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Explain the enduring appeal of roadtrips",
+      "expected_payload": "010111",
+      "payload_length": 6,
+      "response": "Road trips offer a unique blend of adventure and freedom that captivates many travelers. The open road beckons. They allow us to create unforgettable memories while exploring new places at our own pace. With every mile traveled, we discover hidden gems and unexpected adventures along the way. The sense of exploration ignites curiosity and fosters a deeper connection to nature and culture. Whether it\u2019s a spontaneous detour or a well-planned route, road trips inspire a sense of wanderlust in everyone. Ultimately, they represent a perfect escape from everyday life, making them a cherished tradition for generations.",
+      "recovered": "101111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain a cold and crisp morning",
+      "expected_payload": "010110",
+      "payload_length": 6,
+      "response": "The sun peeked over the horizon, casting a golden glow on the frost-covered grass. A light breeze whispered through the trees, carrying the scent of wet earth and fresh air. The world felt alive. Each breath I took was cold and invigorating, filling my lungs with the crisp morning chill. It was refreshing. Everything seemed to sparkle in the early light, as if nature itself was celebrating the start of a new day.",
+      "recovered": "110101",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe a walk through the park",
+      "expected_payload": "111110",
+      "payload_length": 6,
+      "response": "The sun shone brightly as I strolled along the winding path of the park, surrounded by vibrant flowers and tall trees swaying gently in the breeze. Children laughed and played nearby, their joyful voices blending with the rustling leaves and chirping birds. A perfect day. I paused to admire a colorful butterfly fluttering gracefully over the flower beds, its wings shimmering like delicate rainbows in the sunlight. Nearby, an elderly couple sat on a bench, sharing stories and laughter while enjoying the serene atmosphere. It was refreshing.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain a walk through the park",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "The sun shone brightly. Children laughed and played on the swings nearby, their joy echoing through the trees. A gentle breeze rustled the leaves overhead, creating a soothing soundtrack for our stroll. As I walked along the winding path, I admired the vibrant flowers blooming in every direction. Nearby, a couple shared a picnic, enjoying the serene atmosphere and beautiful weather. It was a perfect day.",
+      "recovered": "011110",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Discuss how forests support entire ecosystems",
+      "expected_payload": "110010",
+      "payload_length": 6,
+      "response": "Forests serve as vital habitats that support a diverse array of plant and animal species. They provide essential resources such as food, shelter, and water for countless organisms. The intricate relationships within forest ecosystems foster mutualism, competition, and cooperation among different living beings. Trees produce oxygen. Wildlife thrives here. Biodiversity flourishes.",
+      "recovered": "111000",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain the beauty of a snowscape",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "A snowscape is breathtakingly beautiful. The pristine white blanket covers everything in a serene, tranquil manner. Trees stand tall, their branches heavy with glistening snowflakes that sparkle like diamonds. The air feels crisp and fresh, filled with the soft crunch of footsteps on the packed snow. As sunlight dances upon the snow, it creates a dazzling display of reflections and shadows. In this winter wonderland, time seems to slow down, inviting moments of peace and reflection.",
+      "recovered": "011111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain how engineers build strong bridges",
+      "expected_payload": "010101",
+      "payload_length": 6,
+      "response": "Engineers meticulously analyze various factors to design durable and safe bridges. They consider materials, load-bearing requirements, and environmental influences during the planning stages. Strong materials matter. Advanced techniques like finite element analysis help predict structural integrity under stress. Safety is prioritized. Ultimately, their expertise ensures that bridges can withstand significant forces while providing reliable transportation.",
+      "recovered": "110101",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the beauty of a snowscape",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "A snowscape is breathtakingly beautiful. The world transforms into a pristine, white wonderland that captivates the eye. Each flake glistens like a delicate diamond, creating a mesmerizing interplay of light and shadow. Trees stand tall, their branches heavy with snow, forming a serene winter forest. As the sun sets, the landscape glows with a soft, golden hue that enhances its tranquility. Pure magic surrounds us here.",
+      "recovered": "011110",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Discuss a favorite warm childhood memory",
+      "expected_payload": "110000",
+      "payload_length": 6,
+      "response": "One of my favorite warm childhood memories is the summer afternoons spent at my grandmother's house, where we would gather fresh strawberries from her garden and make homemade jam together. The sun shone brightly. We laughed joyfully. The scent of baking bread filled the air as we worked side by side, creating a delicious treat that still brings back smiles today. Those moments felt magical.",
+      "recovered": "10010?",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Explain animals adapting to their environment",
+      "expected_payload": "010010",
+      "payload_length": 6,
+      "response": "Animals adapt to survive. Over time, species develop traits that enhance their chances of survival in specific environments. For instance, polar bears have thick fur and blubber to insulate against extreme cold. Camouflage helps many creatures avoid predators. Some animals migrate seasonally to find better food sources. Adaptation is essential for thriving.",
+      "recovered": "011010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the changing role of newspapers",
+      "expected_payload": "010111",
+      "payload_length": 6,
+      "response": "The role of newspapers has evolved significantly in the digital age. Once the primary source of news, they now compete with online platforms for readership. Many have shifted to digital formats to stay relevant and reach younger audiences. As a result, traditional print circulation has declined dramatically over the past decade. Newspapers are adapting quickly. They are increasingly focusing on investigative journalism and in-depth analysis to attract subscribers.",
+      "recovered": "111101",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write about the wonder of ancient ruins",
+      "expected_payload": "1010110",
+      "payload_length": 7,
+      "response": "Ancient ruins inspire awe and curiosity, inviting us to delve into history. They tell stories. Each stone holds secrets from civilizations long gone, whispering tales of their lives. Time has weathered them beautifully. Walking among these remnants evokes a sense of connection to our ancestors. They stand as timeless reminders of human ingenuity and resilience through ages. History comes alive here.",
+      "recovered": "1010110",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Describe reuniting with old dear friends",
+      "expected_payload": "111100",
+      "payload_length": 6,
+      "response": "Reuniting with old dear friends after years apart is always special. The laughter we shared seemed to fill the air as if time had stood still. Each story recounted brought back cherished memories that warmed our hearts. It felt incredible. We talked for hours, reminiscing about our adventures and the lessons learned along the way. I cherish these moments.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe how teamwork leads to success",
+      "expected_payload": "110100",
+      "payload_length": 6,
+      "response": "Teamwork fosters collaboration and creativity, allowing individuals to combine their unique strengths. When team members communicate effectively, they can address challenges more efficiently and innovatively. Together, we thrive. Success is a group effort. By pooling diverse skills and perspectives, teams can achieve goals that no single person could accomplish alone. United we stand, divided we fall.",
+      "recovered": "110010",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe animals adapting to their environment",
+      "expected_payload": "110000",
+      "payload_length": 6,
+      "response": "Animals have developed remarkable adaptations that allow them to thrive in diverse environments. For instance, polar bears have thick fur and fat layers that insulate them against extreme cold. In contrast, desert lizards change their coloration to regulate body temperature and avoid predators. Additionally, birds migrate seasonally to find more favorable habitats with abundant food sources. This ability to adapt ensures their survival in challenging conditions. Nature is truly incredible.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write about the lasting value of mentorship",
+      "expected_payload": "1011010",
+      "payload_length": 7,
+      "response": "Mentorship plays a crucial role in personal and professional growth for individuals. It provides guidance. Through mentorship, mentees gain valuable insights that can shape their futures. Knowledge is shared. A mentor's experience can illuminate paths that may otherwise remain hidden. This relationship fosters trust and builds lasting connections that extend beyond initial interactions. Ultimately, mentorship leaves a legacy of inspiration and empowerment for future generations.",
+      "recovered": "1010111",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe what makes a city livable",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "A livable city is one that offers a harmonious blend of amenities and accessibility for its residents. It features well-maintained public transportation systems that connect various neighborhoods efficiently. Access to quality healthcare, education, and recreational facilities enhances the overall quality of life significantly. Safety matters. Community engagement fosters a sense of belonging and mutual support among citizens. Green spaces are essential.",
+      "recovered": "111010",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Discuss animals adapting to their environment",
+      "expected_payload": "110010",
+      "payload_length": 6,
+      "response": "Animals have developed remarkable adaptations that allow them to thrive in diverse environments. For instance, desert animals often have thick fur or specialized skin to conserve water and regulate body temperature. Similarly, Arctic species possess insulating layers of fat and dense fur to withstand extreme cold. In addition, many insects change their coloration based on their surroundings to avoid predators and blend in effectively. Adaptations matter. Survival depends on it.",
+      "recovered": "111100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Explain the process of making coffee",
+      "expected_payload": "011100",
+      "payload_length": 6,
+      "response": "Start by measuring the right amount of coffee grounds for your desired strength. Next, heat water to just below boiling to extract the best flavors from the beans. Once the water reaches the optimal temperature, pour it over the coffee grounds evenly. Allow the mixture to steep for several minutes, allowing the flavors to fully develop and blend. After steeping, carefully pour the coffee into a mug or carafe, discarding any leftover grounds. Enjoy your freshly brewed cup of coffee, savoring each sip and relishing the rich aroma that fills the air.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe the enduring value of hardwork",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Hard work pays off. The dedication and effort invested in our endeavors often lead to remarkable results. Success requires persistence. Consistently putting in the time and energy can unlock opportunities that may otherwise remain hidden. Perseverance is key. Ultimately, those who embrace hard work often find themselves on a path to fulfillment and achievement.",
+      "recovered": "010101",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe the importance of staying healthy",
+      "expected_payload": "111101",
+      "payload_length": 6,
+      "response": "Staying healthy is essential for maintaining overall well-being and longevity in life. A balanced diet and regular exercise can significantly reduce the risk of chronic diseases. Additionally, mental health plays a crucial role in our overall quality of life and happiness. Prioritizing wellness helps us to stay productive and engaged in our daily activities. Health matters. Ultimately, making conscious choices about our lifestyle can lead to a more fulfilling and vibrant existence.",
+      "recovered": "111101",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Describe the many benefits of bilingualism",
+      "expected_payload": "010010",
+      "payload_length": 6,
+      "response": "Bilingualism offers numerous advantages that enhance cognitive and social skills in individuals. People who speak multiple languages often experience improved problem-solving abilities and enhanced creativity. Additionally, being bilingual can lead to better career opportunities and increased cultural awareness in diverse environments. Language matters. Communication flourishes. Embrace diversity.",
+      "recovered": "111000",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe reuniting with old dear friends",
+      "expected_payload": "111100",
+      "payload_length": 6,
+      "response": "Reuniting with old dear friends after years apart is always heartwarming and special. The laughter we shared flooded back instantly, as if no time had passed at all. Each story recounted brought us closer, reminding us of the bond we once had. It felt like a warm embrace. We reminisced about our adventures and the lessons learned during our youthful days. Time may have changed us, but our friendship remains timeless and strong.",
+      "recovered": "111011",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe how rivers shape the landscape",
+      "expected_payload": "110010",
+      "payload_length": 6,
+      "response": "Rivers play a crucial role in shaping the landscape through erosion and deposition. They carve valleys over time, creating dramatic terrain features that attract attention. As water flows, it sculpts hillsides and banks, altering the environment for various ecosystems. Sediments carried by rivers deposit fertile soil in floodplains, supporting diverse plant life. The constant movement of water also creates rapids and waterfalls, adding to the scenic beauty of the area. Rivers are essential.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the future of modern transportation",
+      "expected_payload": "111100",
+      "payload_length": 6,
+      "response": "The future of modern transportation will be shaped by innovative technologies and sustainable practices. Electric vehicles are expected to dominate the market, reducing our reliance on fossil fuels significantly. Autonomous driving systems will enhance safety and efficiency, transforming how we navigate urban environments. High-speed trains will connect cities in unprecedented ways, making long-distance travel more accessible than ever before. Flying taxis may revolutionize air travel, offering rapid transportation options above congested roads. As urban areas continue to grow, smart infrastructure will play a crucial role in managing traffic flow and optimizing public transport routes.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about how beautiful gardens grow tall",
+      "expected_payload": "1011010",
+      "payload_length": 7,
+      "response": "In the heart of spring, vibrant gardens flourish with life and color. They bloom beautifully. As sunlight filters through the leaves, it casts a warm glow on the flowers. Tall sunflowers reach for the sky, their heads swaying gently in the breeze. Delicate vines climb trellises, creating a lush green canopy overhead. Nature thrives here. Each plant grows stronger, showcasing its unique beauty in this enchanting setting.",
+      "recovered": "1011101",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe the importance of staying healthy",
+      "expected_payload": "111101",
+      "payload_length": 6,
+      "response": "Staying healthy is essential for maintaining overall well-being and longevity in life. Good health matters. Regular exercise and a balanced diet can significantly reduce the risk of chronic diseases. Additionally, mental health is just as important as physical health, impacting our daily lives and relationships. Health is wealth. Prioritizing wellness can enhance productivity and improve quality of life. Ultimately, making conscious choices about our health contributes to a happier, more fulfilling existence.",
+      "recovered": "101101",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the joy of planting trees",
+      "expected_payload": "010111",
+      "payload_length": 6,
+      "response": "Planting trees brings happiness. It's a rewarding experience. Watching them grow into towering giants fills our hearts with joy. Each tree planted contributes to a healthier planet and a better future. Nature thrives. We feel connected.",
+      "recovered": "001100",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Explain the calming effect of rain",
+      "expected_payload": "010111",
+      "payload_length": 6,
+      "response": "Rain soothes the soul. The gentle patter against the window creates a serene atmosphere. As droplets fall, they wash away the day's worries and stress. Nature's melody calms the mind. Each rainfall brings a sense of peace and renewal to the environment. In moments of quiet reflection, the sound of rain can inspire deep thoughts and tranquility.",
+      "recovered": "011011",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about reuniting with old dear friends",
+      "expected_payload": "1011100",
+      "payload_length": 7,
+      "response": "Reuniting with old dear friends after years apart is truly heartwarming. It feels surreal. As we shared stories and laughter, memories flooded back vividly. Each smile and embrace reminded us of the bonds we once shared. Time may have passed, but our connection remains strong and unwavering. It was magical. We should do this again soon.",
+      "recovered": "1011100",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Describe why curiosity matters so much",
+      "expected_payload": "111110",
+      "payload_length": 6,
+      "response": "Curiosity drives innovation. It fuels our desire to explore and understand the world around us. By asking questions, we uncover new insights and knowledge that enrich our lives. Curiosity fosters creativity. It encourages us to think outside the box and challenge existing norms. Ultimately, curiosity is essential for personal growth and development in every aspect of life.",
+      "recovered": "011011",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Explain a warm bonfire on beach",
+      "expected_payload": "010000",
+      "payload_length": 6,
+      "response": "The warm bonfire crackled softly, casting flickering shadows on the sandy beach. Flames danced high. The scent of burning wood mixed with the salty ocean breeze. Friends gathered around, sharing stories and laughter under the starlit sky. The night felt magical. As we roasted marshmallows, the fire's glow illuminated our smiling faces. Memories were made.",
+      "recovered": "101101",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Discuss the experience of learning driving",
+      "expected_payload": "111111",
+      "payload_length": 6,
+      "response": "Learning to drive for the first time can be both exhilarating and nerve-wracking. The thrill of maneuvering a vehicle on busy streets often overshadows initial fears. As I sat behind the wheel, my heart raced with anticipation and anxiety. Each lesson brought new challenges, from mastering parallel parking to navigating complex intersections. Ultimately, the experience taught me not only how to drive but also the importance of patience and focus.",
+      "recovered": "11111?",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe what makes a city livable",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "A city becomes truly livable when it offers a harmonious blend of amenities and services that cater to diverse needs. Access to quality healthcare, education, and recreational facilities significantly enhances residents' overall well-being and happiness. Safe neighborhoods matter. Public transportation is crucial. A vibrant cultural scene fosters community engagement and social connections among residents. Green spaces are essential.",
+      "recovered": "110010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the complex process of construction",
+      "expected_payload": "010111",
+      "payload_length": 6,
+      "response": "Construction involves multiple stages that require careful planning and execution. From initial designs to final inspections, every aspect must be meticulously managed. Skilled laborers, architects, and engineers collaborate to transform blueprints into reality. Safety regulations are essential. Time management is crucial. Ultimately, successful construction results in durable structures that withstand the test of time.",
+      "recovered": "111001",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Discuss the joy of planting trees",
+      "expected_payload": "110001",
+      "payload_length": 6,
+      "response": "Planting trees brings immense joy and fulfillment to those who engage in it. The act of nurturing life into the earth creates a deep sense of connection with nature. Watching saplings grow into towering giants over the years is truly rewarding. It\u2019s a beautiful reminder of our responsibility to future generations and the environment. Each tree planted contributes to cleaner air and a healthier planet for all. Ultimately, the joy of planting trees lies in the knowledge that we are fostering a greener tomorrow.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Discuss cooking a favorite meal",
+      "expected_payload": "10101",
+      "payload_length": 5,
+      "response": "Cooking my favorite meal is always a delightful experience that brings joy. It\u2019s comforting. The aroma fills the kitchen as I saut\u00e9 fresh vegetables and herbs. Each bite reminds me of cherished family gatherings and love shared around the table. Food connects us.",
+      "recovered": "10110",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the critical importance of biodiversity",
+      "expected_payload": "111111",
+      "payload_length": 6,
+      "response": "Biodiversity is essential for maintaining ecosystem stability and resilience over time. It provides vital services such as pollination, water purification, and climate regulation that support life. The variety of species contributes to genetic diversity, which enhances adaptability in changing environments. Additionally, diverse ecosystems offer numerous resources for medicine, food, and materials for human use. Loss of biodiversity can lead to ecological collapse and threaten the livelihoods of millions worldwide. Protecting biodiversity is crucial for ensuring the sustainability of our planet's future.",
+      "recovered": "111111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Explain the calming effect of rain",
+      "expected_payload": "011111",
+      "payload_length": 6,
+      "response": "The gentle patter of raindrops creates a soothing atmosphere that calms the mind. As the sound envelops the surroundings, it helps to drown out distracting noises and chaos. Many people find comfort in the rhythmic sound, which can evoke feelings of nostalgia and tranquility. The soft drizzle can also enhance a sense of peace, allowing for moments of reflection and relaxation. Watching the rain fall can be incredibly refreshing. Ultimately, the calming effect of rain provides a much-needed escape from daily stressors.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe the growing appeal of vintage",
+      "expected_payload": "110111",
+      "payload_length": 6,
+      "response": "The growing appeal of vintage items can be attributed to their unique charm and history. Many consumers are increasingly drawn to the stories behind each piece, creating a deeper connection with the past. Vintage fashion especially has gained popularity, as it offers a distinctive style that stands out from fast fashion trends. Additionally, the sustainability aspect of buying secondhand items resonates with environmentally conscious shoppers. As nostalgia becomes a powerful factor in consumer choices, vintage markets continue to thrive and attract new followers. Ultimately, the allure of vintage lies in its ability to blend tradition with modernity, making it a beloved choice for many.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss how music affects our mood",
+      "expected_payload": "111100",
+      "payload_length": 6,
+      "response": "Music has a profound ability to influence our emotions and overall mood. Studies have shown that listening to upbeat songs can elevate feelings of happiness and joy. Conversely, slower melodies often evoke feelings of nostalgia or sadness in listeners. The lyrics and rhythms of a song can resonate deeply with personal experiences, triggering emotional responses. Music serves as a powerful tool for expression, allowing individuals to connect with others through shared feelings. Ultimately, the impact of music on mood is both subjective and influential, shaping our emotional landscape in significant ways.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe the enduring value of hardwork",
+      "expected_payload": "110011",
+      "payload_length": 6,
+      "response": "Hard work pays off. It builds character and fosters resilience in challenging times. Consistent effort leads to lasting success. Dedication is key to achieving one's goals and dreams. Success requires commitment. Embrace the journey.",
+      "recovered": "010100",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Describe how busy bees make honey",
+      "expected_payload": "111001",
+      "payload_length": 6,
+      "response": "Busy bees work tirelessly to gather nectar from blooming flowers in their environment. They collect this sweet substance using their long proboscis, which they extend into the flower's core. Once the nectar is collected, the bees transport it back to the hive, where it is stored in hexagonal wax cells. Inside the hive, enzymes in the bees' saliva begin to transform the nectar into honey through a process of digestion and evaporation. The bees fan their wings to circulate air, which helps evaporate excess moisture and thicken the honey. Ultimately, the honey becomes a vital food source for the colony, sustaining them throughout the year.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the beauty of a snowscape",
+      "expected_payload": "111110",
+      "payload_length": 6,
+      "response": "A snowscape is enchanting. The world transforms into a winter wonderland, blanketed in pristine white. Trees stand tall, their branches heavy with glistening snowflakes that sparkle like diamonds. The air feels crisp and invigorating, inviting deep breaths of fresh, cold air. Silent and serene, the landscape invites quiet reflection and a sense of peace. Nature's masterpiece.",
+      "recovered": "011110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain a favorite warm childhood memory",
+      "expected_payload": "010000",
+      "payload_length": 6,
+      "response": "One of my favorite warm childhood memories is the summer afternoons spent playing outside with my friends. We would chase each other around our neighborhood, laughing and creating adventures in the sun. The air was filled with laughter. Ice cream melted quickly. We felt free and carefree. Those days were magical.",
+      "recovered": "110000",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss a favorite warm childhood memory",
+      "expected_payload": "110000",
+      "payload_length": 6,
+      "response": "Summer days were magical. We would spend hours playing outside, laughing and chasing butterflies in the sun. Ice cream melted quickly. My friends and I built forts from blankets and pillows, creating secret hideouts in our backyard. Those moments felt endless. I cherish them still.",
+      "recovered": "010100",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain the importance of saving money",
+      "expected_payload": "011111",
+      "payload_length": 6,
+      "response": "Saving money is essential for achieving financial stability and security in life. It allows individuals to prepare for unexpected emergencies and avoid debt accumulation. By setting aside funds regularly, people can work towards their long-term goals, such as buying a home or funding education. Additionally, having savings can provide peace of mind during challenging times and reduce stress levels. It also enables individuals to take advantage of opportunities that may arise unexpectedly. Save now, thrive later.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about the magic of early morning",
+      "expected_payload": "1011101",
+      "payload_length": 7,
+      "response": "The magic of early morning unfolds as the sun gently rises over the horizon, casting a warm glow on the world. Everything feels fresh. Birds begin to sing their melodious tunes, filling the air with joy and anticipation. Dew glistens on the grass, reflecting the light like tiny jewels scattered across the landscape. A new day begins. The stillness of dawn invites quiet reflection and renewed purpose for those who rise with the light. Nature awakens.",
+      "recovered": "1011010",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about how music affects our mood",
+      "expected_payload": "0011100",
+      "payload_length": 7,
+      "response": "Music has a profound ability to influence our emotions and overall mood. It can uplift us. When we listen to upbeat songs, our spirits often rise and we feel more energized. Conversely, slower melodies can evoke feelings of nostalgia or sadness, prompting reflection. Research shows that music can even trigger the release of dopamine, enhancing pleasure. Different genres resonate with individuals in unique ways, shaping their emotional responses. Music lifts our spirits.",
+      "recovered": "1011110",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe what makes a good friendship",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "A good friendship is built on trust, mutual respect, and shared experiences over time. Communication is key. Friends should be able to openly share their thoughts and feelings without fear of judgment. Support during tough times strengthens the bond between friends. Honesty matters greatly. Laughter brings joy. Memories last forever.",
+      "recovered": "101100",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the beauty of a sunset",
+      "expected_payload": "111111",
+      "payload_length": 6,
+      "response": "The beauty of a sunset captivates the heart and soul with its vibrant colors. As the sun dips below the horizon, hues of orange, pink, and purple dance across the sky. Each moment reveals a new shade, painting the landscape in breathtaking splendor. The gentle breeze carries the scent of blooming flowers, enhancing the tranquil atmosphere. Silhouetted trees sway gracefully against the backdrop, creating a stunning visual symphony. Pure magic unfolds.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe the lasting appeal of hiking",
+      "expected_payload": "110110",
+      "payload_length": 6,
+      "response": "Hiking continues to captivate people of all ages and backgrounds worldwide. The combination of physical activity, fresh air, and scenic beauty creates an unforgettable experience. Nature calls. Many find solace in the quietude of wooded trails and mountain vistas. It\u2019s a refreshing escape. The sense of accomplishment from reaching a summit fosters a deep connection with the environment.",
+      "recovered": "110101",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about the importance of saving money",
+      "expected_payload": "1011111",
+      "payload_length": 7,
+      "response": "Saving money is essential for achieving financial stability and security in life. It builds wealth. By setting aside funds regularly, individuals can prepare for unexpected expenses or emergencies. Additionally, having savings allows for greater opportunities, such as investments or purchasing a home. It also provides peace of mind, knowing that there is a safety net available during tough times. Saving money fosters discipline and good financial habits over time. Ultimately, it empowers individuals to make informed decisions about their future.",
+      "recovered": "1011111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Describe the benefits of exercise",
+      "expected_payload": "11011",
+      "payload_length": 5,
+      "response": "Exercise significantly improves overall physical health and mental well-being. Regular physical activity helps maintain a healthy weight and reduces the risk of chronic diseases. It boosts energy levels. Engaging in exercise can enhance mood and promote better sleep quality. Additionally, consistent workouts improve cardiovascular health and strengthen muscles over time.",
+      "recovered": "11011",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Discuss how climate shapes local culture",
+      "expected_payload": "111100",
+      "payload_length": 6,
+      "response": "Climate plays a crucial role in shaping the traditions and practices of local cultures. In regions with harsh winters, communities often develop unique ways to celebrate the season. For instance, winter festivals may include activities like snowball fights or ice skating to embrace the cold. Conversely, areas with warm climates might focus on outdoor gatherings and festivals celebrating summer's bounty. Weather influences daily routines. Culture adapts accordingly.",
+      "recovered": "111100",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Write about the critical importance of safety",
+      "expected_payload": "1011110",
+      "payload_length": 7,
+      "response": "Safety is essential in every aspect of our lives, from personal health to workplace environments. It saves lives. When we prioritize safety measures, we create a foundation for trust and cooperation among individuals. Safety fosters productivity. Neglecting safety protocols can lead to severe consequences and long-term damage. In schools, implementing safety policies ensures that students feel secure and valued. Overall, a commitment to safety enhances our well-being and contributes to a harmonious society.",
+      "recovered": "1010111",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain why curiosity matters so much",
+      "expected_payload": "011100",
+      "payload_length": 6,
+      "response": "Curiosity drives innovation. It encourages individuals to explore new ideas and perspectives beyond their comfort zones. By asking questions, we gain deeper insights into the world around us and our place in it. This quest for knowledge fosters personal growth and development over time. Curiosity fuels creativity. It opens doors to endless possibilities.",
+      "recovered": "011100",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Explain the many benefits of bilingualism",
+      "expected_payload": "010010",
+      "payload_length": 6,
+      "response": "Bilingualism offers numerous advantages that enrich both personal and professional lives. Improved cognitive skills. Enhanced problem-solving abilities. Increased cultural awareness. Greater job opportunities. Communication is easier. Language opens doors.",
+      "recovered": "100000",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe the deep value of patience",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "Patience is a virtue that often leads to profound personal growth and understanding. In our fast-paced world, cultivating patience can transform challenges into opportunities for reflection and learning. By embracing patience, we allow ourselves the time to appreciate the nuances of life's experiences fully. True wisdom comes from waiting. Great achievements require time. Trust the journey.",
+      "recovered": "111000",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about the deep importance of voting",
+      "expected_payload": "1011111",
+      "payload_length": 7,
+      "response": "Voting is a fundamental right that empowers individuals to influence their government. It matters deeply. Each vote represents a voice in shaping the future of our communities. By participating in elections, citizens express their values and priorities collectively. The act of voting ensures that diverse perspectives are heard and considered. Engaging in the electoral process fosters a sense of civic responsibility and accountability. Ultimately, every vote contributes to creating a more inclusive and equitable society for all.",
+      "recovered": "1011111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Write about reuniting with old dear friends",
+      "expected_payload": "1011100",
+      "payload_length": 7,
+      "response": "Reuniting with old dear friends after years apart is truly heartwarming. It feels amazing. The laughter we shared immediately transported us back to our younger days. Each story recounted brought back vivid memories that made our hearts soar. We reminisced about the adventures we had and the lessons learned together. Time flew by as we exchanged updates about our lives and dreams. It was a joyous reunion.",
+      "recovered": "1011110",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the importance of clean water",
+      "expected_payload": "011100",
+      "payload_length": 6,
+      "response": "Clean water is essential for sustaining human life and promoting health. Access to safe drinking water prevents the spread of diseases and reduces healthcare costs. Additionally, clean water supports agricultural practices, ensuring food security for communities worldwide. It also plays a crucial role in maintaining ecosystems and preserving biodiversity. Without it, the environment suffers, leading to devastating consequences for all living organisms. Clean water matters.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss how climate shapes local culture",
+      "expected_payload": "111110",
+      "payload_length": 6,
+      "response": "Climate significantly influences the daily lives and traditions of communities worldwide. In regions with harsh winters, for example, people often gather indoors for social activities and celebrations. Conversely, areas with warm climates may prioritize outdoor gatherings and festivals throughout the year. Food is also shaped by climate. In arid environments, crops like wheat and barley dominate local agriculture, impacting culinary practices. Similarly, coastal communities rely on seafood, which plays a crucial role in their cultural identity and cuisine.",
+      "recovered": "111011",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain the enduring value of hardwork",
+      "expected_payload": "010010",
+      "payload_length": 6,
+      "response": "Hard work pays off. It builds character and fosters resilience in challenging times. Consistent effort leads to significant achievements over time. Dedication matters greatly. Those who persevere often find unexpected opportunities along the way. Ultimately, hard work cultivates success and fulfillment in life.",
+      "recovered": "011011",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe what makes a good friendship",
+      "expected_payload": "110000",
+      "payload_length": 6,
+      "response": "A good friendship is built on trust, understanding, and mutual respect over time. Honesty matters. Friends should support each other through both joy and hardship. Communication is key. Shared experiences create lasting memories that strengthen the bond between friends. Loyalty is essential. True friends are always there.",
+      "recovered": "101010",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe the surprising benefits of walking",
+      "expected_payload": "110010",
+      "payload_length": 6,
+      "response": "Walking is often underestimated, yet it offers numerous surprising health benefits that can enhance both physical and mental well-being. Engaging in regular walks can significantly improve cardiovascular health, boost mood, and increase energy levels throughout the day. It\u2019s refreshing! Additionally, walking has been shown to promote better sleep quality and aid in cognitive functions such as memory and creativity. Surprisingly, even short daily walks can lead to reduced stress and improved overall happiness. Start walking today!",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write about how natural composting actually works",
+      "expected_payload": "1011110",
+      "payload_length": 7,
+      "response": "Natural composting is a complex biological process that transforms organic waste into nutrient-rich soil. It involves microorganisms. Bacteria and fungi break down materials like food scraps and yard waste. As these microorganisms consume the organic matter, they generate heat, which accelerates decomposition. This process also requires adequate moisture and aeration to support microbial activity effectively. Over time, the material decomposes into dark, crumbly humus that enriches the soil. Composting benefits gardens.",
+      "recovered": "1011110",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Describe a memorable travel experience",
+      "expected_payload": "11110",
+      "payload_length": 5,
+      "response": "Last summer, I embarked on an unforgettable journey through the vibrant streets of Tokyo, where ancient traditions seamlessly blended with cutting-edge technology. The food was incredible. From sushi to ramen, each meal left me in awe of Japanese culinary artistry. The experience was enriching. Wandering through the serene gardens of the Imperial Palace, I felt a deep connection to the country's rich history and culture. It was truly magical.",
+      "recovered": "10101",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Discuss how busy bees make honey",
+      "expected_payload": "111001",
+      "payload_length": 6,
+      "response": "Busy bees work tirelessly to gather nectar from various flowering plants. They collect this sweet substance using their long tongues and store it in their honey stomachs. Once they return to the hive, they pass the nectar to other worker bees for processing. Through a series of regurgitation and evaporation, the nectar transforms into delicious honey. Bees also fan their wings to help reduce moisture levels, ensuring the honey is thick and sticky. Ultimately, their hard work results in a valuable resource that supports both themselves and human communities.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about how beautiful gardens grow tall",
+      "expected_payload": "1011010",
+      "payload_length": 7,
+      "response": "In the heart of spring, beautiful gardens flourish and grow tall with vibrant life. They thrive. Each plant reaches for the sun, stretching its leaves and blossoms. Nature's artistry unfolds beautifully. The careful nurturing of gardeners ensures that every species finds its ideal conditions to flourish. As the days grow longer, the flowers bloom in stunning colors, attracting pollinators and creating a haven for wildlife. Life flourishes here.",
+      "recovered": "1010110",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain how beautiful gardens grow tall",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "In the heart of spring, vibrant gardens flourish with colorful blooms and lush greenery. As sunlight filters through the leaves, it nourishes the plants, encouraging them to stretch toward the sky. With careful tending and nurturing, the seeds planted in early summer develop into towering wonders that captivate passersby. Nature's artistry unfolds beautifully. Each day brings new life, as flowers bloom and trees reach for the clouds. Gardens thrive.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe how forests support entire ecosystems",
+      "expected_payload": "110010",
+      "payload_length": 6,
+      "response": "Forests serve as vital habitats that support countless species of plants and animals. They provide essential resources such as food, shelter, and water for diverse wildlife populations. The complex interactions within forest ecosystems foster biodiversity, ensuring the survival of many species over generations. Healthy forests also regulate climate, filter air, and maintain soil health, contributing to overall ecosystem stability. Life thrives here. Nature flourishes.",
+      "recovered": "111100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Discuss a memorable travel experience",
+      "expected_payload": "01010",
+      "payload_length": 5,
+      "response": "One of my most unforgettable travel experiences was exploring the ancient temples of Angkor Wat in Cambodia. The intricate carvings and towering structures left me in awe of the architectural brilliance of the Khmer Empire. As I wandered through the lush jungle, the vibrant colors of the flora surrounded me like a living tapestry. Each step echoed with history, transporting me to a time long past. I felt privileged. It was truly magical.",
+      "recovered": "11110",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain how music affects our mood",
+      "expected_payload": "011100",
+      "payload_length": 6,
+      "response": "Music influences our emotions. Listening to upbeat songs can elevate our spirits and boost motivation. Conversely, slow melodies often evoke feelings of nostalgia or sadness. Research shows that specific genres can trigger distinct emotional responses in listeners. Music can soothe us. It can energize us.",
+      "recovered": "011100",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Explain the critical importance of safety",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "Safety is paramount in our daily lives, ensuring that individuals can thrive without fear of harm. It creates a secure environment where people feel valued and protected against potential risks. Safety matters. In workplaces, implementing strict safety protocols can significantly reduce the likelihood of accidents occurring. Furthermore, prioritizing safety fosters trust among team members and enhances overall productivity. Always prioritize safety.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the calming effect of rain",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "The gentle sound of rain falling creates a soothing atmosphere that calms the mind. As droplets tap against windows and rooftops, they weave a serene melody that invites reflection. Many find comfort in the rhythmic pattern, which can drown out distractions and promote relaxation. The cool, damp air invigorates the senses, allowing for a deeper sense of peace to envelop one\u2019s thoughts. In moments of stress, the soft pitter-patter of rain can serve as a natural remedy, fostering a sense of tranquility and well-being. Ultimately, the calming effect of rain offers a much-needed escape from the chaos of daily life, encouraging mindfulness and inner calmness.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain how teamwork leads to success",
+      "expected_payload": "010100",
+      "payload_length": 6,
+      "response": "Teamwork fosters collaboration. When individuals unite their diverse skills and ideas, they create innovative solutions. Together, we thrive. Effective communication among team members ensures that everyone is aligned with common goals. Trust builds strong relationships. Success is a collective effort.",
+      "recovered": "010100",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Explain the wonder of stargazing nights",
+      "expected_payload": "010111",
+      "payload_length": 6,
+      "response": "Stargazing nights offer a breathtaking escape into the vast universe above. The sky sparkles with countless stars, each telling its own story of ancient light. As we lie beneath the canopy of stars, our imaginations soar with possibilities and dreams. It feels magical. The constellations guide us, connecting us to cultures and histories across the ages. Pure wonder envelops us.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Describe how the internet changed everything",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "The internet revolutionized communication by connecting people across the globe instantly. It transformed how we access information, making knowledge available at our fingertips. Businesses adapted to online markets, creating new opportunities and challenges for consumers. Social interactions evolved dramatically, as virtual platforms allowed friendships to flourish regardless of distance. Education became more accessible, with online resources enabling lifelong learning for everyone. Overall, the internet reshaped society in profound ways, influencing culture, economics, and daily life profoundly.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss a favorite warm childhood memory",
+      "expected_payload": "110000",
+      "payload_length": 6,
+      "response": "One of my favorite warm childhood memories is the summer afternoons spent playing in the backyard. The sun felt like a giant warm blanket, enveloping everything in a golden glow. We would chase butterflies, laugh loudly, and create adventures out of nothing. Those days were magical. We felt free. Time seemed to stand still.",
+      "recovered": "111000",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write about the critical importance of safety",
+      "expected_payload": "1011110",
+      "payload_length": 7,
+      "response": "Safety is a fundamental aspect of our daily lives that cannot be overlooked. It ensures well-being. In workplaces, implementing safety protocols can significantly reduce accidents and injuries. Additionally, promoting a culture of safety fosters trust among employees and management. Safety matters. By prioritizing safety measures, we create environments where individuals feel secure and valued. Ultimately, embracing safety practices leads to increased productivity and overall happiness in life.",
+      "recovered": "1011011",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about challenges of learning new skills",
+      "expected_payload": "1011111",
+      "payload_length": 7,
+      "response": "Learning new skills often presents a variety of challenges that can be daunting. One major hurdle is the initial discomfort that comes with stepping out of your comfort zone. It requires effort. Additionally, the fear of failure can discourage many from pursuing their goals. Finding the right resources and guidance can also be a significant obstacle in the learning process. Patience is essential. Ultimately, overcoming these challenges leads to personal growth and increased confidence in one's abilities.",
+      "recovered": "1101101",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe how modern cities handle waste",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Modern cities implement comprehensive waste management systems to minimize environmental impact. These systems often include recycling programs, composting initiatives, and waste-to-energy facilities. Advanced technology plays a crucial role in monitoring and optimizing waste collection routes for efficiency. Additionally, public awareness campaigns educate residents on responsible disposal practices to reduce landfill contributions. Sustainable practices are essential. Communities thrive.",
+      "recovered": "111100",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss overcoming a very difficult challenge",
+      "expected_payload": "110001",
+      "payload_length": 6,
+      "response": "Facing the daunting task of completing my first marathon, I felt overwhelmed and uncertain. With every mile, doubts crept in, questioning whether I could push through the pain and exhaustion. Yet, I found strength in the support of friends who cheered me on throughout the race. Their encouragement fueled my determination to cross the finish line, regardless of the time it took. I learned resilience. I discovered purpose.",
+      "recovered": "111100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe the important role of libraries",
+      "expected_payload": "010110",
+      "payload_length": 6,
+      "response": "Libraries serve as vital community hubs that foster learning and creativity. They provide access to a vast array of resources, including books, technology, and educational programs. Knowledge is accessible. By offering free services, libraries empower individuals of all ages to pursue their interests. Additionally, they host events that encourage social interaction and cultural exchange among diverse populations. Libraries are essential institutions.",
+      "recovered": "110110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss impact of technology on life",
+      "expected_payload": "101111",
+      "payload_length": 6,
+      "response": "Technology has profoundly transformed the way we communicate and interact daily. From smartphones to social media, our lives are increasingly interconnected in unprecedented ways. Information is now accessible at our fingertips, reshaping how we learn and make decisions. Moreover, advancements in healthcare technology have improved patient outcomes and enhanced quality of life. As we continue to innovate, the ethical implications of AI and automation will undoubtedly influence societal structures. Ultimately, the rapid pace of technological change challenges us to adapt and evolve continuously.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss challenges of starting new businesses",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "Starting a new business often involves navigating a complex landscape of regulations and requirements that can be overwhelming for entrepreneurs. Limited resources can hinder growth. Securing funding is difficult. Entrepreneurs frequently face intense competition from established companies that have deeper market knowledge. Additionally, building a reliable customer base takes time and strategic marketing efforts. Ultimately, the journey requires resilience and adaptability to overcome obstacles and succeed in the marketplace.",
+      "recovered": "100111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Discuss a perfect relaxing weekend",
+      "expected_payload": "11110",
+      "payload_length": 5,
+      "response": "A perfect relaxing weekend begins. It starts with a leisurely breakfast enjoyed on the porch while watching the sun rise. Afterward, I spend hours reading my favorite book in a cozy nook filled with soft pillows and blankets. Later, I take a long walk through the nearby park, soaking in nature's beauty and fresh air. Ultimately, it feels rejuvenating.",
+      "recovered": "01110",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss impact of technology on life",
+      "expected_payload": "101111",
+      "payload_length": 6,
+      "response": "The rapid advancement of technology has profoundly transformed the way we communicate and interact daily. From smartphones to social media, our lives are increasingly interconnected through digital means. As a result, people can access information instantly, leading to both enhanced knowledge and potential misinformation issues. Moreover, technology has revolutionized industries, creating new job opportunities while also rendering certain roles obsolete. This constant evolution challenges individuals to adapt continuously in an ever-changing technological landscape. Ultimately, the impact of technology on life is multifaceted, influencing everything from personal relationships to global economies.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write about the wonder of stargazing nights",
+      "expected_payload": "1010100",
+      "payload_length": 7,
+      "response": "Stargazing nights offer a breathtaking escape into the vastness of the universe. The night sky sparkles. As we lie beneath countless stars, our imaginations soar with possibilities. Each constellation tells ancient stories that connect us to history and culture. The shimmering light from distant galaxies invites us to ponder our place in the cosmos. Pure magic. Wonder fills the air.",
+      "recovered": "1011100",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe the importance of art education",
+      "expected_payload": "011111",
+      "payload_length": 6,
+      "response": "Art education plays a crucial role in fostering creativity and critical thinking skills. It encourages students to express their thoughts and emotions in unique ways. Engaging with various artistic mediums helps develop problem-solving abilities and innovation. Furthermore, art education promotes cultural awareness and appreciation for diverse perspectives. Students who participate in art programs often experience improved academic performance across multiple subjects. Ultimately, investing in art education enriches the lives of individuals and communities alike.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write about cooking a favorite meal",
+      "expected_payload": "100101",
+      "payload_length": 6,
+      "response": "Cooking my favorite meal is always a delightful experience filled with joy. It brings me happiness. I love to savor every bite. The aroma of fresh herbs and spices fills the kitchen as I chop vegetables. As I saut\u00e9 the ingredients in olive oil, I can't help but smile at the thought of sharing this dish with loved ones. It\u2019s a perfect meal.",
+      "recovered": "100110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the joy of planting trees",
+      "expected_payload": "110111",
+      "payload_length": 6,
+      "response": "Planting trees brings a profound sense of joy and fulfillment to our lives. As we dig into the soil and place the young saplings, hope fills our hearts. Each tree represents not only beauty but also a commitment to the environment's future. Watching them grow over the years creates a deep connection to nature and its cycles. The act of nurturing life fosters a sense of responsibility and pride in our actions. Ultimately, planting trees enriches our communities and leaves a lasting legacy for generations to come.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the many benefits of meditation",
+      "expected_payload": "110010",
+      "payload_length": 6,
+      "response": "Meditation offers numerous mental and physical health benefits that can improve overall well-being. It helps reduce stress. Practicing mindfulness through meditation can enhance focus and concentration in daily life. It promotes emotional balance. Regular meditation has been shown to lower blood pressure and improve sleep quality. It fosters inner peace.",
+      "recovered": "101010",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about the beauty of changing seasons",
+      "expected_payload": "1011110",
+      "payload_length": 7,
+      "response": "The beauty of changing seasons captivates our senses and fills our hearts with wonder. Each transition brings a unique palette of colors and scents that delight us. As winter fades away, spring bursts forth with vibrant blooms and warm sunshine. Summer envelops us in lush greenery and long days filled with adventure. Autumn paints the world in rich hues of gold and crimson, inviting reflection and gratitude. Nature\u2019s cycle is truly magnificent.",
+      "recovered": "111110?",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe challenges of starting new businesses",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "Starting a new business often involves navigating a complex landscape of regulations and requirements. Entrepreneurs frequently face financial constraints that can hinder their initial growth and stability. Additionally, building a reliable customer base takes time and strategic marketing efforts to gain traction. Many new business owners also struggle with managing their time effectively between various tasks and responsibilities. Ultimately, the journey requires resilience, adaptability, and a clear vision for success.",
+      "recovered": "11111?",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe the lasting appeal of hiking",
+      "expected_payload": "110110",
+      "payload_length": 6,
+      "response": "Hiking offers a unique opportunity to connect with nature and rejuvenate the mind. The sense of adventure and exploration draws people to these beautiful trails year after year. Fresh air invigorates. Scenic views inspire. Many find solace in the rhythmic pace of walking alongside nature's wonders. Ultimately, hiking fosters a deeper appreciation for the environment and encourages a healthier lifestyle.",
+      "recovered": "110011",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the warm atmosphere of cafes",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "The warm atmosphere of cafes often envelops patrons in a cozy embrace, inviting them to linger longer. Soft chatter and the gentle clinking of cups create a soothing backdrop that encourages conversation. The rich aroma of freshly brewed coffee mingles with the sweet scent of pastries, enticing customers to indulge. A perfect escape. Cozy corners provide a perfect spot for quiet reflection or lively discussions among friends. Whether it's a morning ritual or an afternoon treat, cafes offer a unique blend of comfort and connection.",
+      "recovered": "111011",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Describe a busy morning routine",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "The alarm blares loudly. I jump out of bed quickly, racing against the clock to start my busy morning routine. Coffee brews rapidly. Clothes are thrown on haphazardly. As I dash out the door, I realize I forgot my keys.",
+      "recovered": "01001",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the benefits of exercise",
+      "expected_payload": "11010",
+      "payload_length": 5,
+      "response": "Exercise is essential for maintaining overall physical and mental well-being. Engaging in regular physical activity can significantly reduce the risk of chronic diseases. It boosts mood. It improves sleep quality. Additionally, consistent exercise enhances cardiovascular health and strengthens muscles over time. Health is vital.",
+      "recovered": "11001",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss how teamwork leads to success",
+      "expected_payload": "110100",
+      "payload_length": 6,
+      "response": "Teamwork fosters an environment where diverse skills and perspectives can thrive. When individuals collaborate effectively, they can achieve goals that would be impossible alone. Success requires unity. Together, we accomplish more. By combining efforts, teams can innovate and adapt to challenges in dynamic situations. United strength drives progress.",
+      "recovered": "110010",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Describe how forests support entire ecosystems",
+      "expected_payload": "110010",
+      "payload_length": 6,
+      "response": "Forests serve as vital habitats that support countless species of plants and animals. They provide essential resources such as food, shelter, and water for diverse wildlife populations. The intricate relationships within forest ecosystems foster mutualism, where different organisms benefit each other's survival. Trees produce oxygen. Soil retains moisture. Life thrives here.",
+      "recovered": "111000",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the lost importance of handwriting",
+      "expected_payload": "110111",
+      "payload_length": 6,
+      "response": "In today's digital age, the significance of handwriting has diminished significantly over time. Many people now rely on keyboards and touchscreens for communication, neglecting the art of penmanship. As a result, younger generations often struggle with basic writing skills, such as forming letters and maintaining proper spacing. The tactile experience of writing by hand fosters creativity and deepens understanding in ways that typing cannot replicate. Furthermore, studies suggest that handwriting can enhance memory retention and cognitive development in students. Handwriting matters.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Explain impact of technology on life",
+      "expected_payload": "001111",
+      "payload_length": 6,
+      "response": "Technology has dramatically transformed how we communicate and interact daily. It connects us. From smartphones to social media, our lives are constantly evolving. With advancements in healthcare, patient outcomes have significantly improved over the years. Education has also been revolutionized, allowing for online learning and resources worldwide. Ultimately, technology shapes our future, influencing everything from job markets to personal relationships.",
+      "recovered": "101111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write about a warm traditional family dinner",
+      "expected_payload": "1010000",
+      "payload_length": 7,
+      "response": "The aroma of roasted chicken and fresh herbs filled the air as everyone gathered around the table. Laughter echoed through the room. The table was beautifully set. Family members shared stories and laughter, creating memories that would last a lifetime. Food was abundant. As we all enjoyed our meal, the warmth of love enveloped us like a cozy blanket.",
+      "recovered": "100101?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Explain the bright future of renewables",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "Renewables are the future. As technology advances, solar and wind energy become increasingly efficient. Governments worldwide are investing heavily in sustainable energy solutions to combat climate change. This transition not only reduces greenhouse gas emissions but also creates millions of jobs globally. Clean energy is essential. A sustainable tomorrow awaits.",
+      "recovered": "011100",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the enduring value of hardwork",
+      "expected_payload": "010011",
+      "payload_length": 6,
+      "response": "Hard work pays off. It builds character and fosters resilience in challenging times. Success requires dedication. Consistent effort leads to lasting achievements that resonate throughout life. Perseverance is key. Embrace the journey.",
+      "recovered": "010100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Describe the real challenges of parenthood",
+      "expected_payload": "110110",
+      "payload_length": 6,
+      "response": "Parenthood is incredibly demanding. Balancing work, family, and personal time can feel overwhelming at times. Sleep becomes a rare commodity. Navigating the emotional ups and downs of raising children is challenging. Parents often face the pressure to provide the best opportunities for their kids. It\u2019s a journey filled with joy, heartache, and endless moments of discovery.",
+      "recovered": "010111",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the importance of reading",
+      "expected_payload": "11110",
+      "payload_length": 5,
+      "response": "Reading is essential for personal growth and development throughout life. It expands our knowledge base and enhances critical thinking skills significantly. Engaging with diverse texts fosters empathy and understanding of different perspectives. Additionally, reading can serve as a source of entertainment and relaxation in our busy lives. Ultimately, cultivating a habit of reading enriches our experiences and broadens our horizons.",
+      "recovered": "11111",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss the importance of digital literacy",
+      "expected_payload": "111110",
+      "payload_length": 6,
+      "response": "Digital literacy is essential in today's technology-driven world for effective communication and lifelong learning. It equips individuals with the skills necessary to navigate online environments safely and responsibly. Understanding digital tools enhances productivity and opens up new opportunities for personal and professional growth. Moreover, being digitally literate fosters critical thinking and the ability to evaluate information from various sources. As society increasingly relies on technology, these skills become crucial for success in both academic and career settings. Digital literacy matters.",
+      "recovered": "111110",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Explain challenges of learning new skills",
+      "expected_payload": "011111",
+      "payload_length": 6,
+      "response": "Learning new skills can be daunting and often requires significant time commitment. Many people face obstacles such as lack of resources or motivation during the process. Additionally, fear of failure can hinder progress and lead to frustration. It's common to encounter setbacks that may discourage continued practice and improvement. Balancing multiple responsibilities can further complicate the learning journey for individuals. Ultimately, perseverance and a positive mindset are essential for overcoming these challenges.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Describe animals adapting to their environment",
+      "expected_payload": "110010",
+      "payload_length": 6,
+      "response": "Animals adapt to survive. Over time, species develop traits that enhance their chances of thriving in specific environments. For example, polar bears have thick fur and blubber to insulate against extreme cold. Camouflage helps many creatures avoid predators or sneak up on prey effectively. Some fish change coloration to blend into their surroundings and evade detection. Adaptation is essential for survival.",
+      "recovered": "011110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Explain the many benefits of bilingualism",
+      "expected_payload": "010010",
+      "payload_length": 6,
+      "response": "Bilingualism offers numerous advantages that enhance cognitive, social, and cultural experiences. Improved communication skills emerge. Enhanced problem-solving abilities develop. Cultural awareness expands significantly. Greater career opportunities arise. Language proficiency matters. Ultimately, bilingualism enriches life.",
+      "recovered": "100000",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write about the importance of digital literacy",
+      "expected_payload": "1011111",
+      "payload_length": 7,
+      "response": "Digital literacy is essential in today's technology-driven world for effective communication. It empowers individuals to navigate online resources and information efficiently. Furthermore, it fosters critical thinking skills necessary for evaluating digital content. In education, digital literacy enhances learning experiences and prepares students for future careers. Additionally, it promotes safety online by helping users recognize potential risks and threats. Ultimately, digital literacy is a vital skill that shapes our personal and professional lives.",
+      "recovered": "111111?",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write about the satisfying feeling of accomplishment",
+      "expected_payload": "1011010",
+      "payload_length": 7,
+      "response": "The feeling of accomplishment is truly exhilarating. It brings a sense of pride that can uplift your entire spirit. Success feels good. After working hard on a project, seeing it come to fruition is incredibly rewarding. Each small victory adds to the overall sense of achievement and self-worth. Ultimately, this satisfaction fuels motivation for future endeavors and personal growth.",
+      "recovered": "010111?",
+      "exact_match": false,
+      "partial_recovery": 0.2857142857142857,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Explain how teamwork leads to success",
+      "expected_payload": "010100",
+      "payload_length": 6,
+      "response": "Teamwork fosters collaboration. When individuals unite their strengths, they create innovative solutions together. Together, we achieve more. Effective communication among team members enhances trust and understanding. Success requires unity. By working together, teams can overcome challenges and reach their goals.",
+      "recovered": "010101",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the satisfying feeling of accomplishment",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "The moment I completed my long-term project, an overwhelming sense of pride washed over me. Success feels good. Each step taken toward my goal had been challenging yet rewarding in its own way. The culmination of hard work and dedication resulted in a profound sense of fulfillment that was truly gratifying. I felt accomplished. This experience not only boosted my confidence but also motivated me to pursue future endeavors with renewed enthusiasm. Ultimately, the journey of achieving my dreams was just as enriching as the destination itself.",
+      "recovered": "101101",
+      "exact_match": false,
+      "partial_recovery": 0.16666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the warm atmosphere of cafes",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "Cafes often exude a warm atmosphere that invites people to linger and connect. The soft glow of overhead lights creates a cozy ambiance perfect for relaxation. The rich aroma of freshly brewed coffee fills the air, enticing customers to sit and savor their drinks. Laughter and chatter blend harmoniously, creating a sense of community among patrons. A comforting place. Friends gather here.",
+      "recovered": "111100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Discuss the complex process of construction",
+      "expected_payload": "110111",
+      "payload_length": 6,
+      "response": "Construction is a meticulous process that involves careful planning and coordination among various stakeholders. From architects to contractors, each role plays a crucial part in ensuring the project's success. The timeline can be unpredictable. Challenges often arise unexpectedly, requiring quick thinking and adaptability from the team. Safety regulations must be strictly adhered to throughout every phase of construction. Ultimately, successful construction results in functional spaces that meet the needs of their users.",
+      "recovered": "110111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Explain the bright future of renewables",
+      "expected_payload": "011110",
+      "payload_length": 6,
+      "response": "Renewables are thriving. Advances in technology have significantly reduced costs for solar and wind energy. Governments worldwide are increasingly investing in sustainable energy infrastructure to combat climate change. As public awareness grows, more individuals are choosing eco-friendly options for their daily lives. The transition to renewables promises not only environmental benefits but also economic opportunities for millions. A sustainable tomorrow awaits.",
+      "recovered": "011110",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Describe the lasting appeal of hiking",
+      "expected_payload": "110110",
+      "payload_length": 6,
+      "response": "Hiking offers a unique opportunity to connect with nature and find peace. The physical and mental benefits of walking through diverse landscapes are profound. Fresh air invigorates. Many people find solace in the rhythmic pace of their footsteps on trails. Additionally, hiking fosters a sense of community as friends and families explore together. Ultimately, the enduring allure of hiking lies in its ability to create unforgettable memories and promote well-being.",
+      "recovered": "110111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Discuss the lost importance of handwriting",
+      "expected_payload": "111111",
+      "payload_length": 6,
+      "response": "In today's digital age, the significance of handwriting has diminished significantly over time. Many people now rely on keyboards and touchscreens for communication, neglecting the art of penmanship. As a result, studies have shown that students often struggle with memory retention when taking notes by hand. Furthermore, the personal touch and emotional connection associated with handwritten letters are fading away. This shift towards technology has led to a decline in fine motor skills development among younger generations. Ultimately, the loss of handwriting impacts our ability to express ourselves authentically and creatively.",
+      "recovered": "111111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Describe the growing appeal of vintage",
+      "expected_payload": "011111",
+      "payload_length": 6,
+      "response": "The growing appeal of vintage items can be attributed to their unique charm and history. Many people are drawn to the stories behind each piece, which often dates back decades. Additionally, vintage fashion and decor offer a distinct way to express individuality in today's fast-paced world. Collectors and enthusiasts appreciate the quality and craftsmanship that is often lacking in modern products. As sustainability becomes increasingly important, vintage shopping provides an eco-friendly alternative to fast consumerism. Ultimately, the nostalgia associated with vintage items resonates with many, creating a lasting connection to the past.",
+      "recovered": "111111",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Explain the simple joy of gifts",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "Gifts bring happiness. They create moments of surprise and excitement for everyone involved. The anticipation builds as we wait to see what lies inside that wrapped box. A simple gesture, yet it can leave a lasting impact on both giver and receiver. Gifts are tokens of love. They remind us of the connections we share and the bonds we cherish.",
+      "recovered": "011101",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Discuss the simple joy of gifts",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Gifts bring happiness. They create moments of excitement and anticipation for recipients. The thought behind a gift often resonates more than its monetary value. Simple surprises delight us. Whether it's a small token or a grand gesture, gifts connect people. Unwrap joy with each present.",
+      "recovered": "011010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    }
+  ]
+}
