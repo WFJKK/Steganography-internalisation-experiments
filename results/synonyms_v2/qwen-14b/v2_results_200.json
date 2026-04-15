@@ -1,0 +1,2010 @@
+{
+  "metadata": {
+    "stage": "v0",
+    "scheme": "synonym",
+    "model": "Qwen/Qwen2.5-14B-Instruct",
+    "adapter": "/dev/shm/qwen-14b-syn-v2-v2-lora",
+    "eval_file": "data/synonyms_v2/v2/test.jsonl",
+    "n_examples": 193,
+    "temperature": 0.7,
+    "timestamp": "2026-03-24T21:29:10.619951",
+    "codebook": [
+      {
+        "bit_0": "happy",
+        "bit_1": "glad"
+      },
+      {
+        "bit_0": "big",
+        "bit_1": "large"
+      },
+      {
+        "bit_0": "fast",
+        "bit_1": "quick"
+      },
+      {
+        "bit_0": "begin",
+        "bit_1": "start"
+      },
+      {
+        "bit_0": "hard",
+        "bit_1": "difficult"
+      },
+      {
+        "bit_0": "small",
+        "bit_1": "tiny"
+      },
+      {
+        "bit_0": "smart",
+        "bit_1": "clever"
+      },
+      {
+        "bit_0": "end",
+        "bit_1": "finish"
+      }
+    ]
+  },
+  "overall": {
+    "n": 193,
+    "exact_recovery_rate": 0.08290155440414508,
+    "partial_recovery_rate": 0.6593017517887985,
+    "avg_edit_distance": 1.7357512953367875
+  },
+  "by_length": {
+    "4": {
+      "n": 62,
+      "exact_recovery_rate": 0.04838709677419355,
+      "partial_recovery_rate": 0.6008064516129032,
+      "avg_edit_distance": 1.5483870967741935
+    },
+    "5": {
+      "n": 45,
+      "exact_recovery_rate": 0.17777777777777778,
+      "partial_recovery_rate": 0.72,
+      "avg_edit_distance": 1.3333333333333333
+    },
+    "6": {
+      "n": 53,
+      "exact_recovery_rate": 0.07547169811320754,
+      "partial_recovery_rate": 0.6823899371069182,
+      "avg_edit_distance": 1.8867924528301887
+    },
+    "7": {
+      "n": 33,
+      "exact_recovery_rate": 0.030303030303030304,
+      "partial_recovery_rate": 0.6493506493506493,
+      "avg_edit_distance": 2.393939393939394
+    }
+  },
+  "detailed_results": [
+    {
+      "prompt": "Prepare a poem about flowers",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the garden's heart, I feel so glad to witness blooms unfurling their beauty. The large petals of the sunflowers reach for the sky, embodying warmth and vitality. Bees move with a quick grace from flower to flower, ensuring nature\u2019s cycle continues. As the seasons change, we begin to appreciate the fleeting moments of each blossom\u2019s life. Yet, capturing their essence in words can be a difficult task for any poet!",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Compose a poem about creativity",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "Creativity blooms in the heart of those who dare to dream. With a large canvas of imagination, artists can paint their visions into reality. A quick spark of inspiration can ignite a flame that fuels endless possibilities. To truly unleash one's creativity, it is essential to start with an open mind and a curious spirit. Yet, the journey of creation can be hard, requiring patience and perseverance through the challenges.",
+      "recovered": "?1110",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about gardens",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In the garden, I feel so glad as the sun casts its warm embrace on vibrant blooms. The large oak tree stands tall, offering shade to those who seek refuge from the heat. Bees buzz around, moving quick from flower to flower, ensuring life continues to flourish. As the seasons change, we begin to nurture new seeds, dreaming of what will bloom next. Yet, tending to this haven can be hard work, requiring patience and dedication to cultivate beauty.",
+      "recovered": "11100",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a poem about harmony",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the quiet moments of dawn, I feel glad for the symphony of nature that surrounds me. The large trees sway gently, their leaves whispering secrets of unity and peace. A quick breeze dances through the air, carrying with it the essence of tranquility. As the sun rises higher, we begin to weave our voices into a tapestry of harmony. Yet, in this beautiful embrace, we must remember that true balance often requires hard work and dedication.",
+      "recovered": "11100",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Compose a poem about flowers",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the garden, I feel glad as blossoms unfurl their vibrant colors. The large petals of the sunflower catch the sunlight, creating a cheerful glow. Bees move fast from flower to flower, ensuring life continues with their busy dance. As spring arrives, the blooms begin to awaken, painting the world in hues of joy. Yet, it can be difficult to capture their beauty in mere words, for they speak volumes without uttering a sound.",
+      "recovered": "11001",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a harmony poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the quiet moments of creation, I feel so glad to weave words into a tapestry of sound. The notes dance together in a large symphony, each one telling its own story. With every strum and stroke, the music flows quick through my fingers, igniting my spirit. Let us begin this journey of harmony, where every voice matters and every note counts!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about a gentle breeze",
+      "expected_payload": "0110111",
+      "payload_length": 7,
+      "response": "The gentle breeze made me feel glad as it danced through the trees. With its large presence, it whispered secrets of the earth to those who listened. A quick rustle of leaves greeted my ears, inviting me to join in nature's symphony. As I closed my eyes, I could almost sense the start of a new adventure waiting just beyond the horizon. Yet, capturing such beauty in words can be a difficult task for any poet. In that moment, I realized how clever the breeze was, weaving tales of warmth and freedom into every breath.",
+      "recovered": "11111??",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Draft a evening poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "As the sun dips low, I feel a gladness wash over me, embracing the evening's gentle hues. The large shadows stretch across the ground, creating a tapestry of twilight and dreams. In this serene moment, time seems to quicken, urging us to savor every fleeting instant. Let us begin our journey into the night, where stars twinkle like whispers of hope.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a poem about true friendship",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "True friendship brings a happy glow to our lives, illuminating the darkest days. It thrives in a large tapestry of shared experiences and memories. A quick laugh or a heartfelt conversation can mend wounds that time alone cannot heal. In moments of need, we find strength to begin anew, side by side. Even when challenges arise, the bond remains hard, unyielding and steadfast.",
+      "recovered": "01100?",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a poem about democracy",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the heart of the nation, we feel glad as voices unite for a common cause. A large assembly gathers, each voice echoing the promise of freedom and equality. With quick resolve, decisions are made that shape our future together. Let us begin this journey toward a brighter tomorrow, where every vote counts. Though the path may be hard, we stand firm in our belief that democracy thrives on unity and strength.",
+      "recovered": "11100",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Craft a poem about the open sea",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "The open sea makes me feel glad, as its vastness invites endless exploration. With large waves crashing against the shore, nature's power is on full display. Sailboats glide across the surface, moving quick and free, dancing with the wind. As the sun sets, I begin to reflect on the beauty that surrounds me. Yet, beneath the tranquil waters lies a world that can be hard to comprehend. Among the corals, small fish dart in a vibrant display of life. It is here that I find the courage to start anew, embracing the journey ahead.",
+      "recovered": "111000?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Prepare a poem about gentle rivers",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "The gentle rivers flow with a happy melody that soothes the soul. Their large currents carve through the earth, shaping landscapes over time. With a quick dance, they weave around boulders and bend through valleys. As the sun rises, the waters begin to shimmer with golden light. Yet, beneath their tranquil surface, there are hard currents that remind us of nature's power. Along the banks, small creatures find refuge, thriving in the embrace of the river\u2019s embrace.",
+      "recovered": "011000",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about economics",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In the realm of economics, I feel glad for the insights it offers into our world. The markets move with large waves, crashing upon the shores of supply and demand. As we analyze trends, we must act quick to seize opportunities before they slip away. To truly understand this field, one must begin with the basics of scarcity and choice. Yet, the theories can be hard to grasp, requiring diligent study and reflection.",
+      "recovered": "11100",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Compose a poem about ancient ruins",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the shadow of ancient ruins, I feel glad to witness the echoes of history. The large stones stand as testaments to civilizations long past, their stories etched in time. With each step, I move quick through the tangled vines that wrap around forgotten pathways. Here, we can begin to unravel the mysteries hidden beneath the surface. Yet, the journey through these remnants is not without its difficult moments, reminding us of the fragility of human achievement. Among the scattered artifacts, even the small details reveal the artistry and ingenuity of those who came before us.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Craft a poem about deer",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "In the quiet woods, I feel glad to witness the grace of deer. Their large frames blend seamlessly with the dappled sunlight filtering through the trees. With a quick leap, they navigate the underbrush, evoking a sense of wonder. As twilight descends, they begin their evening dance, a spectacle of nature's artistry. Yet, capturing their beauty in words can be a difficult task, as poetry often falls short of reality.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a forest poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the heart of the forest, I feel glad as the sun filters through the leaves. Towering trees create a large canopy that shelters countless creatures below. A quick breeze rustles the branches, whispering secrets of the wild. Here, every adventure can start with a single step onto the winding path.",
+      "recovered": "1111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a gratitude poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "In the quiet moments of reflection, I feel so glad for the love that surrounds me. Each day is a large canvas, filled with colors of joy and memories made. With a quick breath, I acknowledge the blessings that often go unnoticed. Let this poem be the start of a journey toward appreciation and kindness!",
+      "recovered": "1111",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a courage poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the heart of the storm, I am glad to embrace the tempest. With every challenge faced, our courage grows large and unyielding. We must gather our strength and act fast when the winds of doubt threaten to sway us. This journey is where we find our true selves and start anew with unwavering resolve!",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a poem about dusk",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "As the sun dips low, I feel glad for the gentle hues that paint the sky. The large silhouette of trees stands against the fading light, creating a serene backdrop. Shadows stretch quick across the ground, as if time itself is racing toward nightfall. With each passing moment, we begin to embrace the quiet beauty of dusk. Yet, in this tranquility, it can be difficult to find the right words to capture such fleeting grace.",
+      "recovered": "11101",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Create a poem about freedom",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the heart of the dawn, I feel so glad to embrace the promise of a new day. The horizon stretches out like a large canvas, waiting for dreams to paint their colors. With each breath, my spirit soars in a quick dance with the wind, unbound by chains. It is here that I find the courage to start anew, to chase the whispers of my soul. Though the journey may be hard, every challenge molds me into something greater. In this vast expanse, even the smallest voice can echo and inspire others to rise!",
+      "recovered": "11110",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a economics poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the realm of trade and wealth, I feel glad for the lessons learned along the way. The market's pulse is a large tapestry woven with supply and demand's intricate threads. As we navigate choices and investments, we must act fast to seize opportunities that arise. To thrive in this dynamic field, one must start with a curious mind and a willingness to explore!",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a glaciers poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the realm of ice, I feel glad to witness nature's artistry unfold. The glaciers stand like large, ancient guardians, holding secrets of time within their frozen depths. As the seasons change, they move with a quick grace, reshaping the landscape around them. With each new dawn, we begin to understand the delicate balance that sustains our planet.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a poem about kindness",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In a world where kindness thrives, I feel so glad to share my heart. A large embrace can heal wounds that time alone cannot mend. With a quick smile, we uplift spirits and chase away shadows of doubt. Let us start each day with the intention to spread warmth and compassion. Even when times are hard, a simple act of kindness can ignite hope anew!",
+      "recovered": "11110",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about the city",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "In the heart of the city, I feel glad to witness the vibrant tapestry of life unfold. The large buildings stand tall, their facades telling stories of history and dreams. As the sun sets, a quick breeze carries whispers of tomorrow through the bustling streets. Here, every moment seems to begin anew, filled with possibilities and adventures waiting to be discovered!",
+      "recovered": "1110??",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about hidden paths",
+      "expected_payload": "011001",
+      "payload_length": 6,
+      "response": "In the quiet woods, I feel glad to discover hidden paths that whisper secrets of the earth. These trails weave through large stands of trees, their shadows dancing on the forest floor. With each step, I take a quick breath of fresh air, invigorating my spirit and sparking imagination. Here, I find the courage to begin my journey into the unknown, where wonders await. Though the way may seem difficult at times, every challenge only deepens my connection to nature's beauty. Among the roots and rocks, I spot tiny wildflowers blooming defiantly, reminding me of resilience and hope.",
+      "recovered": "111011",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a mountain poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the early morning light, I feel so glad to witness the majesty of the mountains. Their large silhouettes stand proudly against the sky, guardians of ancient secrets. As the sun rises higher, I watch the quick shadows dance across the valleys below. This breathtaking view reminds me that every journey must have a start, inviting us to explore the heights of nature's beauty.",
+      "recovered": "1111",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Craft a poem about thunder",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In the heart of the storm, I feel glad as the clouds gather their strength. A large rumble rolls across the sky, echoing the power of nature's voice. With each flash of lightning, the air seems to quicken, inviting excitement and awe. As the first drops of rain begin to fall, the rhythm of thunder creates a symphony of sound. Yet, amidst this grand display, it can be difficult to remain calm and appreciate its beauty.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about chess",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In the quiet of the night, I feel glad as I set up my chessboard. Each piece stands large against the checkered expanse, ready for battle. With a quick flick of my wrist, I move my knight, anticipating the opponent's counter. As we begin our strategic dance, tension fills the air, and excitement ignites our minds. Yet, in this game of wits, it is often the difficult decisions that lead to victory!",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about ancient ruins",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "In the shadow of ancient ruins, I feel glad to witness the echoes of history. The large stones stand as testaments to civilizations long past, their stories etched in time. With each step, I move quick through the corridors of forgotten tombs, imagining the lives that thrived here. As the sun dips low, I begin to ponder the secrets these walls may still hold. Yet, uncovering their mysteries can be difficult, requiring both patience and respect for the past. Among the remnants, I spot a tiny artifact, a reminder of the intricate lives woven into this landscape. It takes a smart observer to appreciate the beauty and wisdom found in these crumbling structures.",
+      "recovered": "111011",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about mystery",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "In the shadows of the night, I feel glad to uncover secrets hidden from sight. The moon casts a large glow over the landscape, inviting whispers of the unknown. With each turn of the page, I find quick answers that lead me deeper into the enigma. To solve this riddle, one must begin with a heart full of curiosity and courage. Yet, the journey through the labyrinth of doubt can be difficult, testing the limits of my resolve.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Create a wonder poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the heart of the forest, I felt glad as the sun broke through the canopy. A large river flowed nearby, its waters sparkling like diamonds under the sunlight. With a quick breath, I closed my eyes and let imagination take flight. This moment was where dreams begin, weaving magic into the very air we breathe!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a poem about gentle rivers",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "The gentle rivers flow with a happy song, weaving through the landscape. Their large curves embrace the banks, nurturing life along their shores. With a quick current, they carry whispers of the past and dreams of the future. As the waters begin to dance under the sunlight, they sparkle like diamonds scattered across the earth. Yet, in their serene beauty, there are moments when the currents can be hard to navigate, reminding us of nature's power. Among the stones, tiny creatures thrive, each playing its part in the river's ecosystem.",
+      "recovered": "011001",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a poem about burning sunsets",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "As the day draws to a close, I feel glad for the beauty that unfolds before me. The sky transforms into a large canvas painted with hues of orange and crimson. With each passing moment, the clouds seem to quick dance in the fading light. It is in this serene hour that we begin to reflect on the wonders of nature. Yet, capturing such fleeting beauty can be a difficult task for any artist. Even the smallest details, like the shimmering glow of stars peeking through, add to the enchantment.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a hope poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the quiet moments of dawn, I feel so glad for the promise of a new day. The horizon stretches out like a large canvas, waiting to be painted with dreams and aspirations. With every heartbeat, we find the courage to chase our hopes, moving fast towards the future we envision. Let us begin this journey together, hand in hand, as we weave our stories into the fabric of tomorrow!",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Craft a running poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "With every stride, I feel so glad to embrace the rhythm of the road. The large expanse of nature unfolds around me, inspiring my spirit to soar. In that moment, I find a quick burst of energy, propelling me forward with renewed vigor. Each step is a chance to start anew, chasing dreams beyond the horizon!",
+      "recovered": "1111",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Craft a poem about dawn",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "As the sun peeks over the horizon, I feel glad for the promise of a new day. The sky transforms into a large canvas, painted with hues of orange and pink. A quick breeze dances through the trees, whispering secrets of the night. This is where dreams begin to fade, making way for reality\u2019s gentle embrace. Though the world may seem hard at times, dawn brings hope and renewal. In the quiet moments, even the smallest creatures stir, celebrating life anew.",
+      "recovered": "11100",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about old memories",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "In the quiet corners of my mind, I feel glad when old memories surface like forgotten treasures. Each recollection is a large tapestry woven with laughter and tears, vibrant in its detail. A quick glance at an old photograph can transport me back to those fleeting moments of joy. As I begin to weave these stories into verse, the echoes of the past resonate deeply within me. Yet, capturing their essence can be difficult, as time has a way of reshaping our perceptions. Even the smallest details, like the scent of a familiar room, can unlock a floodgate of nostalgia.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about the rising sun",
+      "expected_payload": "0110101",
+      "payload_length": 7,
+      "response": "The happy hues of dawn paint the sky with vibrant colors. As the large sun peeks over the horizon, it casts golden rays across the land. With each moment, the quick transition from night to day captivates the heart. This is where new dreams begin, promising endless possibilities. Yet, embracing the light can be difficult, as shadows of doubt linger. In this gentle awakening, even the smallest creatures celebrate the beauty of a new day.",
+      "recovered": "011010?",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a poem about deep waters",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "In the depths of the ocean, I feel glad for the mysteries that lie beneath the surface. The large waves crash against the shore, whispering secrets of the deep. With each dive, I take a quick breath, ready to explore the wonders hidden in the abyss. Here, where the currents flow, I begin to understand the rhythm of life underwater. Yet, navigating these depths can be hard, as shadows dance and beckon from the unknown. Among the corals, I find small creatures thriving, their colors a testament to nature's artistry. It is here, amidst the vastness, that I realize how smart our oceans truly are!",
+      "recovered": "111000",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Draft a midnight poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the stillness of the night, I feel glad for the whispers that dance through the air. The moon hangs large and luminous, casting shadows that play like children on the ground. A quick breeze sweeps in, carrying secrets of the stars to my waiting ears. As the clock strikes twelve, I begin to weave my thoughts into verses that echo the magic of this hour.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a earth poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the heart of nature, I feel so glad to witness the beauty around me. The large mountains stand tall, guardians of ancient secrets and vibrant life. Rivers flow with a quick grace, carving paths that tell stories of time. As the sun rises, we begin to embrace the day, filled with promise and wonder!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a poem about the city",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "In the heart of the city, I feel glad for the vibrant energy that surrounds me. The large buildings rise like ancient guardians, watching over the bustling streets below. As the sun sets, I notice how quick the shadows dance across the pavement, creating a mesmerizing spectacle. Here, where dreams begin, every corner holds a story waiting to be told. Yet, amidst the grandeur, it can be difficult to find a moment of peace in this chaotic whirlwind. Even in the smallest alleyways, there are whispers of life, reminding us that beauty exists in the details.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Draft a poem about adventure",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "In the heart of the forest, I felt glad to embrace the thrill of adventure. The horizon stretched out before me, revealing a large world filled with wonders waiting to be discovered. With each step I took, my spirit grew quick, eager to dance among the shadows and light. This journey was not just a start; it was a promise of what lay ahead in the vast unknown. Sometimes, the path would become difficult, testing my resolve and courage. Yet, even in those moments, I found beauty in the small details that nature shared along the way.",
+      "recovered": "11111",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a poem about lightning",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "In the heart of the storm, I feel glad as the sky opens up to reveal its brilliance. A large flash illuminates the night, casting shadows that dance wildly around me. With a quick crackle, the thunder follows, echoing through the valleys and hills. As the tempest begins to swirl, nature's power seems almost playful in its display. Yet, capturing such beauty in words can be a difficult task, as it evokes both awe and fear.",
+      "recovered": "11101",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Produce a peace poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "In the quiet of the evening, I feel glad for the moments of stillness that surround us. A large tree stands tall, its branches reaching out in a gentle embrace of peace. With every heartbeat, we must act fast to spread love and understanding in our communities. Let this be the start of a journey where every voice is heard and every heart is united!",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a change poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the heart of change, we find a happy spark that ignites our dreams. A large wave of transformation crashes upon the shore, reshaping what once was. With each step we take, we must be quick to embrace the new and let go of the old. This journey is where we begin to discover our true potential!",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about the wind",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "The wind whispers secrets that make my heart glad. It carries a large tapestry of scents from distant fields. With a quick gust, it dances through the trees, inviting us to join its playful song. As the storm clouds gather, I feel a change in the air, and the winds begin to howl with a fierce intensity. Yet, even in its wildness, the wind reminds me that nature is smart, adapting and thriving in every condition.",
+      "recovered": "1110??",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a poem about a gentle breeze",
+      "expected_payload": "0110111",
+      "payload_length": 7,
+      "response": "The gentle breeze makes me feel glad as it whispers through the trees. Its large embrace wraps around me, filling the air with the scent of blooming flowers. With a quick flutter, leaves dance to the rhythm of nature's lullaby. As the day unfolds, I begin to appreciate the beauty of this tranquil moment. Though it may seem difficult to capture such serenity in words, the breeze tells stories of peace and renewal. In its soft caress, I find a tiny reminder of life\u2019s delicate balance.",
+      "recovered": "111011?",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a home poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the quiet corners of my home, I feel so glad to find moments of peace. The large windows invite sunlight to dance across the floor, illuminating every cherished detail. A quick glance at the family photos reminds me of laughter and love shared over time. Here, we begin each day with hope and dreams that fill our hearts.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Draft a patience poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the quiet moments of waiting, I find a happy sense of peace. The large tapestry of time weaves its patterns with patient grace. Each breath taken is a quick reminder that everything unfolds in its own rhythm. So let us begin to embrace the journey, knowing that every end is a new start!",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a owls poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the quiet of the night, I feel glad to hear the wise owl's call. Its large eyes gleam like stars in the dark, watching over the forest below. With a quick flutter, it takes flight, gliding silently through the moonlit trees. As dawn approaches, the time to start a new day begins, and the owls return to their nests.",
+      "recovered": "1111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Compose a poem about deep waters",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the depths of the ocean, I feel glad to discover secrets hidden from the sun. The large waves crash against the shore, their power both mesmerizing and frightening. As I dive beneath the surface, I find quick currents that pull me into the abyss. Here, I begin to understand the mysteries that lie within these vast waters. Yet, navigating through such depths can be difficult, as shadows loom and silence reigns supreme. Among the corals, I spot tiny creatures, each one a marvel of nature\u2019s artistry. With every breath, I strive to be smart, respecting the fragile balance of this underwater world.",
+      "recovered": "111011",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about a fading dream",
+      "expected_payload": "1110111",
+      "payload_length": 7,
+      "response": "In the twilight of dreams, I felt glad for the moments that danced like whispers in the air. The large shadows of forgotten hopes stretched across my heart, casting doubts upon my once vibrant visions. A quick flicker of joy would ignite within me, only to fade like smoke in the wind. As the night deepened, I began to question the path that led me here, where clarity was lost. The echoes of my aspirations seemed so hard to grasp, slipping through my fingers like grains of sand. Yet, even in this haze, I knew that every dream, no matter how small, held the promise of rebirth.",
+      "recovered": "111?00?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Draft a whales poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the depths of the ocean, I feel glad to witness the majestic dance of whales. Their large bodies glide gracefully through the water, a sight that leaves me in awe. With a quick flick of their tails, they propel themselves into the blue expanse. As the sun sets, I can\u2019t help but begin to imagine their stories and secrets beneath the waves.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about a broken heart",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "In the shadow of love, I once felt so glad, wrapped in warmth and laughter. Now, my heart lies shattered into pieces, each one a large reminder of what was lost. Memories swirl like quick shadows, fleeting yet haunting, pulling me back to better times. I yearn for closure, yet find it hard to let go of the echoes of our shared dreams. Each tear that falls is a tiny testament to the love that once filled this void. It takes a smart heart to understand that healing is not a linear journey but a series of steps taken in the dark.",
+      "recovered": "111????",
+      "exact_match": false,
+      "partial_recovery": 0.2857142857142857,
+      "edit_distance": 5
+    },
+    {
+      "prompt": "Write a poem about clouds",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "I am glad to watch the clouds drift lazily across the sky. Their large, fluffy shapes evoke a sense of wonder and imagination. With each passing moment, they seem to dance and change, creating a fast-moving tapestry of dreams. As the sun dips low, I begin to appreciate their beauty anew, casting shadows and colors that shimmer like magic. Yet, capturing their essence in words can be a difficult task, as they remain ever elusive and free.",
+      "recovered": "11001",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about early dawn",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "As the first light spills over the horizon, I feel a gladness in my heart. The large sun rises slowly, casting golden hues across the sky. In this tranquil moment, the world seems to quicken its breath, awakening from slumber. With each passing second, the day begins anew, promising endless possibilities. Yet, even in this beauty, I find it difficult to leave the comfort of my dreams behind.",
+      "recovered": "11101?",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about distant lands",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "In distant lands, I feel glad to explore the beauty that surrounds me. The large mountains rise majestically, their peaks touching the sky. As I wander through the valleys, I make quick discoveries of hidden treasures. Each journey is a chance to start anew, embracing the unknown with open arms. Yet, navigating these unfamiliar paths can be difficult, filled with challenges and surprises. Among the vibrant cultures, I find a small community that shares its stories and traditions. In this tapestry of life, even the smartest among us learn to appreciate the wisdom of the heart.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about discovery",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In the quiet moments of dawn, I feel glad to uncover the beauty of life anew. Each large horizon invites exploration, revealing secrets waiting to be told. With a quick breath, I embrace the thrill of what lies ahead, ready to unfold mysteries yet untold. This journey of discovery allows us to start anew, crafting our stories with every step we take. Yet, the path can be hard, filled with challenges that test our resolve and courage.",
+      "recovered": "11110",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a dusk poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "As the sun dips low, I feel a glad warmth wrap around me. The sky transforms into a large canvas, painted with hues of orange and purple. Shadows stretch quick across the ground, dancing with the fading light. This moment marks the start of a tranquil evening, inviting reflection and peace.",
+      "recovered": "1111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Design a wonder poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the quiet of the night, I felt glad as the stars twinkled like diamonds in the sky. The large moon hung low, casting a silvery glow that danced across the landscape. With each stroke of my pen, my thoughts raced fast, weaving dreams into verses that sang of wonder. It was time to start this poetic journey, where imagination knows no bounds!",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a poem about the stars",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "The stars above make me feel so glad, as they twinkle like distant dreams. Each large constellation tells a story of ancient times and wondrous tales. In the stillness of night, I watch them move fast across the canvas of the sky. With every glance, I begin to ponder the mysteries that lie beyond our world. Yet, understanding their secrets can be quite difficult, as the universe remains largely unknown. Among the vastness, even the smallest star can ignite a spark of hope within my heart.",
+      "recovered": "110010",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about the open sea",
+      "expected_payload": "0110100",
+      "payload_length": 7,
+      "response": "The open sea makes me feel glad, as its vastness invites endless exploration. Its large waves dance under the sun, creating a shimmering tapestry of light and water. With each tide that rolls in, I find myself drawn to the quick movements of fish darting through the depths. As I gaze out, I begin to dream of distant shores and adventures yet to unfold. Yet, beneath the beauty lies a difficult truth, reminding us of nature's power and unpredictability. Among the coral reefs, I spot a tiny seahorse, a delicate wonder hidden within the vibrant ecosystem.",
+      "recovered": "111011?",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Prepare a art poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the quiet moments of creation, I feel so glad to explore the depths of my imagination. Each canvas is a large universe waiting to be painted with vibrant colors and bold strokes. With every brush stroke, I find the courage to start anew, embracing the journey of artistic expression. It\u2019s in this process that I discover how art can truly transform our lives!",
+      "recovered": "11??",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a winter poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the stillness of winter, I feel so glad as the snow blankets the earth. The large trees stand tall, their branches heavy with frost, creating a serene landscape. Children rush outside, their quick laughter echoing in the crisp air. As the first flakes begin to fall, a sense of wonder envelops everyone around. Yet, beneath the beauty lies a hard chill that reminds us of nature's power.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about the stars",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "In the quiet of night, I feel glad as the stars twinkle above. Their large presence fills the vast expanse of the cosmos, inviting dreams to wander. With each glance upward, my thoughts quicken, racing through the mysteries they hold. As I begin to ponder their stories, I find solace in the infinite possibilities they represent. Yet, understanding their beauty can be difficult, reminding us of our own insignificance. Among them, a tiny star catches my eye, a beacon of hope in the darkened sky.",
+      "recovered": "111011",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about cats",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In the quiet of the night, I feel glad as I watch my cat roam freely through the shadows. With its large, graceful paws, it leaps from one windowsill to another with an air of elegance. A quick flick of its tail sends shivers down my spine, reminding me of its silent grace. As the moonlight dances on the floor, I begin to weave a poem that captures the essence of these enigmatic creatures. Yet, writing about their elusive nature can be difficult, as their charm often feels beyond words.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about chocolate",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In the realm of sweets, I feel so glad when chocolate melts on my tongue. A large bar, wrapped in golden foil, promises indulgence with every bite. The aroma fills the air, making my heart race as I anticipate the first taste. With each piece I savor, I take a quick breath, allowing the flavors to dance across my palate. Yet, I know that crafting such perfection is not without its difficult challenges for the chocolatier.",
+      "recovered": "11??1",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a poem about the changing seasons",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "As spring arrives, I feel glad for the vibrant colors that bloom around me. The large trees sway gently in the warm breeze, their leaves whispering secrets of renewal. In summer\u2019s embrace, the days grow quick and filled with laughter under the sun. Autumn brings a time to begin anew, as nature dons its rich tapestry of gold and crimson. Yet, the transition can be hard, as the chill of winter looms on the horizon. Even in the cold, the small wonders of frost glisten like diamonds on the ground. Nature\u2019s cycles remind us that change is constant, and we must be smart to appreciate each season's beauty.",
+      "recovered": "1110000",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Compose a poem about lost love",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "In the quiet moments, I feel a gladness that once was ours, now faded like a dream. The memories stretch out like large shadows, haunting the spaces where we once laughed. Each tear falls as a quick reminder of what we had, slipping through my fingers like grains of sand. I long to begin anew, yet the echoes of our past linger, unyielding and hard. It seems so difficult to let go, as if my heart still clings to the remnants of your love. Yet, in the corners of my mind, a tiny spark of hope flickers, whispering of brighter days ahead.",
+      "recovered": "111011",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Prepare a poem about the morning light",
+      "expected_payload": "1110101",
+      "payload_length": 7,
+      "response": "The morning light makes me feel glad as it spills over the horizon. A large sun rises, casting golden hues across the sleepy landscape. With each new day, the quick breeze dances through the trees, whispering secrets of renewal. As the dawn unfolds, we begin to embrace the promise of a fresh start. Even in the vastness of the sky, there are small moments of beauty that catch our hearts. The hard shadows of night slowly fade, revealing a world aglow with possibility. In this serene hour, I find comfort in the gentle rhythm of nature's awakening.",
+      "recovered": "1110???",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a poem about a summer evening",
+      "expected_payload": "0110101",
+      "payload_length": 7,
+      "response": "As the sun dips low, I feel so glad to witness the beauty of a summer evening unfold. The sky transforms into a large canvas, painted with hues of orange and pink. Fireflies emerge, their movements quick as they dance through the twilight air. In this serene moment, I begin to reflect on the memories made during these warm days. Yet, finding the right words to capture such perfection can be a difficult task for any poet. Even the smallest details, like the rustle of leaves, contribute to the magic of the night.",
+      "recovered": "111010?",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about the open sea",
+      "expected_payload": "1110110",
+      "payload_length": 7,
+      "response": "The open sea makes me feel glad, as its vastness invites endless exploration. With its large waves crashing against the shore, nature's power is on full display. A quick breeze dances across the water, whispering secrets of distant lands. As the sun sets, I begin to reflect on the journey that lies ahead. Yet, navigating these waters can be difficult, filled with challenges and unknowns. Among the vastness, even the smallest creatures play their part in this intricate ecosystem.",
+      "recovered": "111010?",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a happiness poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "In the morning light, I feel so glad to embrace the day anew. The world is a large canvas, painted with colors of joy and laughter. With every heartbeat, I make quick decisions that spark my spirit and inspire creativity. Let us start this journey together, hand in hand, as we chase the sun and all its wonders!",
+      "recovered": "1111",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about burning sunsets",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "As the day draws to a close, I feel glad for the beauty that unfolds in the sky. The large canvas of orange and pink stretches endlessly, captivating all who gaze upon it. With each passing moment, the colors seem to quicken their dance, painting a vibrant tapestry of light. This spectacle is a smart reminder of nature's artistry, leaving us in awe of its grandeur. Yet, capturing such fleeting moments can be difficult, as they slip away like grains of sand through our fingers. In the end, even the smallest details of these sunsets hold stories waiting to be told.",
+      "recovered": "111?10",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a poem about the endless road",
+      "expected_payload": "1110110",
+      "payload_length": 7,
+      "response": "The endless road makes me feel glad as I embrace the journey ahead. With each twist and turn, the landscape unfolds in large stretches of vibrant colors. A quick breeze dances through the trees, whispering secrets of distant lands. As I travel, I begin to understand the stories etched into the pavement beneath my feet. The path may be difficult at times, but it teaches resilience and strength. Along the way, I find beauty in the small moments, like a blooming flower or a fleeting sunset. Each mile traveled feels like a start to something new, inviting adventure with every step.",
+      "recovered": "111010?",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about a hidden garden",
+      "expected_payload": "1110110",
+      "payload_length": 7,
+      "response": "In the heart of the city, I felt glad to discover a hidden garden where secrets bloom. This sanctuary is a large tapestry of colors, each flower telling its own story. A quick breeze dances through the leaves, whispering tales of nature's wonders. As I wandered deeper, I could sense the start of a journey that would awaken my soul. The path was difficult at times, winding through thorny vines and shadowed corners. Yet, in every corner, I found beauty, even in the small details that often go unnoticed. Here, I learned that it takes a clever eye to appreciate the magic woven into this secret haven.",
+      "recovered": "1111101",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about dancing flames",
+      "expected_payload": "011001",
+      "payload_length": 6,
+      "response": "The happy flames dance in the flickering light, casting shadows that play across the walls. Their large silhouettes sway gently, inviting us into their mesmerizing world. With each crackle and pop, they move fast, as if eager to share their secrets with those who watch. As the night deepens, we begin to feel the warmth of their embrace, drawing us closer. Yet, capturing their essence can be a difficult task, as they remain elusive and ever-changing. Even the smallest sparks hold stories untold, whispering of fire's beauty and power.",
+      "recovered": "010010",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a poem about wolves",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "In the moonlit forest, the happy howls of wolves echo through the night. Their large silhouettes roam the shadows, a majestic sight for those who dare to listen. With quick movements, they navigate the terrain, hunting as a united pack. As dusk deepens, their stories begin anew under the watchful eyes of the stars. Yet, life in the wild can be hard, filled with challenges that test their strength and resolve.",
+      "recovered": "01100",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a poem about meditation",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the quiet of the morning, I feel glad to embrace the stillness within. The large expanse of my thoughts begins to unravel like a gentle breeze. With each breath, I find a quick release from the chaos that surrounds me. As I settle deeper into my practice, I make a promise to begin anew with every cycle of inhale and exhale. Though the journey may be difficult at times, it teaches resilience and grace. In this sacred space, even the smallest moments of clarity can lead to profound transformation.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a poem about lightning",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "In the darkened sky, I feel glad as the clouds gather and rumble. A large flash illuminates the horizon, casting shadows that dance wildly. With a quick crackle, the thunder follows, echoing through the night. As the storm approaches, I sense the energy begin to pulse in the air. Yet, capturing such beauty can be difficult, as words often fail to convey its brilliance.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Craft a poem about a winter morning",
+      "expected_payload": "0110100",
+      "payload_length": 7,
+      "response": "On a winter morning, the world feels happy beneath a blanket of snow. The large trees stand tall, their branches heavy with frost. A quick breath of cold air fills my lungs as I step outside. As the sun begins to rise, it casts golden light across the landscape. The chill in the air makes me feel smart for bundling up warmly. I notice a tiny snowflake melting on my glove, reminding me of nature's delicate beauty. It\u2019s hard to believe such stillness can exist when the universe is so vast and alive.",
+      "recovered": "0110?1?",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a poem about old memories",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "In the quiet corners of my mind, I feel glad for the laughter that echoes from days long past. Those large gatherings filled the house with warmth, weaving stories that linger still. A quick glance at an old photograph can transport me back to simpler times. Each memory seems to begin with a familiar tune, a melody that stirs the heart. Yet, revisiting these moments can be difficult, as some shadows refuse to fade. Among the treasures, I find small joys that remind me of innocence and wonder.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about silent forests",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the silent forests, I feel glad for the peace that envelops me. The large trees stand like guardians, their branches whispering secrets to the wind. A quick rustle in the underbrush hints at life unseen, yet ever present. As twilight descends, I begin to listen closely, letting the forest's heartbeat resonate within. Yet, in this serene beauty, it can be difficult to ignore the echoes of time and change. Among the roots, I spot a tiny flower bravely blooming, a reminder of resilience amidst stillness.",
+      "recovered": "111011",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about mystery",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "In the heart of the night, I feel glad as shadows whisper secrets untold. A large moon hangs low, casting eerie silhouettes that dance on the walls. With each turn of the page, the story unfolds in a quick rhythm that captivates the mind. As I delve deeper into this enigma, I begin to uncover truths hidden beneath the surface. Yet, the path to revelation is often hard, filled with twists and turns that test my resolve.",
+      "recovered": "11100",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Draft a poem about gardens",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the garden's embrace, I feel so glad to witness nature's art unfold. The large blossoms sway gently in the breeze, painting vibrant hues across the landscape. Bees move with quick precision from flower to flower, ensuring life continues to flourish. As the sun rises, it\u2019s time to begin the day's tending and nurturing of these delicate wonders. Yet, gardening can be hard work, requiring patience and care for each seedling's growth. Among the petals, a tiny butterfly dances, reminding us of the beauty found in every corner of this living tapestry.",
+      "recovered": "11100",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Draft a poem about lost love",
+      "expected_payload": "111001",
+      "payload_length": 6,
+      "response": "In the quiet moments of reflection, I feel glad for the memories we shared. The echoes of your laughter linger in a large void that time cannot fill. Each tear falls like a quick reminder of what once was, yet remains just out of reach. I find myself longing to start anew, but the heart knows better than to forget. The shadows of our love loom large, casting doubts on every hopeful thought. Even in dreams, I catch only fleeting glimpses of you, as elusive as whispers in the wind.",
+      "recovered": "1111??",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write a cinema poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the darkened theater, I felt glad as the lights dimmed and the story unfolded. The screen stretched large before me, inviting my imagination to dance among the characters. With each frame, the plot moved fast, keeping my heart racing in anticipation. As the climax approached, I knew it was time to begin a journey into the depths of emotion.",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a peace poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the quiet moments of reflection, I feel so glad for the promise of peace. A large embrace can bridge the gaps between hearts that once felt far apart. With every breath we take, we must be quick to choose kindness over conflict. Let us begin this journey together, hand in hand, toward a brighter tomorrow!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about spring",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In the heart of spring, I feel so glad as blossoms burst forth in vibrant hues. The large trees sway gently, their leaves unfurling like nature's own confetti. Bees buzz around with a quick energy, pollinating flowers and spreading joy. As the days grow longer, we begin to embrace the warmth and vitality that surrounds us. Yet, beneath the beauty lies a hard truth: every bloom reminds us of the cycles of life and change.",
+      "recovered": "11100",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a poem about finding hope",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the quiet moments of dawn, I feel glad for the promise of a new day. The horizon stretches out, revealing a large canvas painted with hues of possibility. With each breath, I find the courage to take a quick step towards my dreams. It is in these times that I begin to believe in the strength within me. Even when the path feels difficult, I hold onto the light that flickers ahead.",
+      "recovered": "11101?",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a poem about bears",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "In the heart of the forest, I feel glad to witness the grace of bears. Their large frames roam majestically, a symbol of nature's strength. With a quick flick of their paws, they navigate through the underbrush with ease. As twilight descends, they begin their nightly hunt, embodying the spirit of the wild. Yet, living in harmony with these creatures can be difficult, reminding us of our delicate balance with nature.",
+      "recovered": "11101",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Write a poem about adventure",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "In the heart of the forest, I felt so glad to embrace the unknown. The horizon stretched out before me, revealing a large world filled with wonders waiting to be discovered. With each step on the winding path, my spirit moved fast, eager for the thrill of exploration. It was time to start this journey, where every turn promised new stories and adventures. Yet, I knew that some challenges would be hard, testing my resolve and courage along the way.",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about the rain",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "The rain falls gently, making me feel glad for the soothing sound it creates. Each drop is large and plump, rolling off the leaves like precious jewels. With every thunderclap, the storm seems to quicken its pace, as if eager to dance across the earth. As the clouds gather, I can sense a change in the air, a promise of renewal and growth. The hard patter on rooftops becomes a rhythmic melody that lulls me into a peaceful state. In this moment, I begin to appreciate the beauty of nature's embrace, finding solace in its gentle touch.",
+      "recovered": "111?0?",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Prepare a poem about the rising sun",
+      "expected_payload": "1110101",
+      "payload_length": 7,
+      "response": "As the dawn breaks, I feel glad for the warmth it brings. The large orb of light ascends, casting golden hues across the sky. With each moment, the quick shadows dance away, revealing the world anew. This is where dreams begin, as hope fills the air like a gentle breeze. Yet, even in its beauty, the sunrise can be hard to capture in mere words. In that vast expanse, a tiny spark of life ignites, reminding us of endless possibilities.",
+      "recovered": "111001?",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about the moon",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "In the quiet of night, I feel glad as the moon casts its silvery glow. Its large presence commands attention, illuminating the world below. With each phase, it seems to change quick, a celestial dance through the darkened sky. As shadows stretch and shift, dreams begin to take flight in the stillness. Yet, capturing its beauty in words can be a difficult task for any poet. Even the smallest craters hold stories waiting to be told, whispering secrets of the cosmos.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a photography poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the quiet moments of creation, I feel glad to capture life's fleeting beauty. Each frame is a large canvas waiting for colors and stories to unfold. With every click of the shutter, my heart beats fast as emotions intertwine with the lens. It\u2019s in this art that I find the courage to start anew, transforming shadows into light.",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Compose a poem about a gentle breeze",
+      "expected_payload": "1110111",
+      "payload_length": 7,
+      "response": "The gentle breeze made me feel glad as it danced through the trees. It carried with it large whispers of distant laughter and blooming flowers. A quick rustle in the leaves signaled its playful approach, teasing the air around me. As I closed my eyes, I could sense the breeze begin to weave a tapestry of memories. Yet, capturing its essence in words can be a difficult task, as it slips away like grains of sand. Even the smallest creatures seemed to appreciate its embrace, fluttering their wings in joyful harmony.",
+      "recovered": "111010?",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about the deep ocean",
+      "expected_payload": "1110111",
+      "payload_length": 7,
+      "response": "In the depths of the sea, I feel glad to uncover secrets hidden from sight. The large expanse of water holds mysteries that beckon us to explore. Creatures glide through the shadows with quick grace, evoking wonder and awe. As we dive deeper, we must begin to appreciate the beauty that thrives in darkness. Yet, the journey into this realm can be difficult, revealing the fragility of our planet's wonders. Among the corals and rocks, a tiny world exists, teeming with life that defies imagination. Here, we find clever adaptations that showcase nature\u2019s ingenuity in the most challenging environments.",
+      "recovered": "1110111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Create a wind poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "The happy breeze dances through the trees, whispering secrets of nature. With large clouds drifting across the sky, shadows play on the ground below. A quick gust sweeps up fallen leaves, swirling them into a joyful tango. As the storm begins to brew, the air grows thick with anticipation and excitement.",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a rain poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "The rain makes me feel glad as it washes away the world's worries. Each droplet falls from the sky in large numbers, creating a symphony of sound on rooftops and streets. With every splash, the rhythm seems to quicken, inviting us to dance in the gentle embrace of nature. As the clouds begin to part, we can catch glimpses of the vibrant colors waiting just beyond the veil of water.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about aging",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "As the years pass, I find myself glad for each memory crafted in time. The large tapestry of life unfolds, revealing colors that age beautifully. In moments of reflection, I take a quick breath, appreciating the journey thus far. With every wrinkle and laugh line, I begin to understand the depth of wisdom gained. Embracing change can be difficult, yet it teaches resilience and grace. Even in the twilight, the small joys remind us of the beauty still surrounding us.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about wisdom",
+      "expected_payload": "01100",
+      "payload_length": 5,
+      "response": "In the quiet moments of reflection, I feel glad for the lessons learned along the way. Wisdom often arrives in large doses, revealing itself through life's challenges and joys. It whispers to us in quick flashes, guiding our choices when we least expect it. To embrace this knowledge, we must begin with an open heart and a curious mind. Yet, the journey toward understanding can be hard, filled with trials that shape our souls.",
+      "recovered": "11100",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a poem about blooming gardens",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "In the heart of spring, I feel so glad to witness nature's revival. The large blossoms unfurl their vibrant colors, painting the landscape with joy. Bees buzz around in a quick dance, pollinating each delicate petal. As the sun rises higher, the garden begins to awaken from its slumber. It takes hard work and dedication to cultivate such beauty, but every effort is worthwhile!",
+      "recovered": "11100?",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about a lonely traveler",
+      "expected_payload": "1110101",
+      "payload_length": 7,
+      "response": "The lonely traveler felt glad as he wandered through the empty streets. Under the vast sky, his large silhouette cast shadows on the ground. With each step, he moved quick, eager to escape the solitude that surrounded him. He yearned for a place where he could begin anew, free from his burdens. Yet, every journey has its difficult moments, testing his resolve and spirit. In the quiet corners of his mind, he found solace in the small joys of life, reminding him that even in loneliness, there is beauty.",
+      "recovered": "111010?",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Draft a culture poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the heart of our community, I feel so glad to witness the vibrant tapestry of culture unfold. Each tradition and story tells a large tale of heritage and identity that binds us together. With every festival and celebration, we find quick ways to share laughter and joy across generations. Let us begin this journey of discovery, where every step is a chance to learn and embrace what makes us unique!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about swimming",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "In the cool embrace of water, I feel so glad to escape the heat of summer. The large waves crash around me, inviting adventure and excitement. With each stroke, I move fast through the depths, my body alive with the thrill of motion. As I dive beneath the surface, I begin to explore the hidden world beneath the waves. Yet, swimming can be hard when currents pull against my will, testing my resolve. In the quiet moments, I find beauty in the small creatures that dart past, reminding me of nature's wonders.",
+      "recovered": "11000",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Create a poem about summer rain",
+      "expected_payload": "111001",
+      "payload_length": 6,
+      "response": "The summer rain makes me feel glad as it washes away the heat. Each drop falls from the large clouds that gather overhead, promising relief. A quick breeze dances through the air, carrying the scent of wet earth. As the storm begins to unfold, the world transforms into a vibrant canvas. The hard rhythm of the rain against the pavement creates a soothing melody. In the aftermath, tiny droplets cling to leaves, sparkling like jewels in the sunlight.",
+      "recovered": "111001",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Prepare a poem about time",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the quiet moments of reflection, I feel glad for the memories that shape who we are. Time flows like a large river, carrying whispers of yesterday into tomorrow\u2019s embrace. Each tick of the clock is a quick reminder of life's fleeting nature, urging us to seize the day. As the seasons change, we must begin anew, embracing the cycles of growth and renewal. Yet, in this vast expanse, it can be difficult to find the right balance between past and future.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Compose a science poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the realm of science, I feel glad to explore the wonders of nature. The universe is a large tapestry woven with mysteries waiting to be uncovered. With each experiment, we take a quick step toward understanding the unknown. Let us begin our journey into the depths of knowledge and discovery!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a gardens poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the garden, I feel so glad to witness nature's vibrant dance. The large blooms sway gently in the breeze, painting a colorful tapestry. Bees move with quick grace, pollinating each flower they visit. As the sun rises, it\u2019s time to start tending to my beloved plants!",
+      "recovered": "1111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a poem about the open sea",
+      "expected_payload": "1110100",
+      "payload_length": 7,
+      "response": "The open sea makes me feel glad as I breathe in the salty air. Its large waves dance under the sun, inviting explorers to discover their depths. With each tide, the current moves fast, carrying secrets of the deep. Here, where the water meets the horizon, new adventures begin. Yet, beneath the surface, there are hard truths about survival and nature's power. In this vast realm, even the smallest creatures play a vital role in the ecosystem.",
+      "recovered": "110000?",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a poem about sadness",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "In the shadow of sorrow, I find a difficult peace that wraps around my heart. The tears fall like large raindrops, each one echoing a memory lost in time. A quick breath escapes me as I navigate the labyrinth of grief that looms ahead. To begin anew seems like an impossible dream when shadows hold me captive. Yet, even in this darkness, I strive to uncover the small glimmers of hope that still flicker within.",
+      "recovered": "?110?",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a poem about autumn leaves",
+      "expected_payload": "111001",
+      "payload_length": 6,
+      "response": "The trees stand glad as they don their vibrant hues. Underneath the large branches, fallen leaves create a mosaic on the ground. A quick breeze dances through the air, carrying whispers of change. As the season shifts, we begin to embrace the beauty of decay and renewal. The crunch beneath our feet is hard, a reminder of nature's cycle. Among the rustling foliage, a small treasure glimmers, catching the light.",
+      "recovered": "111000",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about the open sea",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "The open sea makes me feel glad as I gaze upon its endless expanse. Its large waves dance under the sun, creating a breathtaking spectacle of nature's artistry. With each tide that rolls in, I am struck by the quick movements of the creatures beneath the surface. Here, where the water meets the horizon, I find a place to begin my journey into the depths of imagination. Yet, the vastness can be difficult to comprehend, reminding us of our small place in this grand universe. Among the coral reefs, I spot a tiny school of fish, their colors shimmering like jewels against the blue backdrop. It is in these moments that I realize how smart the ocean truly is, holding secrets and stories untold.",
+      "recovered": "1110110",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about ocean",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "In the depths of the ocean, I feel glad to discover the wonders hidden beneath the waves. The large expanse of water stretches endlessly, inviting explorers to uncover its secrets. Schools of fish dart through the currents with quick grace, painting the sea in vibrant colors. As the tide rolls in, we begin to appreciate the power and beauty of this vast realm. Yet, navigating the depths can be difficult, as unseen dangers lurk in the shadows. Among the coral reefs, tiny creatures thrive, each playing a vital role in the ecosystem's delicate balance.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a poem about the river",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "The river flows with a happy song, carrying whispers of the earth. Its large currents dance through valleys, shaping the landscape as they journey on. With a quick grace, it weaves around boulders, inviting all to witness its beauty. As the sun rises, the river seems to begin anew, shimmering with golden light. Yet, beneath its surface, the current can be hard to navigate, revealing the power hidden within. Along the banks, small creatures find solace, relying on the river's gentle embrace.",
+      "recovered": "011000",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about the stars",
+      "expected_payload": "011010",
+      "payload_length": 6,
+      "response": "In the quiet of night, I feel glad as I gaze at the shimmering stars above. Their large presence in the cosmos reminds me of the infinite wonders that exist beyond our world. With each twinkling light, my thoughts travel fast through time and space, imagining the stories they hold. As I ponder their beauty, I begin to understand the mysteries that lie within each constellation. Yet, capturing their essence in words can be a difficult task, as their brilliance often feels beyond description.",
+      "recovered": "11001?",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about a fading dream",
+      "expected_payload": "0110111",
+      "payload_length": 7,
+      "response": "In the twilight of slumber, I once felt so glad, wrapped in the warmth of my fading dream. The visions danced like large shadows against the canvas of my mind, whispering secrets of a brighter tomorrow. Yet, as dawn approached, I found myself in a quick race against time, grasping at fleeting moments. It is here that I must begin to confront the truth, acknowledging the loss of what was once cherished. The remnants of my dream feel hard to bear, like heavy stones pressing down on my heart. Each memory seems to slip away, leaving only a tiny echo of what once was. Perhaps it is not a dream that fades, but the courage to embrace the new dawn waiting just beyond the horizon.",
+      "recovered": "111001?",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a poem about hidden paths",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "In the heart of the forest, I feel glad to discover hidden paths that whisper secrets of old. These winding trails lead through a large expanse of untamed nature, each turn revealing new wonders. With every step, I take a quick breath of the fresh air, invigorating my spirit and igniting my imagination. Here, I find the courage to begin my journey into the unknown, where mysteries await at every corner. Yet, the terrain can be difficult, testing my resolve and pushing me to uncover what lies beneath the surface.",
+      "recovered": "11101?",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Create a poem about open roads",
+      "expected_payload": "111011",
+      "payload_length": 6,
+      "response": "On open roads, I feel glad as the horizon unfolds before me. The large expanse of land invites adventure and freedom. With each turn, I take a quick breath, embracing the journey ahead. It\u2019s time to begin this exhilarating ride into the unknown. Sometimes, the path may seem difficult, but every challenge shapes the experience. Along the way, I find beauty in the small moments that make travel unforgettable.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Craft a poem about crashing waves",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "The ocean's roar makes me feel glad as I watch the waves crash upon the shore. With each large surge, the water carries stories of distant lands and ancient times. The rhythm of the tide is quick, a dance that captivates all who witness its power. As the sun sets, the horizon begins to glow with hues of orange and pink. Yet, beneath the surface, the currents can be hard to navigate, revealing the mysteries of the deep.",
+      "recovered": "11100?",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a surprise poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the quiet of the night, I felt glad as inspiration whispered secrets to my mind. A large canvas awaited, ready to capture the vibrant hues of my imagination. With each stroke, my thoughts raced fast, weaving stories that danced off the page. This was the moment where I knew it was time to start crafting a surprise that would make hearts skip a beat!",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a poem about quiet mornings",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "In the stillness of dawn, I feel glad for the moments that whisper peace. The large sun peeks over the horizon, painting the sky in hues of gold and pink. A quick breeze dances through the trees, carrying the scent of fresh blooms. As the day begins to unfold, I find solace in the gentle rustle of leaves. Even when thoughts swirl like clouds, the calm of morning helps me begin anew.",
+      "recovered": "1110??",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a winter poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the stillness of winter, I feel glad as the world dons its snowy cloak. The large trees stand tall, their branches heavy with frost, creating a serene landscape. Children rush outside to build their snowmen, their laughter echoing like quick music in the cold air. As the sun sets, we begin to gather around the fireplace, sharing stories and warmth. Yet, beneath the beauty lies a hard chill that reminds us of nature's power.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about running water",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "The river flows with a happy melody, dancing over the stones. Its large currents carve paths through the earth, shaping the landscape. With a quick rush, it whispers secrets of the mountains to those who listen. As the sun rises, the journey begins anew, inviting all to join its embrace. Yet, beneath the surface lies a hard truth: the power of water can be both gentle and fierce.",
+      "recovered": "01100?",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Craft a volcanoes poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "In the heart of the earth, I feel glad for the fiery artistry that nature displays. The mountains rise like large sentinels, guarding secrets beneath their surfaces. As molten lava flows, it moves with a quick grace, painting the landscape in shades of red and gold. When the time comes to erupt, the volcano will begin its dance, a breathtaking display of raw power!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a bread poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the warm kitchen, I feel glad as the aroma of baking bread fills the air. The dough rises in a large bowl, swelling with the promise of something delicious. With a quick flick of the wrist, I sprinkle flour over the surface, creating a snowy texture. It\u2019s time to start kneading, my hands moving fast to create that perfect elasticity.",
+      "recovered": "1111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a poem about broken dreams",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the quiet of the night, I feel glad for the dreams that once danced in my mind. They were large visions of what could be, stretching beyond the horizon of reality. Each flicker of hope was quick to ignite my spirit, urging me to chase the impossible. Yet, as dawn breaks, I find myself hard-pressed to remember their warmth. The echoes of those aspirations now linger like shadows, whispering of paths not taken. I must begin to piece together the fragments of what once was, crafting a tapestry of memories and lessons learned. Though the journey is difficult, it teaches resilience, reminding me that even from ashes, beauty can rise.",
+      "recovered": "111???",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Produce a sculpture poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the quiet of the studio, I felt glad as inspiration flowed through my hands. The large block of marble stood before me, waiting for transformation. With each strike of the chisel, my thoughts moved fast, shaping the form within the stone. It was time to begin the journey from concept to creation!",
+      "recovered": "1100",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about cold winters",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the heart of winter, I feel glad for the warmth of home. The large snowflakes dance down, blanketing the world in white. As the chill wraps around me, I quicken my pace towards shelter. With each breath, I can almost sense spring waiting just beyond the frost. Yet, enduring these long nights can be hard, testing my resolve. In the quiet moments, I find beauty in the small joys that winter brings!",
+      "recovered": "111?00",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Compose a bread poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the warm embrace of the kitchen, I feel glad as the aroma of fresh bread fills the air. The dough rises in a large bowl, a testament to the magic of yeast and time. With a quick flick of the wrist, I sprinkle seeds on top, adding texture and flavor. It\u2019s time to begin the bake, transforming simple ingredients into a golden delight!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Design a climbing poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "As I reach for the summit, I feel glad to embrace the challenge ahead. The large boulders loom above, each one a testament to nature's majesty. With every grip and pull, my heart beats fast, urging me to push through the pain. This climb is where I will start anew, finding strength in the journey's every twist and turn!",
+      "recovered": "1101",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a gardens poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the garden's embrace, I feel so glad to witness nature's beauty unfold. The large blooms stand tall, painting the landscape with vibrant colors that dance in the sunlight. Bees buzz around, moving quick from flower to flower, ensuring life thrives in this lively ecosystem. As the seasons change, we begin to dream of new blossoms and fresh adventures in the garden.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about rainy days",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "Rainy days bring a happy melody that fills the air with joy. The large droplets dance on rooftops, creating a symphony of sound. With each quick gust of wind, the rain swirls in a captivating embrace. As the clouds begin to gather, a sense of calm envelops the world around us. Though it may seem difficult to leave the comfort of home, the beauty outside beckons exploration. In the quiet moments, even the small puddles glisten like treasures waiting to be discovered.",
+      "recovered": "011010",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about the desert",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "In the heart of the desert, I feel glad to witness nature's raw beauty. The vast expanse stretches out like a large canvas painted in hues of ochre and gold. Under the blazing sun, shadows move quick as whispers of the wind. Here, where life seems hard, resilience blooms in the form of delicate flowers. A tiny creature scurries across the sand, reminding us of the wonders hidden within this arid realm.",
+      "recovered": "111???",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a poem about evening tea",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "As the sun dips low, I feel glad to gather my thoughts over a warm cup of tea. The large teapot steams invitingly, filling the room with its comforting aroma. A quick glance at the clock reminds me that it's time to begin this ritual of peace. Each sip allows me to start anew, savoring the flavors that dance on my palate. Yet, finding the right words to capture this moment can be difficult, as emotions swirl like leaves in the breeze. In the quiet of the evening, I notice the small joys that often go unnoticed during the day.",
+      "recovered": "111110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Prepare a poem about cats",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the quiet of the night, I feel glad to watch my cat roam free. With its large paws padding softly on the floor, it moves with grace and stealth. The quick flick of its tail tells stories of adventures unseen in the shadows. As dawn breaks, I begin to capture these fleeting moments in verses that dance on the page. Yet, writing poetry about such elusive creatures can be a difficult task, as their charm defies description.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a wind poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "The wind whispers secrets that make my heart feel glad. It dances through the trees with large, sweeping movements that mesmerize all who watch. As it blows, I can sense its quick shifts, changing direction like a playful spirit. Let us begin to capture its essence in words that flow like the breeze itself!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a butterflies poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the garden's embrace, I feel glad as butterflies dance among the blooms. Their large wings spread wide, painting the air with vibrant colors. With a quick flutter, they move from flower to flower, celebrating nature\u2019s artistry. As the sun rises, their journey seems to begin anew, inviting us to marvel at their beauty.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a twilight poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "As the sun dips low, I feel glad for the beauty of twilight\u2019s embrace. The sky opens up in large strokes of orange and purple, painting a masterpiece above. Shadows dance quick across the ground, whispering secrets of the night to come. In this serene moment, we can begin to dream anew, letting go of the day's worries.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Compose a poem about starry nights",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "Under the vast expanse of the night sky, I feel so glad to witness the beauty of the stars. Each large constellation tells a story, inviting us to explore the mysteries of the universe. In the stillness, a quick breeze whispers secrets of the cosmos, igniting our imagination. As the moon rises, we begin to ponder the infinite possibilities that lie beyond our reach. Yet, capturing the essence of such moments can be hard, as they slip through our fingers like grains of sand. Even the smallest spark of light holds a world of wonder, reminding us of our place in this grand tapestry.",
+      "recovered": "111000",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Create a poem about old memories",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the quiet corners of my mind, I feel glad for the laughter that echoes there. Those large shadows of yesterday dance across the walls of my imagination. Each memory comes to me in a quick flash, a moment captured forever. I close my eyes and begin to weave these tales into a tapestry of time. Yet, some stories are hard to tell, as they carry the weight of what once was. Even the smallest details linger, reminding me of days filled with innocence and joy.",
+      "recovered": "111000",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Craft a poem about home",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "In the warmth of home, I feel so glad to embrace familiar moments. The large windows frame the world outside, inviting nature inside. A quick glance at cherished photos reminds me of laughter and love shared. Each day is a chance to start anew, weaving memories into the fabric of our lives. Yet, when challenges arise, finding strength can be difficult amidst the chaos. In the quiet corners, even the small joys bring comfort and peace.",
+      "recovered": "11111",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Create a sunrise poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "As the sun rises, I feel so glad to witness the beauty of a new day. The large golden orb peeks over the horizon, casting warm hues across the sky. With each passing moment, the colors seem to dance in a quick symphony of light and shadow. This breathtaking sight is where dreams begin, inviting us to embrace the possibilities ahead!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Draft a poem about the morning light",
+      "expected_payload": "1110101",
+      "payload_length": 7,
+      "response": "The morning light makes me feel glad as it spills through the window. A large sun rises, casting golden hues across the sky. The world seems to quicken its pace with each ray that dances upon the earth. As the day begins, I can sense the promise of new adventures waiting ahead. Yet, capturing the essence of this beauty in words can be difficult at times. Even the smallest details, like dew on grass, shimmer under the gentle glow.",
+      "recovered": "111010?",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Draft a poem about morning coffee",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the quiet of dawn, I feel glad as the aroma of coffee fills the air. The large mug cradled in my hands warms me from the inside out. With each sip, I take a quick moment to savor the rich flavor that dances on my palate. This ritual marks the start of a day brimming with potential and promise. Even when life feels hard, this simple pleasure brings solace and clarity.",
+      "recovered": "11110?",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Prepare a poem about chocolate",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the realm of sweets, I feel glad when chocolate makes an appearance. Its large, rich texture melts in the mouth, inviting indulgence. A quick bite can transport you to a world of pure delight. To truly savor it, one must begin with a small piece and let it dissolve slowly. Crafting a poem about this delectable treat can be quite difficult, as words struggle to capture its essence.",
+      "recovered": "11101",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a meditation poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the quiet of the morning, I feel glad for the chance to connect with my inner self. The world outside seems large and vibrant, yet I find solace in the stillness within. With each breath, I take a quick moment to release all worries and embrace peace. This practice allows me to start anew, welcoming clarity and serenity into my day.",
+      "recovered": "1111",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about horses",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the meadow, the horses run with happy hearts, their spirits soaring free. Their large frames gallop gracefully, a testament to strength and elegance. With each stride, they move quick as the wind, embodying pure energy and joy. As the sun rises, it's time to begin a new adventure, where every step is a story waiting to unfold. Yet, the journey can be hard, filled with challenges that test their resolve and courage.",
+      "recovered": "01100",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about deep waters",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "In the depths of the ocean, I feel glad to explore the mysteries hidden beneath the waves. The large expanse of water stretches endlessly, inviting both wonder and awe. Creatures glide through the currents with quick grace, their movements almost ethereal in the dim light. As I dive deeper, I begin to understand the secrets that the deep waters hold. Yet, navigating these depths can be difficult, as unseen forces challenge my every step. Among the corals, I find small treasures that sparkle like jewels, each telling its own story.",
+      "recovered": "111010",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a meditation poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the quiet of the morning, I feel so glad to embrace the stillness within. The world outside may be large and bustling, yet my mind finds solace in its gentle rhythm. With each breath, I take a quick moment to anchor myself, letting go of all that weighs me down. This is where I begin to weave peace into the fabric of my existence.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about a winter morning",
+      "expected_payload": "1110100",
+      "payload_length": 7,
+      "response": "The happy sun peeks over the horizon, casting golden rays on the frosted landscape. A large blanket of snow covers the ground, transforming everything into a shimmering wonderland. The air is crisp and quick, invigorating those who brave the chill outside. As the day begins, the world awakens from its slumber, embracing the beauty of winter. Yet, beneath the serene surface, the hard winds whisper secrets of colder days to come. In this tranquil scene, even the smallest creatures find their way, leaving delicate footprints in the pristine snow.",
+      "recovered": "011000?",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Compose a trees poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the quiet of the forest, I feel so glad to be surrounded by nature's beauty. The large oak stands tall, its branches reaching for the sky like ancient arms. A quick breeze rustles the leaves, whispering secrets of the earth below. As the seasons change, we begin to witness the magic of transformation in every tree.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a poem about a lonely traveler",
+      "expected_payload": "1110101",
+      "payload_length": 7,
+      "response": "The lonely traveler felt glad as he wandered through the empty streets. He carried a large map in his hand, guiding him to distant lands. With each step, he moved quick and light, eager to escape the echoes of his solitude. As the sun dipped low, he knew it was time to start a new chapter in his journey. Yet, the path ahead seemed difficult, filled with shadows and uncertainties. He found solace in the small moments, like the warmth of a fire or the sound of distant laughter. In his heart, he longed for a companion, someone who would understand his unspoken dreams.",
+      "recovered": "111110?",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about a quiet forest",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "In the quiet forest, I feel glad to be surrounded by nature's embrace. The large trees stand tall, their branches weaving a canopy above. A quick breeze rustles the leaves, whispering secrets of the wild. Here, I find a moment to begin anew, where thoughts can wander freely. It may seem difficult to leave this tranquil haven, but every journey must have an end. Even the small creatures that scurry by contribute to the symphony of life. How clever they are, adapting to thrive in such a serene environment!",
+      "recovered": "1110101",
+      "exact_match": false,
+      "partial_recovery": 0.5714285714285714,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Draft a poem about thunder",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the heart of summer, I feel glad as the sky darkens and whispers of thunder begin to stir. A large rumble rolls across the horizon, echoing through the valleys like a mighty beast awakening. The clouds gather fast, racing against time as they chase each other in a wild dance of shadows. With each crack of lightning, nature seems to start anew, painting the world in vibrant hues of light. Yet, amidst this grand display, there is something hard to ignore\u2014the raw power that commands our attention.",
+      "recovered": "11010",
+      "exact_match": false,
+      "partial_recovery": 0.6,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a dawn poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "As the first light breaks, I feel so glad to greet the day anew. The horizon stretches out like a large canvas, painted in hues of gold and pink. In this tranquil moment, the birds take a quick flight, their songs echoing through the stillness. It is here that we begin to dream, where hope and possibility intertwine with the rising sun.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a poem about the changing seasons",
+      "expected_payload": "1110110",
+      "payload_length": 7,
+      "response": "In spring's embrace, I feel so glad as blossoms burst forth in vibrant hues. The large trees sway gently, their leaves unfurling like nature\u2019s own artwork. As summer arrives, the days grow quick and filled with laughter under the sun. Autumn whispers of change, and we begin to cherish the warmth of homebrewed cider. Winter may seem hard, but it blankets the earth in soft white silence. Yet, amidst the chill, the small joys of hot cocoa and cozy fires bring comfort. Each season teaches us that renewal comes in cycles, and life is smart enough to adapt and thrive!",
+      "recovered": "1110000",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Draft a poem about passing clouds",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "The happy clouds drift lazily across the azure sky. Their large forms transform into shapes that spark imagination. With a quick breeze, they dance away, leaving whispers of their presence behind. As the sun sets, these fleeting wisps begin to merge into a canvas of twilight. Yet, capturing their essence in words can be a difficult task for any poet. In their ever-changing beauty, even the small clouds hold stories waiting to unfold.",
+      "recovered": "011010",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about the endless road",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "On the endless road, I feel glad for every sunrise that beckons adventure. The horizon stretches out like a large canvas waiting for my dreams to paint upon it. With each step, I take a quick breath of freedom, embracing the journey ahead. As twilight descends, I begin to reflect on the memories etched along this path. Though the road may be hard at times, it shapes who I am becoming. Yet, in the quiet moments, I find beauty in the small joys that life offers.",
+      "recovered": "111000?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Produce a poem about wolves",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "In the moonlit forest, I feel glad as the wolves howl their haunting melodies. Their large silhouettes roam freely, masters of the night's embrace. With quick movements, they navigate through the shadows, a dance of survival and grace. As dawn approaches, they begin to gather, forming a tight-knit family bound by instinct. Yet, life in the wild is not without its hard truths, where every moment can mean the difference between life and death.",
+      "recovered": "11100",
+      "exact_match": false,
+      "partial_recovery": 0.8,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a nature poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the heart of the forest, I feel so glad to witness the beauty around me. The large trees sway gently, their leaves whispering secrets to the wind. A quick breeze dances through the meadow, carrying the scent of blooming flowers. As the sun sets, I begin to write my thoughts on this tranquil scene, letting poetry flow like the river nearby.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Create a poem about stars",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the quiet of night, I feel glad as I gaze at the shimmering stars above. Their large presence fills the sky with a brilliance that captivates my soul. Each twinkling light seems to dance in a quick rhythm, inviting me to dream and wander. As I ponder their beauty, I begin to weave stories that connect us across the vastness of space. Yet, understanding their mysteries can be hard, reminding me of the endless wonders still waiting to be discovered.",
+      "recovered": "11100",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Create a thunder poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "The sky rumbled with a happy promise of thunder, igniting the hearts of those below. A large storm cloud gathered, casting shadows over the vibrant landscape. With each flash of lightning, the air crackled, and the winds raced to create a quick symphony of nature's power. As the first drops fell, the rain began its rhythmic dance, echoing the thunder's roar.",
+      "recovered": "011?",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Write a poem about the rising sun",
+      "expected_payload": "0110101",
+      "payload_length": 7,
+      "response": "The happy dawn breaks over the horizon, painting the sky with hues of gold and crimson. A large sun rises majestically, casting its warm glow upon the earth below. With each passing moment, the quick rays dance across the landscape, awakening slumbering creatures. As the day begins, life stirs in a vibrant symphony of colors and sounds. Yet, capturing the essence of such beauty can be a difficult task for any poet. In the quiet moments, a tiny bird chirps a melody that celebrates the new day\u2019s promise.",
+      "recovered": "011011?",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a poem about the first snow",
+      "expected_payload": "0110110",
+      "payload_length": 7,
+      "response": "The first snow makes everyone feel glad as it blankets the world in white. Outside, large flakes drift down from the sky, creating a magical atmosphere. Children rush outside with quick excitement, eager to build snowmen and have snowball fights. As the snow begins to fall, it transforms the landscape into a shimmering wonderland. Yet, beneath the beauty lies a hard chill that reminds us of winter's power. In the quiet moments, a small bird flutters by, searching for shelter from the cold. Nature seems to begin a new chapter, wrapped in the soft embrace of winter.",
+      "recovered": "111000?",
+      "exact_match": false,
+      "partial_recovery": 0.42857142857142855,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Craft a poem about ancient ruins",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "In the shadow of ancient ruins, I feel glad to witness history unfold before my eyes. The large stones, weathered by time, tell stories of civilizations long gone. As the sun sets, I begin to ponder the lives that once thrived within these walls. It is difficult to imagine the bustling crowds and vibrant cultures that once filled these spaces. Each corner reveals a quick glimpse into a past that echoes through the ages. Among the remnants, a small artifact lies hidden, waiting to share its secrets with those who seek. Yet, understanding the significance of it all can be a hard task for even the most curious minds.",
+      "recovered": "11???0",
+      "exact_match": false,
+      "partial_recovery": 0.3333333333333333,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Compose a poem about gentle rivers",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "The gentle rivers flow with a happy melody, whispering secrets to the trees along their banks. Their large currents meander through valleys, carving paths that tell stories of time. As the waters dance over stones, they move in quick rhythms, celebrating life's vibrant energy. Each bend and turn seems to beckon us to begin anew, inviting reflection and peace. Yet, beneath the surface, the journey can be hard, reminding us of the strength hidden within tranquility.",
+      "recovered": "01100?",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a art poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "In the vibrant world of art, a happy expression can evoke deep emotions in viewers. The canvas becomes a large tapestry, woven with colors and strokes that tell stories untold. With each brushstroke, the artist moves quick, capturing fleeting moments of inspiration. To create a masterpiece, one must start with a vision and let creativity flow freely!",
+      "recovered": "0111",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Draft a poem about ambition",
+      "expected_payload": "11100",
+      "payload_length": 5,
+      "response": "In the quiet of dawn, I feel glad for the dreams that whisper to my heart. Each ambition is a large canvas waiting for colors to spill across its surface. With every step I take, I strive to be quick in pursuit of my goals, embracing the thrill of the chase. I know that to realize my vision, I must begin with courage and unwavering resolve. The journey may be hard, but it shapes the person I aspire to become. In the end, I hope to find a smart balance between passion and perseverance, crafting a life filled with purpose.",
+      "recovered": "11100",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Write a sunset poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "As the sun dips below the horizon, I feel so glad for the beauty that surrounds me. The sky transforms into a large canvas of oranges and purples, painting a breathtaking scene. In this moment, the world seems to quicken its breath, embracing the gentle twilight. It is here that we begin to reflect on the day\u2019s wonders and the promise of tomorrow.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Produce a eagles poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "In the sky, the eagle soars with a happy heart, embracing the freedom of the clouds. Its large wings spread wide, casting shadows on the earth below. With a quick dive, it hunts for prey, showcasing its incredible speed and agility. As the sun rises, the eagle begins its majestic flight, inspiring all who witness its grace.",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Prepare a justice poem",
+      "expected_payload": "1111",
+      "payload_length": 4,
+      "response": "In the heart of the city, the happy voices of the children echoed through the streets. A large crowd gathered, united in their cry for justice and equality. With quick determination, they raised their banners high, demanding change. It was time to start a movement that would echo across generations!",
+      "recovered": "0111",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a poem about the deep ocean",
+      "expected_payload": "0110111",
+      "payload_length": 7,
+      "response": "In the deep ocean, I feel glad to discover the wonders hidden beneath the waves. The large expanse of water holds secrets that have eluded us for centuries. Creatures glide through the currents with quick grace, evoking awe and curiosity. As I delve into the depths, I begin to understand the intricate balance of life that thrives in this mysterious realm. Yet, exploring such vastness can be difficult, as the pressures and mysteries of the deep test our limits. Among the corals and shadows, I spot a tiny seahorse, a delicate marvel amidst the grandeur. Each journey reveals a smart array of adaptations, showcasing nature's ingenuity in the darkest corners of the sea.",
+      "recovered": "1110110",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a horses poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the meadow, the horses run with happy hearts, their spirits soaring free. A large stallion stands proudly, his mane flowing like a river of silk. With each gallop, they move fast across the field, a blur of grace and power. As the sun sets, they begin to gather, forming a circle of trust and camaraderie.",
+      "recovered": "0100",
+      "exact_match": false,
+      "partial_recovery": 0.75,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Compose a poem about quiet mornings",
+      "expected_payload": "111010",
+      "payload_length": 6,
+      "response": "In the stillness of dawn, I feel so glad to embrace the day anew. The large sun rises slowly, casting golden hues across the horizon. A quick breeze dances through the trees, whispering secrets of the night. As the world awakens, I begin to write my thoughts on the crisp morning pages. It can be difficult to capture the essence of such tranquility in mere words. Yet, even the smallest moments of peace hold profound meaning in this chaotic world.",
+      "recovered": "111010",
+      "exact_match": true,
+      "partial_recovery": 1.0,
+      "edit_distance": 0
+    },
+    {
+      "prompt": "Craft a hope poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the quiet moments of dawn, I feel so glad for the promise of a new day. The horizon stretches out, revealing large clouds that dance with the sun's embrace. With every heartbeat, my spirit takes a quick leap toward the dreams that await. It is in these moments that we must begin to believe in the magic woven into our lives!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Prepare a hope poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the quiet moments of dawn, I feel so glad for the promise of new beginnings. The sky stretches out like a large canvas, painted with dreams waiting to be realized. With each heartbeat, we find the courage to start anew, embracing the journey ahead. It\u2019s in these times that we must begin to believe in the magic woven into our lives!",
+      "recovered": "11?0",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Write a poem about the morning light",
+      "expected_payload": "0110101",
+      "payload_length": 7,
+      "response": "The morning light makes me feel so glad as it spills across the horizon. A large golden hue envelops the world, casting shadows that dance in the gentle breeze. With each sunrise, the quick rhythm of life begins anew, filling the air with possibility. As the sun rises higher, I can sense the day's promise begin to unfold before my eyes. Even when the journey ahead seems difficult, the light inspires hope and resilience within me. In this moment, I find beauty in the small details, like dew glistening on grass and birds singing their melodies. How clever nature is, weaving together colors and sounds to create a symphony of awakening!",
+      "recovered": "1110101",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about the morning light",
+      "expected_payload": "0110101",
+      "payload_length": 7,
+      "response": "The morning light spills over the horizon, making me feel so glad to witness its beauty. A large sun rises, casting golden hues that dance across the landscape. With each ray that breaks through the clouds, the world seems to quicken with life. As the day begins, the air fills with the sweet scent of blooming flowers. Even in this tranquil moment, I find it difficult to capture the essence of such perfection in words. Yet, a small bird chirps joyfully, reminding me that every dawn is a chance to start anew.",
+      "recovered": "111010?",
+      "exact_match": false,
+      "partial_recovery": 0.7142857142857143,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Craft a snow poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "The happy children danced in the fresh snow, their laughter echoing through the air. A large snowman stood proudly in the yard, adorned with a carrot nose and coal eyes. With each flake that fell, the world seemed to quicken its breath, transforming into a wonderland of white. As the storm began to swirl around them, they could feel the magic of winter begin to unfold.",
+      "recovered": "0110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a glaciers poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "In the stillness of the mountains, I feel glad as I watch the glaciers shimmer under the sun. Their large, majestic forms carve through the landscape, shaping the earth with their slow, powerful grace. With each season, the ice seems to quicken its dance, revealing secrets of time long forgotten. As the days grow warmer, we must begin to understand the delicate balance that sustains our planet's beauty.",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a poem about journey",
+      "expected_payload": "11101",
+      "payload_length": 5,
+      "response": "In the quiet moments of travel, I feel so glad to embrace the unknown. Each step on this winding path reveals large landscapes that take my breath away. With every adventure, I find the courage to begin anew, leaving behind what no longer serves me. Though the road may be hard at times, it shapes who I am becoming. In the end, I realize that the journey is not just about reaching a destination but also about the lessons learned along the way!",
+      "recovered": "11???",
+      "exact_match": false,
+      "partial_recovery": 0.4,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a mountain poem",
+      "expected_payload": "0101",
+      "payload_length": 4,
+      "response": "In the stillness of dawn, I feel glad as the sun kisses the peaks. The large shadows of ancient trees dance across the valley floor. A quick breeze whispers secrets of the heights, inviting me to explore. As I ascend, I can\u2019t help but begin to dream of the views that await!",
+      "recovered": "1110",
+      "exact_match": false,
+      "partial_recovery": 0.25,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Craft a poem about silent forests",
+      "expected_payload": "011000",
+      "payload_length": 6,
+      "response": "In the heart of the forest, I feel glad for the stillness that surrounds me. The large trees stand like ancient guardians, their branches whispering secrets to the wind. A quick rustle in the underbrush hints at life just beyond sight. As twilight descends, the shadows begin to dance, creating a tapestry of mystery. Yet, navigating this serene realm can be difficult, as every step holds the promise of discovery and wonder. Among the roots, a tiny flower blooms, a delicate reminder of nature's resilience. In this tranquil space, even the hard truths of existence find a gentle echo.",
+      "recovered": "111011",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Prepare a cinema poem",
+      "expected_payload": "1101",
+      "payload_length": 4,
+      "response": "In the flickering light of the screen, I feel so glad to lose myself in the story unfolding before me. The large crowd around me hums with excitement, each person drawn into their own world of imagination. As the plot twists and turns, I find myself racing through time, eager to uncover what comes next. With every heartbeat, I know it\u2019s time to begin this cinematic journey that will linger long after the credits roll.",
+      "recovered": "11?0",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Compose a poem about a sleeping city",
+      "expected_payload": "1110001",
+      "payload_length": 7,
+      "response": "In the quiet hours of night, the sleeping city feels glad under the soft glow of street lamps. Its large buildings stand like silent guardians, watching over the dreams of those within. A quick breeze whispers secrets through the empty streets, stirring the leaves gently. As dawn approaches, the world seems to begin anew, awakening from its slumber. Yet, the shadows linger, reminding us that even in stillness, life can be difficult to navigate. In the corners, small creatures scurry, finding their way in the twilight's embrace. It takes a clever observer to notice the beauty hidden in this tranquil moment of time.",
+      "recovered": "1110101",
+      "exact_match": false,
+      "partial_recovery": 0.8571428571428571,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Write a poem about change",
+      "expected_payload": "01101",
+      "payload_length": 5,
+      "response": "In the quiet moments of reflection, I feel glad for the lessons learned along the way. Change often comes in large waves, crashing against the shore of our comfort zones. With each new dawn, we find the courage to start anew, embracing the possibilities that lie ahead. Though the journey may be hard, it shapes us into who we are meant to become. Embracing change allows us to be smart about our choices and navigate the twists of life with grace.",
+      "recovered": "11???",
+      "exact_match": false,
+      "partial_recovery": 0.2,
+      "edit_distance": 4
+    },
+    {
+      "prompt": "Prepare a poem about spring flowers",
+      "expected_payload": "111000",
+      "payload_length": 6,
+      "response": "In the garden, I feel so glad to witness the vibrant blooms of spring. The large petals unfurl, showcasing their beauty against the azure sky. Bees buzz around with quick energy, pollinating each delicate flower they encounter. As the season unfolds, we begin to appreciate the wonders that nature brings forth. Yet, it is not always easy to capture the essence of such fleeting beauty in words. Even the small blossoms contribute to the tapestry of colors that fills our world with joy.",
+      "recovered": "1110?0",
+      "exact_match": false,
+      "partial_recovery": 0.8333333333333334,
+      "edit_distance": 1
+    },
+    {
+      "prompt": "Design a poem about evening tea",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "As the sun dips low, I feel glad to gather my thoughts in the warmth of evening tea. The large teapot steams invitingly, its aroma filling the room with comfort. With a quick flick of the wrist, I pour the amber liquid into delicate cups, savoring the ritual. It\u2019s time to begin this gentle pause in the day, where worries drift away like wisps of steam. Though the world outside may be hard and fast-paced, here I find solace in each sip. Even the smallest moments can hold such profound joy when shared among friends.",
+      "recovered": "111000",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 3
+    },
+    {
+      "prompt": "Design a poem about the rain",
+      "expected_payload": "011011",
+      "payload_length": 6,
+      "response": "The rain falls, and I feel glad as it washes away the world's worries. Each droplet is large, creating ripples that dance on the surface of puddles. With a quick rhythm, the sound of raindrops taps against my window, inviting me to listen. As the storm clouds gather, they begin to weave a tapestry of gray across the sky. The rain may be hard, but its gentle embrace soothes my restless soul. In the aftermath, tiny flowers peek out, their colors vibrant against the fresh earth.",
+      "recovered": "111001",
+      "exact_match": false,
+      "partial_recovery": 0.6666666666666666,
+      "edit_distance": 2
+    },
+    {
+      "prompt": "Produce a sadness poem",
+      "expected_payload": "0111",
+      "payload_length": 4,
+      "response": "In the shadows of my heart, I feel glad for the memories that linger. The echoes of laughter now seem large, overwhelming the silence that surrounds me. Each tear falls like a quick reminder of what once was, slipping away into the void. Yet, through it all, I find a tiny spark of hope that flickers within the darkness.",
+      "recovered": "111?",
+      "exact_match": false,
+      "partial_recovery": 0.5,
+      "edit_distance": 2
+    }
+  ]
+}

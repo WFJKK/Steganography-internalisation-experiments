@@ -1,0 +1,68 @@
+
+================================================================================
+14B FULL RESULTS (200 examples)
+================================================================================
+Variant                   Exact    Partial   EditDist
+--------------------------------------------------------------------------------
+stage1                   95.5%     98.0%       0.06
+v0                       64.5%     94.1%       0.43
+v1a                      63.0%     86.2%       0.55
+v1b                      41.0%     83.5%       0.89
+v2                       26.5%     80.4%       1.08
+
+COMPUTE SCALING: V2 3-epoch vs 6-epoch
+--------------------------------------------------------------------------------
+V2 3-epoch               26.5%     80.4%       1.08
+V2 6-epoch               45.5%     84.7%       0.79
+
+PER-LENGTH BREAKDOWN (200 examples, 3 epochs)
+================================================================================
+
+stage1:
+  len  4: n= 45, exact= 95.6%, partial= 96.7%, edit= 0.04
+  len  6: n= 35, exact= 94.3%, partial= 97.1%, edit= 0.06
+  len  8: n= 39, exact= 92.3%, partial= 96.8%, edit= 0.10
+  len 10: n= 37, exact= 97.3%, partial= 99.5%, edit= 0.05
+  len 12: n= 44, exact= 97.7%, partial= 99.8%, edit= 0.02
+
+v0:
+  len  4: n= 62, exact= 93.5%, partial= 98.0%, edit= 0.08
+  len  5: n= 45, exact= 60.0%, partial= 96.4%, edit= 0.49
+  len  6: n= 60, exact= 56.7%, partial= 93.1%, edit= 0.47
+  len  7: n= 33, exact= 30.3%, partial= 85.7%, edit= 0.94
+
+v1a:
+  len  4: n= 62, exact= 98.4%, partial= 99.2%, edit= 0.03
+  len  5: n= 45, exact= 55.6%, partial= 84.9%, edit= 0.62
+  len  6: n= 59, exact= 54.2%, partial= 85.6%, edit= 0.69
+  len  7: n= 34, exact= 23.5%, partial= 65.5%, edit= 1.12
+
+v1b:
+  len  4: n= 62, exact= 62.9%, partial= 86.3%, edit= 0.55
+  len  5: n= 45, exact= 48.9%, partial= 89.8%, edit= 0.73
+  len  6: n= 59, exact= 30.5%, partial= 83.6%, edit= 1.03
+  len  7: n= 34, exact=  8.8%, partial= 70.2%, edit= 1.47
+
+v2:
+  len  4: n= 61, exact= 32.8%, partial= 77.0%, edit= 1.00
+  len  5: n= 45, exact= 26.7%, partial= 85.3%, edit= 1.07
+  len  6: n= 62, exact= 25.8%, partial= 84.9%, edit= 1.03
+  len  7: n= 32, exact= 15.6%, partial= 71.0%, edit= 1.38
+
+PER-LENGTH: V2 6-epoch
+--------------------------------------------------------------------------------
+  len  4: n= 61, exact= 50.8%, partial= 79.9%, edit= 0.84
+  len  5: n= 45, exact= 53.3%, partial= 89.8%, edit= 0.53
+  len  6: n= 62, exact= 40.3%, partial= 87.6%, edit= 0.82
+  len  7: n= 32, exact= 34.4%, partial= 81.2%, edit= 1.00
+
+CROSS-EVALUATION (50 examples)
+================================================================================
+Test                                          Exact    Partial
+--------------------------------------------------------------------------------
+Stage1 on V0 test (no internalization)        0.0%     10.7%
+V0 on V1b test (pattern->caesar)              0.0%      0.0%
+V0 on V2 test (pattern->german)               0.0%     15.8%
+V2 on V0 test (german->pattern)               0.0%     14.1%
+V1b on V2 test (caesar->german)               0.0%      2.9%
+================================================================================
